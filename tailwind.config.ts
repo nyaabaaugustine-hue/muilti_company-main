@@ -10,11 +10,17 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body:     ['Plus Jakarta Sans', 'sans-serif'],
-        headline: ['Syne', 'sans-serif'],
-        code:     ['monospace'],
+        sans:    ['DM Sans', 'sans-serif'],
+        display: ['Cormorant Garamond', 'Georgia', 'serif'],
+        body:    ['DM Sans', 'sans-serif'],
+        headline:['Cormorant Garamond', 'Georgia', 'serif'],
+        code:    ['monospace'],
       },
       colors: {
+        navy:      '#0A1628',
+        'navy-mid':'#112240',
+        gold:      '#C9A84C',
+        'gold-light':'#E4C876',
         background:  'hsl(var(--background))',
         foreground:  'hsl(var(--foreground))',
         card:        { DEFAULT: 'hsl(var(--card))', foreground: 'hsl(var(--card-foreground))' },
@@ -27,13 +33,6 @@ export default {
         border:      'hsl(var(--border))',
         input:       'hsl(var(--input))',
         ring:        'hsl(var(--ring))',
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))',
-        },
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -49,10 +48,30 @@ export default {
           from: { height: 'var(--radix-accordion-content-height)' },
           to:   { height: '0' },
         },
+        fadeUp: {
+          from: { opacity: '0', transform: 'translateY(32px)' },
+          to:   { opacity: '1', transform: 'translateY(0)' },
+        },
+        scaleIn: {
+          from: { opacity: '0', transform: 'scale(0.92)' },
+          to:   { opacity: '1', transform: 'scale(1)' },
+        },
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to:   { transform: 'translateX(-50%)' },
+        },
+        floatY: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%':      { transform: 'translateY(-8px)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up':   'accordion-up 0.2s ease-out',
+        'fade-up':        'fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both',
+        'scale-in':       'scaleIn 0.7s cubic-bezier(0.22,1,0.36,1) both',
+        'marquee':        'marquee 35s linear infinite',
+        'float':          'floatY 4s ease-in-out infinite',
       },
     },
   },

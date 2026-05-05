@@ -1,30 +1,28 @@
-import type { Metadata } from 'next';
-import './globals.css';
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'UnifiedNexus | Ghana Excellence',
-  description: 'A unified ecosystem of four world-class Ghanaian companies.',
+  title: "UnifiedNexus Group | Excellence Across Ghana & Beyond",
+  description:
+    "UnifiedNexus is a Ghanaian multi-sector powerhouse spanning Technology, Renewable Energy, Real Estate, and Strategic Marketing.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body
-        className="antialiased bg-background text-foreground"
-        style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-      >
-        {children}
-      </body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
