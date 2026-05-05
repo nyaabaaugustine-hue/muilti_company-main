@@ -1,0 +1,70 @@
+{
+  "placeholderImages": [
+    {
+      "id": "osu-hub-bg",
+      "description": "Custom Ghanaian tech hub background",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777865847/WhatsApp_Image_2026-05-03_at_7.41.12_PM_buzbtt.jpg",
+      "imageHint": "ghana tech"
+    },
+    {
+      "id": "hero-abstract",
+      "description": "Premium abstract background with light trails",
+      "imageUrl": "https://picsum.photos/seed/hero42/1920/1080",
+      "imageHint": "abstract technology"
+    },
+    {
+      "id": "smic360-logo",
+      "description": "Minimalist technology logo",
+      "imageUrl": "https://picsum.photos/seed/smic/400/400",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "powergenix-logo",
+      "description": "Minimalist energy logo",
+      "imageUrl": "https://picsum.photos/seed/power/400/400",
+      "imageHint": "energy logo"
+    },
+    {
+      "id": "smart360-logo",
+      "description": "Minimalist smart home logo",
+      "imageUrl": "https://picsum.photos/seed/smart/400/400",
+      "imageHint": "smart home"
+    },
+    {
+      "id": "meshan-ads-logo",
+      "description": "Minimalist marketing logo",
+      "imageUrl": "https://picsum.photos/seed/meshan/400/400",
+      "imageHint": "marketing ads"
+    },
+    {
+      "id": "group-office",
+      "description": "Modern premium office space",
+      "imageUrl": "https://picsum.photos/seed/office99/1200/800",
+      "imageHint": "modern office"
+    },
+    {
+      "id": "smic-bg",
+      "description": "Advanced server farm with glowing lights",
+      "imageUrl": "https://picsum.photos/seed/tech-smic/800/600",
+      "imageHint": "datacenter server"
+    },
+    {
+      "id": "power-bg",
+      "description": "Solar panels and wind turbines in a field",
+      "imageUrl": "https://picsum.photos/seed/energy-power/800/600",
+      "imageHint": "renewable energy"
+    },
+    {
+      "id": "smart-bg",
+      "description": "Custom Ghanaian real estate background",
+      "imageUrl": "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777870096/2bed-logo_1_somx5l.png",
+      "imageHint": "modern apartment"
+    },
+    {
+      "id": "meshan-bg",
+      "description": "Vibrant digital city advertisement",
+      "imageUrl": "https://picsum.photos/seed/ads-meshan/800/600",
+      "imageHint": "digital marketing"
+    }
+  ]
+}
