@@ -154,9 +154,9 @@ export function CompanySelector() {
           background: "rgba(3,8,18,0.94)",
           backdropFilter: "blur(12px)",
           display: "flex",
-          alignItems: "flex-start",
+          alignItems: "center", // Reverted to center for better vertical alignment with reduced padding
           justifyContent: "center",
-          padding: "80px 20px 40px",
+          padding: "40px 20px", // Reduced top padding and simplified padding
           overflowY: "auto",
         }}
       >
@@ -247,17 +247,6 @@ export function CompanySelector() {
                 One Vision
               </em>
             </h1>
-            <p style={{
-              fontSize: 14,
-              color: "rgba(255,255,255,0.65)",
-              lineHeight: 1.75,
-              maxWidth: 500,
-              margin: "0 auto",
-              fontWeight: 400,
-            }}>
-              Each company leads its sector. Together, they form an unrivalled
-              force for growth across West Africa.
-            </p>
           </div>
 
           {/* Gold divider */}

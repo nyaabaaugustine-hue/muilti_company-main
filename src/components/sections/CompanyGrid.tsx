@@ -183,8 +183,7 @@ export function CompanyGrid() {
       id="companies"
       style={{
         background: "#14253d",
-        padding: "100px 0",
-        scrollMarginTop: "72px",
+        padding: "60px 0 60px 0", // Reduced top and bottom padding
       }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -200,18 +199,6 @@ export function CompanyGrid() {
               <span style={{ color: "#C9A84C", fontStyle: "italic" }}>One Vision</span>
             </h2>
           </div>
-          <p
-            style={{
-              fontSize: 14,
-              color: "rgba(255,255,255,0.85)",
-              maxWidth: 320,
-              lineHeight: 1.8,
-              fontWeight: 400,
-            }}
-          >
-            Each company leads its sector. Together, they form an unrivalled
-            force for growth across West Africa.
-          </p>
         </div>
 
         {/* Grid */}
@@ -222,7 +209,7 @@ export function CompanyGrid() {
         </div>
 
         {/* Divider note */}
-        <div className="gold-divider mt-16 mb-6" />
+        <div className="gold-divider mt-10 mb-6" /> {/* Reduced top margin */}
         <p
           className="text-center"
           style={{ fontSize: 11, color: "rgba(255,255,255,0.60)", letterSpacing: "0.15em", textTransform: "uppercase" }}

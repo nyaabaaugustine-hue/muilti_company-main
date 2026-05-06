@@ -1,10 +1,5 @@
 import { CompanySelector } from "@/components/sections/CompanySelector";
-import { HeroSection } from "@/components/sections/HeroSection";
 import { CompanyGrid } from "@/components/sections/CompanyGrid";
-import { GroupOverview } from "@/components/sections/GroupOverview";
-import { CTASection } from "@/components/sections/CTASection";
-import { Footer } from "@/components/sections/Footer";
-import { Navbar } from "@/components/sections/Navbar";
 
 const MARQUEE_ITEMS = [
   "Technology & AI",
@@ -32,12 +27,6 @@ export default function Home() {
     >
       {/* Company selector overlay — shows on load */}
       <CompanySelector />
-
-      {/* Fixed nav */}
-      <Navbar />
-
-      {/* Hero */}
-      <HeroSection />
 
       {/* Gold ticker marquee */}
       <div
@@ -78,15 +67,6 @@ export default function Home() {
 
       {/* Company portfolio */}
       <CompanyGrid />
-
-      {/* About / overview */}
-      <GroupOverview />
-
-      {/* CTA */}
-      <CTASection />
-
-      {/* Footer */}
-      <Footer />
     </main>
   );
 }
