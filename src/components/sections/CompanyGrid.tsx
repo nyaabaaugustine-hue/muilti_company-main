@@ -8,57 +8,54 @@ const COMPANIES = [
   {
     id: "osu-tech",
     index: "01",
-    name: "Osu Digital Hub",
+    name: "AFCFTA Policy Network",
     tagline: "Innovation from Accra",
     sector: "Technology & AI",
-    description:
-      "Pioneering high-scale software, cloud, and AI solutions tailored for West Africa's growing enterprise sector. From Accra to the world.",
+    
     icon: Cpu,
     accentColor: "#3B82F6",
     image:
-      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777772336/eagle_ubrnab.png",
+      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778098678/apn_square_tybqra.jpg",
     href: "/osu-tech",
   },
   {
     id: "volta-energy",
     index: "02",
-    name: "Volta Energy",
+    name: "Africa Globalized Investment",
     tagline: "Powering the Coast",
     sector: "Renewable Energy",
-    description:
-      "Building sustainable, resilient energy storage and solar networks across West Africa for a cleaner, brighter industrial future.",
+    
     icon: Zap,
     accentColor: "#10B981",
     image:
-      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777112845/a10_jjnjkv.jpg",
+      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099500/1b_dpkhdt.png",
     href: "/volta-energy",
   },
   {
     id: "kumasi-smart",
     index: "03",
-    name: "Kumasi Smart",
+    name: "Women of Africa Network",
     tagline: "Modernity Meets Heritage",
     sector: "Real Estate",
-    description:
-      "Redefining luxury residential and commercial real estate through smart-home technology, bold architecture, and cultural pride.",
+    
     icon: Home,
     accentColor: "#C9A84C",
     image:
-      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777112850/a11_fvr487.jpg",
+      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099379/1a_zcxsx2.png",
     href: "/kumasi-smart",
   },
   {
     id: "adabraka-media",
     index: "04",
-    name: "Adabraka Media",
+    name: "African Business Export Club",
     tagline: "Resonating Stories",
     sector: "Strategic Marketing",
     description:
-      "Amplifying local brand narratives across global markets through data-driven creative strategy, digital campaigns, and storytelling.",
+      "",
     icon: BarChart3,
     accentColor: "#E879F9",
     image:
-      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777112830/a8_uhzxz6.jpg",
+      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
     href: "/adabraka-media",
   },
 ];

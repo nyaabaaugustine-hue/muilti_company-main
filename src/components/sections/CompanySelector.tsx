@@ -7,24 +7,24 @@ const COMPANIES = [
   {
     index: "01",
     sector: "Technology & AI",
-    name: "Osu Digital Hub",
+    name: "AFCFTA Policy Network",
     tagline: "Innovation from Accra",
     description:
-      "Pioneering high-scale software, cloud, and AI solutions tailored for West Africa's growing enterprise sector. From Accra to the world.",
-    href: "https://tgne-groupsite.vercel.app/osu-tech",
+      "",
+    href: "Www.Afcftapolicy.net",
     color: "#3B82F6",
     bg: "rgba(59,130,246,0.06)",
     emoji: "💻",
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777772336/eagle_ubrnab.png",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778098678/apn_square_tybqra.jpg",
   },
   {
     index: "02",
-    sector: "Renewable Energy",
-    name: "Volta Energy",
+    sector: "Africa Globalized Investment",
+    name: "Africa Globalized Investment",
     tagline: "Powering the Coast",
     description:
-      "Building sustainable, resilient energy storage and solar networks across West Africa for a cleaner, brighter industrial future.",
-    href: "https://tgne-groupsite.vercel.app/volta-energy",
+      "",
+    href: "Www.womenofafricanetwork.org",
     color: "#10B981",
     bg: "rgba(16,185,129,0.06)",
     emoji: "⚡",
@@ -33,11 +33,11 @@ const COMPANIES = [
   {
     index: "03",
     sector: "Real Estate",
-    name: "Kumasi Smart",
+    name: "Women of Africa Network",
     tagline: "Modernity Meets Heritage",
     description:
-      "Redefining luxury residential and commercial real estate through smart-home technology, bold architecture, and cultural pride.",
-    href: "https://tgne-groupsite.vercel.app/kumasi-smart",
+      "",
+    href: "Www.africaglobalizedinvestment.org",
     color: "#C9A84C",
     bg: "rgba(201,168,76,0.06)",
     emoji: "🏛",
@@ -46,15 +46,15 @@ const COMPANIES = [
   {
     index: "04",
     sector: "Strategic Marketing",
-    name: "Adabraka Media",
+    name: "African Business Export Club",
     tagline: "Resonating Stories",
     description:
-      "Amplifying local brand narratives across global markets through data-driven creative strategy, digital campaigns, and storytelling.",
-    href: "https://tgne-groupsite.vercel.app/adabraka-media",
+      "",
+    href: "Www.abec500.com",
     color: "#E879F9",
     bg: "rgba(232,121,249,0.06)",
     emoji: "📡",
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777112830/a8_uhzxz6.jpg",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
   },
 ];
 
