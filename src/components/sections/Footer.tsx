@@ -42,7 +42,7 @@ const SOCIALS = [
 
 export function Footer() {
   return (
-    <footer style={{ background: "#070F1C", borderTop: "1px solid rgba(201,168,76,0.12)" }}>
+    <footer style={{ background: "#0D1A2C", borderTop: "1px solid rgba(201,168,76,0.18)" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12" style={{ paddingTop: 72, paddingBottom: 40 }}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
 
@@ -68,7 +68,7 @@ export function Footer() {
             <p
               style={{
                 fontSize: 13,
-                color: "rgba(255,255,255,0.45)",
+                color: "rgba(255,255,255,0.65)",
                 lineHeight: 1.85,
                 maxWidth: 300,
                 marginBottom: 24,
@@ -89,17 +89,17 @@ export function Footer() {
                   style={{
                     width: 34,
                     height: 34,
-                    border: "1px solid rgba(201,168,76,0.2)",
+                    border: "1px solid rgba(201,168,76,0.25)",
                     borderRadius: 2,
-                    color: "rgba(255,255,255,0.4)",
+                    color: "rgba(255,255,255,0.58)",
                   }}
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLAnchorElement).style.borderColor = "#C9A84C";
                     (e.currentTarget as HTMLAnchorElement).style.color = "#C9A84C";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,168,76,0.2)";
-                    (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.4)";
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,168,76,0.25)";
+                    (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.58)";
                   }}
                 >
                   <Icon size={14} />
@@ -129,12 +129,12 @@ export function Footer() {
                     <Link
                       href={link.href}
                       className="transition-colors duration-300 no-underline"
-                      style={{ fontSize: 13, color: "rgba(255,255,255,0.45)", fontWeight: 300 }}
+                      style={{ fontSize: 13, color: "rgba(255,255,255,0.65)", fontWeight: 300 }}
                       onMouseEnter={(e) =>
-                        (e.currentTarget.style.color = "rgba(255,255,255,0.85)")
+                        (e.currentTarget.style.color = "rgba(255,255,255,0.95)")
                       }
                       onMouseLeave={(e) =>
-                        (e.currentTarget.style.color = "rgba(255,255,255,0.45)")
+                        (e.currentTarget.style.color = "rgba(255,255,255,0.65)")
                       }
                     >
                       {link.label}
@@ -149,15 +149,15 @@ export function Footer() {
         {/* Bottom bar */}
         <div
           className="flex flex-col sm:flex-row justify-between items-center gap-3"
-          style={{ paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.06)" }}
+          style={{ paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.10)" }}
         >
-          <p style={{ fontSize: 11, color: "rgba(255,255,255,0.25)" }}>
+          <p style={{ fontSize: 11, color: "rgba(255,255,255,0.44)" }}>
             © {new Date().getFullYear()} UnifiedNexus Group. All rights reserved. Accra, Ghana.
           </p>
           <p
             style={{
               fontSize: 10,
-              color: "rgba(201,168,76,0.4)",
+              color: "rgba(201,168,76,0.55)",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
             }}

@@ -27,11 +27,11 @@ export function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
         background: scrolled
-          ? "rgba(10,22,40,0.97)"
-          : "rgba(10,22,40,0.6)",
+          ? "rgba(16,32,50,0.97)"
+          : "rgba(16,32,50,0.72)",
         backdropFilter: "blur(16px)",
         borderBottom: scrolled
-          ? "1px solid rgba(201,168,76,0.2)"
+          ? "1px solid rgba(201,168,76,0.25)"
           : "1px solid transparent",
       }}
     >
@@ -67,7 +67,7 @@ export function Navbar() {
                 fontSize: 9,
                 letterSpacing: "0.25em",
                 textTransform: "uppercase",
-                color: "rgba(201,168,76,0.7)",
+                color: "rgba(201,168,76,0.8)",
                 fontWeight: 500,
               }}
             >
@@ -83,12 +83,12 @@ export function Navbar() {
               <a
                 href={l.href}
                 className="relative text-xs font-medium tracking-widest uppercase transition-colors duration-300 no-underline"
-                style={{ color: "rgba(255,255,255,0.65)" }}
+                style={{ color: "rgba(255,255,255,0.80)" }}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.color = "#C9A84C")
                 }
                 onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = "rgba(255,255,255,0.65)")
+                  (e.currentTarget.style.color = "rgba(255,255,255,0.80)")
                 }
               >
                 {l.label}
@@ -130,8 +130,8 @@ export function Navbar() {
         <div
           className="lg:hidden px-6 pb-6 pt-2"
           style={{
-            background: "rgba(10,22,40,0.98)",
-            borderTop: "1px solid rgba(201,168,76,0.15)",
+            background: "rgba(16,32,50,0.98)",
+            borderTop: "1px solid rgba(201,168,76,0.20)",
           }}
         >
           {NAV_LINKS.map((l) => (
@@ -139,7 +139,7 @@ export function Navbar() {
               key={l.label}
               href={l.href}
               className="block py-3 text-sm font-medium tracking-widest uppercase no-underline transition-colors"
-              style={{ color: "rgba(255,255,255,0.7)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+              style={{ color: "rgba(255,255,255,0.82)", borderBottom: "1px solid rgba(255,255,255,0.10)" }}
               onClick={() => setOpen(false)}
             >
               {l.label}

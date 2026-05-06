@@ -27,9 +27,9 @@ export function CompanyNav({ companyName, companyColor, parentHref = "/" }: Comp
       style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
         height: 68,
-        background: scrolled ? "rgba(10,22,40,0.97)" : "rgba(10,22,40,0.7)",
+        background: scrolled ? "rgba(16,32,50,0.97)" : "rgba(16,32,50,0.78)",
         backdropFilter: "blur(14px)",
-        borderBottom: scrolled ? "1px solid rgba(201,168,76,0.18)" : "1px solid transparent",
+        borderBottom: scrolled ? "1px solid rgba(201,168,76,0.22)" : "1px solid transparent",
         transition: "all 0.4s ease",
         display: "flex", alignItems: "center",
         padding: "0 48px",
@@ -43,20 +43,20 @@ export function CompanyNav({ companyName, companyColor, parentHref = "/" }: Comp
           style={{
             display: "flex", alignItems: "center", gap: 6,
             fontSize: 11, fontWeight: 600, letterSpacing: "0.1em",
-            textTransform: "uppercase", color: "rgba(255,255,255,0.45)",
+            textTransform: "uppercase", color: "rgba(255,255,255,0.62)",
             textDecoration: "none", transition: "color 0.3s",
           }}
           onMouseEnter={e => (e.currentTarget.style.color = "#C9A84C")}
-          onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}
+          onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.62)")}
         >
           <ArrowLeft size={13} /> Group
         </Link>
-        <div style={{ width: 1, height: 20, background: "rgba(255,255,255,0.12)" }} />
+        <div style={{ width: 1, height: 20, background: "rgba(255,255,255,0.18)" }} />
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <div style={{
             width: 8, height: 8, borderRadius: "50%",
             background: companyColor,
-            boxShadow: `0 0 8px ${companyColor}`,
+            boxShadow: `0 0 10px ${companyColor}`,
           }} />
           <span style={{
             fontFamily: "'Cormorant Garamond', serif",
@@ -73,11 +73,11 @@ export function CompanyNav({ companyName, companyColor, parentHref = "/" }: Comp
           <a key={l} href={`#${l.toLowerCase()}`}
             style={{
               fontSize: 11, fontWeight: 500, letterSpacing: "0.12em",
-              textTransform: "uppercase", color: "rgba(255,255,255,0.5)",
+              textTransform: "uppercase", color: "rgba(255,255,255,0.68)",
               textDecoration: "none", transition: "color 0.3s",
             }}
             onMouseEnter={e => (e.currentTarget.style.color = companyColor)}
-            onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
+            onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.68)")}
           >
             {l}
           </a>

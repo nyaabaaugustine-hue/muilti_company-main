@@ -77,8 +77,8 @@ function CompanyCard({
       className="card-lift animate-scale-in group relative flex flex-col overflow-hidden no-underline"
       style={{
         animationDelay: `${delay}ms`,
-        background: "#0F1E38",
-        border: "1px solid rgba(201,168,76,0.12)",
+        background: "#152840",
+        border: "1px solid rgba(201,168,76,0.18)",
         borderRadius: 4,
         textDecoration: "none",
       }}
@@ -96,7 +96,7 @@ function CompanyCard({
         <div
           className="absolute inset-0"
           style={{
-            background: `linear-gradient(160deg, rgba(10,22,40,0.3) 0%, rgba(10,22,40,0.7) 100%)`,
+            background: `linear-gradient(160deg, rgba(16,32,50,0.25) 0%, rgba(16,32,50,0.65) 100%)`,
           }}
         />
         {/* Color accent overlay */}
@@ -111,9 +111,9 @@ function CompanyCard({
         <div
           className="absolute top-4 left-4 font-display text-xs font-semibold px-2.5 py-1"
           style={{
-            background: "rgba(10,22,40,0.85)",
+            background: "rgba(16,32,50,0.85)",
             color: "#C9A84C",
-            border: "1px solid rgba(201,168,76,0.3)",
+            border: "1px solid rgba(201,168,76,0.35)",
             borderRadius: 2,
             letterSpacing: "0.12em",
           }}
@@ -125,7 +125,7 @@ function CompanyCard({
         <div
           className="absolute top-4 right-4 text-xs font-semibold px-2.5 py-1 uppercase tracking-wider"
           style={{
-            background: "rgba(10,22,40,0.85)",
+            background: "rgba(16,32,50,0.85)",
             color: company.accentColor,
             border: `1px solid ${company.accentColor}44`,
             borderRadius: 2,
@@ -146,8 +146,8 @@ function CompanyCard({
             style={{
               width: 44,
               height: 44,
-              background: `${company.accentColor}18`,
-              border: `1px solid ${company.accentColor}33`,
+              background: `${company.accentColor}20`,
+              border: `1px solid ${company.accentColor}40`,
               borderRadius: 2,
             }}
           >
@@ -179,7 +179,7 @@ function CompanyCard({
           className="flex-1"
           style={{
             fontSize: 13,
-            color: "rgba(255,255,255,0.55)",
+            color: "rgba(255,255,255,0.72)",
             lineHeight: 1.75,
             marginBottom: 24,
           }}
@@ -211,7 +211,7 @@ export function CompanyGrid() {
     <section
       id="companies"
       style={{
-        background: "#0A1628",
+        background: "#102032",
         padding: "100px 0",
       }}
     >
@@ -231,7 +231,7 @@ export function CompanyGrid() {
           <p
             style={{
               fontSize: 14,
-              color: "rgba(255,255,255,0.5)",
+              color: "rgba(255,255,255,0.68)",
               maxWidth: 320,
               lineHeight: 1.8,
               fontWeight: 300,
@@ -253,7 +253,7 @@ export function CompanyGrid() {
         <div className="gold-divider mt-16 mb-6" />
         <p
           className="text-center"
-          style={{ fontSize: 11, color: "rgba(255,255,255,0.3)", letterSpacing: "0.15em", textTransform: "uppercase" }}
+          style={{ fontSize: 11, color: "rgba(255,255,255,0.45)", letterSpacing: "0.15em", textTransform: "uppercase" }}
         >
           Each company delivers a dedicated world-class experience
         </p>

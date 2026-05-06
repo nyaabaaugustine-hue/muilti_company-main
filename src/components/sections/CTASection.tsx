@@ -6,15 +6,15 @@ export function CTASection() {
   return (
     <section
       id="contact"
-      style={{ background: "#0A1628", padding: "100px 0" }}
+      style={{ background: "#102032", padding: "100px 0" }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Main CTA block */}
         <div
           className="relative overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, #112240 0%, #1A3354 100%)",
-            border: "1px solid rgba(201,168,76,0.2)",
+            background: "linear-gradient(135deg, #182E52 0%, #224266 100%)",
+            border: "1px solid rgba(201,168,76,0.25)",
             borderRadius: 4,
             padding: "80px 64px",
           }}
@@ -28,7 +28,7 @@ export function CTASection() {
               width: "60%",
               height: "200%",
               background:
-                "radial-gradient(ellipse, rgba(201,168,76,0.08) 0%, transparent 60%)",
+                "radial-gradient(ellipse, rgba(201,168,76,0.11) 0%, transparent 60%)",
             }}
           />
 
@@ -37,15 +37,15 @@ export function CTASection() {
             className="absolute top-0 left-0 pointer-events-none"
             style={{ width: 80, height: 80 }}
           >
-            <div style={{ position: "absolute", top: 0, left: 0, width: 40, height: 1, background: "#C9A84C", opacity: 0.6 }} />
-            <div style={{ position: "absolute", top: 0, left: 0, width: 1, height: 40, background: "#C9A84C", opacity: 0.6 }} />
+            <div style={{ position: "absolute", top: 0, left: 0, width: 40, height: 1, background: "#C9A84C", opacity: 0.7 }} />
+            <div style={{ position: "absolute", top: 0, left: 0, width: 1, height: 40, background: "#C9A84C", opacity: 0.7 }} />
           </div>
           <div
             className="absolute bottom-0 right-0 pointer-events-none"
             style={{ width: 80, height: 80 }}
           >
-            <div style={{ position: "absolute", bottom: 0, right: 0, width: 40, height: 1, background: "#C9A84C", opacity: 0.6 }} />
-            <div style={{ position: "absolute", bottom: 0, right: 0, width: 1, height: 40, background: "#C9A84C", opacity: 0.6 }} />
+            <div style={{ position: "absolute", bottom: 0, right: 0, width: 40, height: 1, background: "#C9A84C", opacity: 0.7 }} />
+            <div style={{ position: "absolute", bottom: 0, right: 0, width: 1, height: 40, background: "#C9A84C", opacity: 0.7 }} />
           </div>
 
           <div
@@ -71,7 +71,7 @@ export function CTASection() {
               <p
                 style={{
                   fontSize: 15,
-                  color: "rgba(255,255,255,0.55)",
+                  color: "rgba(255,255,255,0.74)",
                   lineHeight: 1.85,
                   fontWeight: 300,
                 }}
@@ -95,14 +95,14 @@ export function CTASection() {
               <div style={{ marginTop: 8 }}>
                 <div
                   className="flex items-center gap-2 mb-2"
-                  style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}
+                  style={{ fontSize: 12, color: "rgba(255,255,255,0.60)" }}
                 >
                   <Mail size={12} style={{ color: "#C9A84C" }} />
                   hello@unifiednexus.com
                 </div>
                 <div
                   className="flex items-center gap-2"
-                  style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}
+                  style={{ fontSize: 12, color: "rgba(255,255,255,0.60)" }}
                 >
                   <Phone size={12} style={{ color: "#C9A84C" }} />
                   +233 (0) 30 000 0000

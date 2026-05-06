@@ -13,7 +13,7 @@ export function HeroSection() {
   return (
     <section
       className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #0A1628 0%, #112240 100%)" }}
+      style={{ background: "linear-gradient(135deg, #102032 0%, #182E52 100%)" }}
     >
       {/* Grid texture */}
       <div className="absolute inset-0 grid-bg pointer-events-none" />
@@ -26,7 +26,7 @@ export function HeroSection() {
           right: "-10%",
           width: "70%",
           height: "80%",
-          background: "radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 65%)",
+          background: "radial-gradient(ellipse, rgba(201,168,76,0.10) 0%, transparent 65%)",
         }}
       />
       <div
@@ -36,7 +36,7 @@ export function HeroSection() {
           left: "-5%",
           width: "50%",
           height: "60%",
-          background: "radial-gradient(ellipse, rgba(17,34,64,0.9) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(24,46,82,0.9) 0%, transparent 70%)",
         }}
       />
 
@@ -52,8 +52,8 @@ export function HeroSection() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            opacity: 0.18,
-            filter: "grayscale(20%) contrast(1.1)",
+            opacity: 0.30,
+            filter: "grayscale(10%) contrast(1.1)",
           }}
         />
         {/* Fade edge */}
@@ -61,7 +61,7 @@ export function HeroSection() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, #0A1628 0%, rgba(10,22,40,0.2) 50%, rgba(10,22,40,0.5) 100%)",
+              "linear-gradient(90deg, #102032 0%, rgba(16,32,50,0.2) 50%, rgba(16,32,50,0.5) 100%)",
           }}
         />
       </div>
@@ -99,7 +99,7 @@ export function HeroSection() {
           className="animate-fade-up delay-200"
           style={{
             fontSize: 17,
-            color: "rgba(255,255,255,0.6)",
+            color: "rgba(255,255,255,0.78)",
             maxWidth: 480,
             lineHeight: 1.85,
             fontWeight: 300,
@@ -130,7 +130,7 @@ export function HeroSection() {
           className="animate-fade-up delay-400 flex flex-wrap gap-12"
           style={{
             paddingTop: 40,
-            borderTop: "1px solid rgba(255,255,255,0.08)",
+            borderTop: "1px solid rgba(255,255,255,0.12)",
           }}
         >
           {STATS.map(({ n, label }) => (
@@ -144,7 +144,7 @@ export function HeroSection() {
               <div
                 style={{
                   fontSize: 11,
-                  color: "rgba(255,255,255,0.45)",
+                  color: "rgba(255,255,255,0.62)",
                   textTransform: "uppercase",
                   letterSpacing: "0.15em",
                   marginTop: 6,
@@ -160,7 +160,7 @@ export function HeroSection() {
       {/* Scroll indicator */}
       <div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-float hidden md:flex flex-col items-center gap-2"
-        style={{ opacity: 0.4 }}
+        style={{ opacity: 0.55 }}
       >
         <span style={{ fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C9A84C" }}>
           Scroll

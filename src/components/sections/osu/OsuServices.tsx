@@ -14,7 +14,7 @@ const SERVICES = [
 export function OsuServices() {
   const [hov, setHov] = useState<number|null>(null);
   return (
-    <section id="services" style={{ background:"#080F1E",padding:"100px 64px" }}>
+    <section id="services" style={{ background:"#0E1B32",padding:"100px 64px" }}>
       <div style={{ maxWidth:1100,margin:"0 auto" }}>
         <div style={{ display:"inline-flex",alignItems:"center",gap:10,fontSize:10,fontWeight:700,letterSpacing:"0.22em",textTransform:"uppercase",color:"#3B82F6",marginBottom:16 }}>
           <span style={{ width:28,height:1,background:"#3B82F6",display:"block" }} />What We Build
@@ -23,7 +23,7 @@ export function OsuServices() {
           <h2 style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(32px,3.5vw,48px)",fontWeight:600,color:"#fff",lineHeight:1.15 }}>
             Services Built for{" "}<em style={{ color:"#3B82F6",fontStyle:"italic",fontWeight:400 }}>Scale</em>
           </h2>
-          <p style={{ fontSize:13,color:"rgba(255,255,255,0.45)",maxWidth:300,lineHeight:1.75,fontWeight:300 }}>
+          <p style={{ fontSize:13,color:"rgba(255,255,255,0.65)",maxWidth:300,lineHeight:1.75,fontWeight:300 }}>
             From MVP to enterprise — we architect solutions that grow with you.
           </p>
         </div>
@@ -33,18 +33,18 @@ export function OsuServices() {
             return (
               <div key={i} onMouseEnter={()=>setHov(i)} onMouseLeave={()=>setHov(null)}
                 style={{
-                  background: hov===i ? "rgba(59,130,246,0.07)" : "rgba(13,22,40,0.8)",
-                  border: `1px solid ${hov===i ? "rgba(59,130,246,0.4)" : "rgba(59,130,246,0.1)"}`,
+                  background: hov===i ? "rgba(59,130,246,0.09)" : "rgba(18,30,52,0.88)",
+                  border: `1px solid ${hov===i ? "rgba(59,130,246,0.45)" : "rgba(59,130,246,0.15)"}`,
                   borderRadius:4, padding:"28px 24px",
                   transition:"all 0.4s cubic-bezier(0.22,1,0.36,1)",
                   transform: hov===i ? "translateY(-6px)" : "translateY(0)",
                   boxShadow: hov===i ? "0 24px 48px rgba(0,0,0,0.4)" : "none",
                 }}>
-                <div style={{ width:44,height:44,background:"rgba(59,130,246,0.12)",border:"1px solid rgba(59,130,246,0.25)",borderRadius:2,display:"flex",alignItems:"center",justifyContent:"center",marginBottom:18 }}>
+                <div style={{ width:44,height:44,background:"rgba(59,130,246,0.14)",border:"1px solid rgba(59,130,246,0.30)",borderRadius:2,display:"flex",alignItems:"center",justifyContent:"center",marginBottom:18 }}>
                   <Icon size={20} style={{ color:"#3B82F6" }} />
                 </div>
                 <h3 style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:20,fontWeight:600,color:"#fff",marginBottom:10 }}>{s.title}</h3>
-                <p style={{ fontSize:13,color:"rgba(255,255,255,0.5)",lineHeight:1.75,fontWeight:300 }}>{s.desc}</p>
+                <p style={{ fontSize:13,color:"rgba(255,255,255,0.70)",lineHeight:1.75,fontWeight:300 }}>{s.desc}</p>
               </div>
             );
           })}

@@ -22,7 +22,7 @@ export function GroupOverview() {
   return (
     <section
       id="about"
-      style={{ background: "#112240", padding: 0 }}
+      style={{ background: "#182E52", padding: 0 }}
     >
       <div
         className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
@@ -49,7 +49,7 @@ export function GroupOverview() {
           <p
             style={{
               fontSize: 15,
-              color: "rgba(255,255,255,0.58)",
+              color: "rgba(255,255,255,0.76)",
               lineHeight: 1.85,
               fontWeight: 300,
               marginBottom: 36,
@@ -71,7 +71,7 @@ export function GroupOverview() {
                   size={15}
                   style={{ color: "#C9A84C", flexShrink: 0, marginTop: 2 }}
                 />
-                <span style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", fontWeight: 400, lineHeight: 1.5 }}>
+                <span style={{ fontSize: 13, color: "rgba(255,255,255,0.85)", fontWeight: 400, lineHeight: 1.5 }}>
                   {s}
                 </span>
               </div>
@@ -81,7 +81,7 @@ export function GroupOverview() {
           {/* Stats row */}
           <div
             className="flex gap-10"
-            style={{ paddingTop: 32, borderTop: "1px solid rgba(201,168,76,0.15)" }}
+            style={{ paddingTop: 32, borderTop: "1px solid rgba(201,168,76,0.2)" }}
           >
             {STATS.map(({ n, label }) => (
               <div key={label}>
@@ -94,7 +94,7 @@ export function GroupOverview() {
                 <div
                   style={{
                     fontSize: 10,
-                    color: "rgba(255,255,255,0.4)",
+                    color: "rgba(255,255,255,0.60)",
                     textTransform: "uppercase",
                     letterSpacing: "0.18em",
                     marginTop: 6,
@@ -118,14 +118,14 @@ export function GroupOverview() {
               alt="UnifiedNexus Group headquarters"
               fill
               className="object-cover"
-              style={{ filter: "brightness(0.7) contrast(1.05)" }}
+              style={{ filter: "brightness(0.88) contrast(1.05)" }}
             />
             {/* Dark overlay */}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to top, rgba(10,22,40,0.92) 0%, rgba(10,22,40,0.2) 60%, transparent 100%)",
+                  "linear-gradient(to top, rgba(16,32,50,0.88) 0%, rgba(16,32,50,0.15) 60%, transparent 100%)",
               }}
             />
           </div>
@@ -138,7 +138,7 @@ export function GroupOverview() {
               right: -16,
               width: 160,
               height: 160,
-              border: "1px solid rgba(201,168,76,0.25)",
+              border: "1px solid rgba(201,168,76,0.30)",
               borderRadius: 4,
             }}
           />
@@ -153,7 +153,7 @@ export function GroupOverview() {
               style={{
                 fontSize: 14,
                 fontStyle: "italic",
-                color: "rgba(255,255,255,0.85)",
+                color: "rgba(255,255,255,0.94)",
                 lineHeight: 1.75,
                 marginBottom: 12,
               }}

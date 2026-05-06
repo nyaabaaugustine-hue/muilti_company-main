@@ -6,36 +6,36 @@
 
 @layer base {
   :root {
-    --navy:        #0A1628;
-    --navy-mid:    #112240;
-    --navy-light:  #1A3354;
-    --navy-card:   #0F1E38;
+    --navy:        #102032;
+    --navy-mid:    #182E52;
+    --navy-light:  #224266;
+    --navy-card:   #152840;
     --gold:        #C9A84C;
     --gold-light:  #E4C876;
     --gold-pale:   #F5E9C4;
     --gold-dark:   #9A7A2E;
     --cream:       #FDF8EE;
     --white:       #FFFFFF;
-    --text-muted:  rgba(255,255,255,0.55);
+    --text-muted:  rgba(255,255,255,0.74);
 
-    --background:         10 22% 10%;
+    --background:         213 40% 14%;
     --foreground:         0 0% 97%;
-    --card:               213 54% 13%;
+    --card:               213 54% 18%;
     --card-foreground:    0 0% 97%;
-    --popover:            213 54% 10%;
+    --popover:            213 54% 14%;
     --popover-foreground: 0 0% 97%;
     --primary:            42 53% 55%;
     --primary-foreground: 213 60% 10%;
-    --secondary:          213 40% 18%;
-    --secondary-foreground: 0 0% 90%;
-    --muted:              213 40% 18%;
-    --muted-foreground:   213 20% 60%;
+    --secondary:          213 40% 24%;
+    --secondary-foreground: 0 0% 92%;
+    --muted:              213 40% 24%;
+    --muted-foreground:   213 20% 68%;
     --accent:             42 53% 55%;
     --accent-foreground:  213 60% 10%;
     --destructive:        0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border:             42 30% 30%;
-    --input:              213 40% 18%;
+    --border:             42 30% 32%;
+    --input:              213 40% 22%;
     --ring:               42 53% 55%;
     --radius:             0.5rem;
   }
@@ -171,15 +171,15 @@
   gap: 8px;
 }
 .btn-outline-gold:hover {
-  background: rgba(201,168,76,0.1);
+  background: rgba(201,168,76,0.12);
   border-color: var(--gold);
 }
 
 /* ── Grid background ── */
 .grid-bg {
   background-image:
-    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
@@ -187,7 +187,7 @@
 .gold-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 /* ── Section eyebrow ── */
@@ -211,9 +211,9 @@
 
 /* ── Glass card ── */
 .glass {
-  background: rgba(17, 34, 64, 0.6);
+  background: rgba(24, 46, 82, 0.7);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.2);
 }
 
 /* ── Scrollbar ── */
