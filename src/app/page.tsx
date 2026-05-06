@@ -1,3 +1,4 @@
+import { CompanySelector } from "@/components/sections/CompanySelector";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { CompanyGrid } from "@/components/sections/CompanyGrid";
 import { GroupOverview } from "@/components/sections/GroupOverview";
@@ -29,6 +30,9 @@ export default function Home() {
     <main
       style={{ minHeight: "100vh", width: "100%", overflowX: "hidden", background: "#0A1628" }}
     >
+      {/* Company selector overlay — shows on load */}
+      <CompanySelector />
+
       {/* Fixed nav */}
       <Navbar />
 
