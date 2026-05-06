@@ -162,9 +162,9 @@ export function CompanySelector() {
           background: "rgba(3,8,18,0.94)",
           backdropFilter: "blur(12px)",
           display: "flex",
-          alignItems: "center", // Reverted to center for better vertical alignment with reduced padding
+          alignItems: "flex-start",
           justifyContent: "center",
-          padding: "40px 20px", // Reduced top padding and simplified padding
+          padding: "80px 20px 40px",
           overflowY: "auto",
         }}
       >
