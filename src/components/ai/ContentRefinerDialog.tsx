@@ -67,7 +67,7 @@ export function ContentRefinerDialog() {
       </DialogTrigger>
       <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
+          <DialogTitle className="flex items-center gap-2 text-xl font-bold text-foreground">
             <Sparkles className="h-5 w-5 text-primary" />
             AI Content Refiner
           </DialogTitle>
@@ -79,9 +79,9 @@ export function ContentRefinerDialog() {
         <div className="space-y-6 pt-4">
           {!result && (
             <div className="space-y-4">
-              <div className="p-4 rounded-lg bg-muted/50 border">
-                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Target Content</p>
-                <p className="text-sm font-medium">Group & 4 Individual Companies</p>
+              <div className="p-4 rounded-lg bg-muted/70 border border-primary/30">
+                <p className="text-xs font-extrabold uppercase tracking-widest text-foreground mb-3">Target Content</p>
+                <p className="text-sm font-semibold text-foreground">Group & 4 Individual Companies</p>
                 <p className="text-xs text-muted-foreground mt-1">Refining for premium, corporate, and impactful brand voice.</p>
               </div>
               <Button 
@@ -108,11 +108,11 @@ export function ContentRefinerDialog() {
                   <h3 className="text-xs font-bold uppercase tracking-widest text-primary">Unified Group Suggestions</h3>
                   <div className="grid gap-3">
                     <div className="relative group">
-                      <label className="text-[10px] text-muted-foreground uppercase ml-1">Refined Tagline</label>
+                      <label className="text-[10px] text-foreground/80 font-bold uppercase ml-1">Refined Tagline</label>
                       <Textarea 
                         readOnly 
                         value={result.group.refinedTagline} 
-                        className="bg-muted/30 resize-none min-h-[40px] pr-10"
+                        className="bg-muted/50 border-primary/20 resize-none min-h-[40px] pr-10 text-foreground text-sm"
                       />
                       <Button 
                         variant="ghost" 
@@ -124,11 +124,11 @@ export function ContentRefinerDialog() {
                       </Button>
                     </div>
                     <div className="relative group">
-                      <label className="text-[10px] text-muted-foreground uppercase ml-1">Refined Description</label>
+                      <label className="text-[10px] text-foreground/80 font-bold uppercase ml-1">Refined Description</label>
                       <Textarea 
                         readOnly 
                         value={result.group.refinedDescription} 
-                        className="bg-muted/30 resize-none min-h-[60px] pr-10"
+                        className="bg-muted/50 border-primary/20 resize-none min-h-[60px] pr-10 text-foreground text-sm"
                       />
                       <Button 
                         variant="ghost" 
@@ -147,15 +147,15 @@ export function ContentRefinerDialog() {
                 <div className="space-y-4 pt-4 border-t">
                   <h3 className="text-xs font-bold uppercase tracking-widest text-primary">Company Specific Suggestions</h3>
                   {result.companies.map((c, idx) => (
-                    <div key={idx} className="space-y-3 p-4 rounded-lg border bg-muted/20">
-                      <h4 className="font-bold text-sm">{c.name}</h4>
+                    <div key={idx} className="space-y-3 p-4 rounded-lg border border-primary/10 bg-muted/40">
+                      <h4 className="font-extrabold text-sm text-foreground">{c.name}</h4>
                       <div className="grid gap-3">
                         <div className="relative group">
-                          <label className="text-[10px] text-muted-foreground uppercase ml-1">Refined Tagline</label>
+                          <label className="text-[10px] text-foreground/80 font-bold uppercase ml-1">Refined Tagline</label>
                           <Textarea 
                             readOnly 
                             value={c.refinedTagline} 
-                            className="bg-muted/30 resize-none min-h-[40px] pr-10"
+                            className="bg-muted/50 border-primary/20 resize-none min-h-[40px] pr-10 text-foreground"
                           />
                           <Button 
                             variant="ghost" 

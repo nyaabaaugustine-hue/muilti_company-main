@@ -42,7 +42,7 @@ export default function Home() {
       {/* Gold ticker marquee */}
       <div
         style={{
-          background: "linear-gradient(90deg, #C9A84C 0%, #E4C876 50%, #C9A84C 100%)",
+          background: "linear-gradient(90deg, #D4B760 0%, #F5E09E 50%, #D4B760 100%)",
           padding: "12px 0",
           overflow: "hidden",
         }}
@@ -56,7 +56,7 @@ export default function Home() {
                   fontWeight: 700,
                   letterSpacing: "0.18em",
                   textTransform: "uppercase",
-                  color: "#0A1628",
+                  color: "#02050C",
                 }}
               >
                 {item}
@@ -66,7 +66,7 @@ export default function Home() {
                   width: 4,
                   height: 4,
                   borderRadius: "50%",
-                  background: "rgba(10,22,40,0.35)",
+                background: "rgba(2,5,12,0.45)",
                   display: "inline-block",
                   flexShrink: 0,
                 }}

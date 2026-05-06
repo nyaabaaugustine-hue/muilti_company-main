@@ -13,7 +13,7 @@
 ## Style Guidelines:
 
 - Primary color: A sophisticated deep violet (#6657E6), selected for its modern, premium feel on a dark background, reflecting technological innovation.
-- Background color: A muted dark charcoal (#24222B), chosen as the foundational dark theme base, enhancing depth and focus on content, subtly derived from the primary hue.
+- Background color: A brightened midnight slate (#111D2F), chosen as the foundational dark theme base for better readability and modern aesthetics.
 - Accent color: A vibrant sky blue (#B3DEFF), providing a refreshing contrast against the dark background, used for highlights, interactive elements, and guiding user attention, creating an analogous but distinct visual pop.
 - Headline font: 'Space Grotesk' (sans-serif) for a modern, clean, and tech-forward feel. Body font: 'Inter' (sans-serif) for legibility and a neutral, professional tone in supporting text.
 - Utilize minimalist, line-art or filled glyph icons that are visually aligned with a clean, modern aesthetic. Icons should have consistent styling and color to maintain the premium look.
