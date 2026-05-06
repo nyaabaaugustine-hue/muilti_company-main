@@ -15,7 +15,7 @@ const COMPANIES = [
     icon: Cpu,
     accentColor: "#3B82F6",
     image:
-      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777865847/WhatsApp_Image_2026-05-03_at_7.41.12_PM_buzbtt.jpg",
+      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777772336/eagle_ubrnab.png",
     href: "/osu-tech",
   },
   {
@@ -29,7 +29,7 @@ const COMPANIES = [
     icon: Zap,
     accentColor: "#10B981",
     image:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
+      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777112845/a10_jjnjkv.jpg",
     href: "/volta-energy",
   },
   {
@@ -43,7 +43,7 @@ const COMPANIES = [
     icon: Home,
     accentColor: "#C9A84C",
     image:
-      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777870096/2bed-logo_1_somx5l.png",
+      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777112850/a11_fvr487.jpg",
     href: "/kumasi-smart",
   },
   {
@@ -57,7 +57,7 @@ const COMPANIES = [
     icon: BarChart3,
     accentColor: "#E879F9",
     image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80",
+      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777112830/a8_uhzxz6.jpg",
     href: "/adabraka-media",
   },
 ];
@@ -74,11 +74,11 @@ function CompanyCard({
   return (
     <a
       href={company.href}
-      className="card-lift animate-scale-in group relative flex flex-col overflow-hidden no-underline"
+      className="card-lift animate-scale-in group relative flex flex-col overflow-hidden no-underline border-gold/30"
       style={{
         animationDelay: `${delay}ms`,
-        background: "#152840",
-        border: "1px solid rgba(201,168,76,0.18)",
+        background: "#1e2f4d",
+        border: "1px solid rgba(201,168,76,0.30)",
         borderRadius: 4,
         textDecoration: "none",
       }}
@@ -92,28 +92,13 @@ function CompanyCard({
           className="object-cover transition-transform duration-700 group-hover:scale-108"
           style={{ transition: "transform 0.7s ease" }}
         />
-        {/* Overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `linear-gradient(160deg, rgba(16,32,50,0.25) 0%, rgba(16,32,50,0.65) 100%)`,
-          }}
-        />
-        {/* Color accent overlay */}
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            background: `linear-gradient(135deg, ${company.accentColor}44, transparent)`,
-          }}
-        />
-
         {/* Index badge */}
         <div
           className="absolute top-4 left-4 font-display text-xs font-semibold px-2.5 py-1"
           style={{
             background: "rgba(16,32,50,0.85)",
             color: "#C9A84C",
-            border: "1px solid rgba(201,168,76,0.35)",
+            border: "1px solid rgba(201,168,76,0.50)",
             borderRadius: 2,
             letterSpacing: "0.12em",
           }}
@@ -127,7 +112,7 @@ function CompanyCard({
           style={{
             background: "rgba(16,32,50,0.85)",
             color: company.accentColor,
-            border: `1px solid ${company.accentColor}44`,
+            border: `1px solid ${company.accentColor}66`,
             borderRadius: 2,
             fontSize: 9,
             letterSpacing: "0.15em",
@@ -140,20 +125,7 @@ function CompanyCard({
       {/* Body */}
       <div className="flex flex-col flex-1 p-6">
         {/* Icon + name */}
-        <div className="flex items-start gap-4 mb-4">
-          <div
-            className="flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
-            style={{
-              width: 44,
-              height: 44,
-              background: `${company.accentColor}20`,
-              border: `1px solid ${company.accentColor}40`,
-              borderRadius: 2,
-            }}
-          >
-            <Icon size={18} style={{ color: company.accentColor }} />
-          </div>
-          <div>
+        <div className="flex flex-col gap-1 mb-4">
             <h2
               className="font-display font-semibold leading-tight"
               style={{ fontSize: 20, color: "#fff" }}
@@ -171,7 +143,6 @@ function CompanyCard({
             >
               {company.tagline}
             </p>
-          </div>
         </div>
 
         {/* Description */}
@@ -179,7 +150,7 @@ function CompanyCard({
           className="flex-1"
           style={{
             fontSize: 13,
-            color: "rgba(255,255,255,0.72)",
+            color: "rgba(255,255,255,0.88)",
             lineHeight: 1.75,
             marginBottom: 24,
           }}
@@ -211,8 +182,9 @@ export function CompanyGrid() {
     <section
       id="companies"
       style={{
-        background: "#102032",
+        background: "#14253d",
         padding: "100px 0",
+        scrollMarginTop: "72px",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -231,10 +203,10 @@ export function CompanyGrid() {
           <p
             style={{
               fontSize: 14,
-              color: "rgba(255,255,255,0.68)",
+              color: "rgba(255,255,255,0.85)",
               maxWidth: 320,
               lineHeight: 1.8,
-              fontWeight: 300,
+              fontWeight: 400,
             }}
           >
             Each company leads its sector. Together, they form an unrivalled
@@ -253,7 +225,7 @@ export function CompanyGrid() {
         <div className="gold-divider mt-16 mb-6" />
         <p
           className="text-center"
-          style={{ fontSize: 11, color: "rgba(255,255,255,0.45)", letterSpacing: "0.15em", textTransform: "uppercase" }}
+          style={{ fontSize: 11, color: "rgba(255,255,255,0.60)", letterSpacing: "0.15em", textTransform: "uppercase" }}
         >
           Each company delivers a dedicated world-class experience
         </p>

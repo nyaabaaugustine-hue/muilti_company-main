@@ -15,7 +15,7 @@ const COMPANIES = [
     color: "#3B82F6",
     bg: "rgba(59,130,246,0.06)",
     emoji: "💻",
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777865847/WhatsApp_Image_2026-05-03_at_7.41.12_PM_buzbtt.jpg",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777772336/eagle_ubrnab.png",
   },
   {
     index: "02",
@@ -28,7 +28,7 @@ const COMPANIES = [
     color: "#10B981",
     bg: "rgba(16,185,129,0.06)",
     emoji: "⚡",
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777112845/a10_jjnjkv.jpg",
   },
   {
     index: "03",
@@ -41,7 +41,7 @@ const COMPANIES = [
     color: "#C9A84C",
     bg: "rgba(201,168,76,0.06)",
     emoji: "🏛",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777112850/a11_fvr487.jpg",
   },
   {
     index: "04",
@@ -54,7 +54,7 @@ const COMPANIES = [
     color: "#E879F9",
     bg: "rgba(232,121,249,0.06)",
     emoji: "📡",
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777112830/a8_uhzxz6.jpg",
   },
 ];
 
@@ -151,12 +151,12 @@ export function CompanySelector() {
           position: "fixed",
           inset: 0,
           zIndex: 9999,
-          background: "rgba(5,12,24,0.92)",
-          backdropFilter: "blur(8px)",
+          background: "rgba(3,8,18,0.94)",
+          backdropFilter: "blur(12px)",
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "center",
-          padding: "20px",
+          padding: "80px 20px 40px",
           overflowY: "auto",
         }}
       >
@@ -174,11 +174,11 @@ export function CompanySelector() {
             onClick={dismiss}
             style={{
               position: "absolute",
-              top: -48,
+              top: -54,
               right: 0,
-              background: "rgba(255,255,255,0.06)",
-              border: "1px solid rgba(255,255,255,0.12)",
-              color: "rgba(255,255,255,0.5)",
+              background: "rgba(255,255,255,0.1)",
+              border: "1px solid rgba(255,255,255,0.2)",
+              color: "rgba(255,255,255,0.8)",
               borderRadius: 2,
               padding: "6px 14px",
               fontSize: 11,
@@ -193,11 +193,11 @@ export function CompanySelector() {
             }}
             onMouseEnter={e => {
               (e.currentTarget as HTMLButtonElement).style.color = "#fff";
-              (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.3)";
+              (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.5)";
             }}
             onMouseLeave={e => {
-              (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.5)";
-              (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.12)";
+              (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.8)";
+              (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.2)";
             }}
           >
             <X size={12} /> Skip
@@ -249,11 +249,11 @@ export function CompanySelector() {
             </h1>
             <p style={{
               fontSize: 14,
-              color: "rgba(255,255,255,0.45)",
+              color: "rgba(255,255,255,0.65)",
               lineHeight: 1.75,
               maxWidth: 500,
               margin: "0 auto",
-              fontWeight: 300,
+              fontWeight: 400,
             }}>
               Each company leads its sector. Together, they form an unrivalled
               force for growth across West Africa.
@@ -285,13 +285,13 @@ export function CompanySelector() {
                   textDecoration: "none",
                   display: "flex",
                   flexDirection: "column",
-                  background: hovered === i ? c.bg : "rgba(15,30,56,0.8)",
-                  border: `1px solid ${hovered === i ? c.color + "55" : "rgba(201,168,76,0.12)"}`,
+                  background: hovered === i ? c.bg : "rgba(22,42,75,0.85)",
+                  border: `1px solid ${hovered === i ? c.color + "77" : "rgba(201,168,76,0.25)"}`,
                   borderRadius: 4,
                   overflow: "hidden",
                   boxShadow: hovered === i
-                    ? `0 28px 60px -12px rgba(0,0,0,0.6), 0 0 0 1px ${c.color}33`
-                    : "0 4px 24px rgba(0,0,0,0.3)",
+                    ? `0 28px 60px -12px rgba(0,0,0,0.7), 0 0 0 1px ${c.color}55`
+                    : "0 8px 32px rgba(0,0,0,0.4)",
                   animationName: "cardStagger",
                   animationDuration: "0.6s",
                   animationDelay: `${0.1 + i * 0.1}s`,
@@ -308,15 +308,10 @@ export function CompanySelector() {
                     style={{
                       width: "100%", height: "100%",
                       objectFit: "cover",
-                      opacity: 0.22,
+                      opacity: 1,
                     }}
                   />
-                  {/* colour wash */}
-                  <div style={{
-                    position: "absolute", inset: 0,
-                    background: `linear-gradient(160deg, ${c.color}22, rgba(10,22,40,0.7))`,
-                  }} />
-
+                  
                   {/* Index badge */}
                   <div style={{
                     position: "absolute", top: 12, left: 12,
@@ -335,24 +330,13 @@ export function CompanySelector() {
                     position: "absolute", top: 12, right: 12,
                     background: "rgba(10,22,40,0.88)",
                     color: c.color,
-                    fontSize: 8, fontWeight: 700, letterSpacing: "0.16em",
+                    fontSize: 8, fontWeight: 800, letterSpacing: "0.16em",
                     textTransform: "uppercase",
                     padding: "4px 10px",
-                    border: `1px solid ${c.color}44`,
+                    border: `1px solid ${c.color}66`,
                     borderRadius: 2,
                   }}>
                     {c.sector}
-                  </div>
-
-                  {/* Big emoji centre */}
-                  <div style={{
-                    position: "absolute", inset: 0,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    fontSize: 36,
-                    opacity: hovered === i ? 0.9 : 0.5,
-                    transition: "opacity 0.35s ease",
-                  }}>
-                    {c.emoji}
                   </div>
                 </div>
 
@@ -374,9 +358,9 @@ export function CompanySelector() {
 
                   {/* Description */}
                   <p style={{
-                    fontSize: 12, color: "rgba(255,255,255,0.5)",
+                    fontSize: 12, color: "rgba(255,255,255,0.75)",
                     lineHeight: 1.75, flex: 1, marginBottom: 20,
-                    fontWeight: 300,
+                    fontWeight: 400,
                   }}>
                     {c.description}
                   </p>
@@ -385,7 +369,7 @@ export function CompanySelector() {
                   <div style={{
                     display: "flex", alignItems: "center", justifyContent: "space-between",
                     paddingTop: 14,
-                    borderTop: `1px solid ${hovered === i ? c.color + "33" : "rgba(255,255,255,0.07)"}`,
+                    borderTop: `1px solid ${hovered === i ? c.color + "55" : "rgba(255,255,255,0.15)"}`,
                     transition: "border-color 0.35s ease",
                   }}>
                     <span style={{
@@ -425,7 +409,7 @@ export function CompanySelector() {
           {/* Footer note */}
           <p style={{
             textAlign: "center", marginTop: 32,
-            fontSize: 10, color: "rgba(255,255,255,0.2)",
+            fontSize: 10, color: "rgba(255,255,255,0.4)",
             letterSpacing: "0.18em", textTransform: "uppercase",
           }}>
             Each company delivers a dedicated world-class experience
