@@ -68,18 +68,6 @@ export function CTASection() {
                   the Future?
                 </em>
               </h2>
-              <p
-                style={{
-                  fontSize: 15,
-                  color: "rgba(255,255,255,0.74)",
-                  lineHeight: 1.85,
-                  fontWeight: 300,
-                }}
-              >
-                Whether you're seeking a technology partner, sustainable energy
-                solutions, premium real estate, or powerful brand growth —
-                UnifiedNexus Group is ready to deliver.
-              </p>
             </div>
 
             <div className="flex flex-col gap-4 flex-shrink-0">

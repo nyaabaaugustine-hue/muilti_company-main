@@ -3,7 +3,7 @@
 import { ArrowDown, ArrowRight } from "lucide-react";
 
 const STATS = [
-  { n: "4", label: "Companies" },
+{ n: "4", label: "Companies" },
   { n: "12+", label: "Countries" },
   { n: "400+", label: "Experts" },
   { n: "10yr", label: "Track Record" },
@@ -90,25 +90,9 @@ export function HeroSection() {
         >
           One Group.{" "}
           <em style={{ color: "#C9A84C", fontStyle: "italic", fontWeight: 400 }}>
-            Four Worlds.
+          Four Worlds.
           </em>
         </h1>
-
-        {/* Sub */}
-        <p
-          className="animate-fade-up delay-200"
-          style={{
-            fontSize: 17,
-            color: "rgba(255,255,255,0.78)",
-            maxWidth: 480,
-            lineHeight: 1.85,
-            fontWeight: 300,
-            marginBottom: 48,
-          }}
-        >
-          Four specialised companies. One shared vision of excellence across
-          Ghana and beyond — in Technology, Energy, Real Estate, and Media.
-        </p>
 
         {/* CTAs */}
         <div

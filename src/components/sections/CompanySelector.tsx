@@ -9,9 +9,7 @@ const COMPANIES = [
     sector: "Technology & AI",
     name: "AFCFTA Policy Network",
     tagline: "Innovation from Accra",
-    description:
-      "",
-    href: "Www.Afcftapolicy.net",
+    href: "https://www.afcftapolicy.net",
     color: "#3B82F6",
     bg: "rgba(59,130,246,0.06)",
     emoji: "💻",
@@ -22,9 +20,7 @@ const COMPANIES = [
     sector: "Renewable Energy",
     name: "Africa Globalized Investment",
     tagline: "Powering the Coast",
-    description:
-      "",
-    href: "Www.africaglobalizedinvestment.org",
+    href: "https://www.africaglobalizedinvestment.org",
     color: "#10B981",
     bg: "rgba(16,185,129,0.06)",
     emoji: "⚡",
@@ -35,9 +31,7 @@ const COMPANIES = [
     sector: "Real Estate",
     name: "Women of Africa Network",
     tagline: "Modernity Meets Heritage",
-    description:
-      "",
-    href: "Www.womenofafricanetwork.org",
+    href: "https://www.womenofafricanetwork.org",
     color: "#C9A84C",
     bg: "rgba(201,168,76,0.06)",
     emoji: "🏛",
@@ -48,9 +42,7 @@ const COMPANIES = [
     sector: "Strategic Marketing",
     name: "African Business Export Club",
     tagline: "Resonating Stories",
-    description:
-      "",
-    href: "Www.abec500.com",
+    href: "https://www.abec500.com",
     color: "#E879F9",
     bg: "rgba(232,121,249,0.06)",
     emoji: "📡",
@@ -68,8 +60,10 @@ export function CompanySelector() {
   const handleRedirect = (name: string, url: string) => {
     setRedirecting({ name, url });
     setTimeout(() => {
-      window.location.href = url;
-    }, 1500);
+      window.open(url, "_blank", "noopener,noreferrer");
+      setRedirecting(null);
+      dismiss();
+    }, 1200);
   };
 
   useEffect(() => {
@@ -388,15 +382,6 @@ export function CompanySelector() {
                       {c.tagline}
                     </div>
                   </div>
-
-                  {/* Description */}
-                  <p style={{
-                    fontSize: 12, color: "rgba(255,255,255,0.75)",
-                    lineHeight: 1.75, flex: 1, marginBottom: 20,
-                    fontWeight: 400,
-                  }}>
-                    {c.description}
-                  </p>
 
                   {/* CTA row */}
                   <div style={{

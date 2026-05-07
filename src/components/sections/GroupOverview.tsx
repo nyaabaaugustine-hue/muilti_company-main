@@ -46,20 +46,6 @@ export function GroupOverview() {
               Diverse Expertise
             </em>
           </h2>
-          <p
-            style={{
-              fontSize: 15,
-              color: "rgba(255,255,255,0.76)",
-              lineHeight: 1.85,
-              fontWeight: 300,
-              marginBottom: 36,
-            }}
-          >
-            UnifiedNexus operates at the intersection of industry-defining
-            innovation. By pooling our resources and specialised knowledge across
-            four distinct sectors, we create an ecosystem far greater than the
-            sum of its parts.
-          </p>
 
           {/* Strengths */}
           <div

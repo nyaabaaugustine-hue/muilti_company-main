@@ -65,19 +65,6 @@ export function Footer() {
                 Unified<span style={{ color: "#C9A84C" }}>Nexus</span>
               </span>
             </div>
-            <p
-              style={{
-                fontSize: 13,
-                color: "rgba(255,255,255,0.65)",
-                lineHeight: 1.85,
-                maxWidth: 300,
-                marginBottom: 24,
-                fontWeight: 300,
-              }}
-            >
-              A unified group of four world-class Ghanaian companies shaping
-              the future of technology, energy, real estate, and media.
-            </p>
             {/* Socials */}
             <div className="flex gap-3">
               {SOCIALS.map(({ Icon, href, label }) => (

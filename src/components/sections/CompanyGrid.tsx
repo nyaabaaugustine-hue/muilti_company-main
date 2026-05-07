@@ -16,7 +16,7 @@ const COMPANIES = [
     accentColor: "#3B82F6",
     image:
       "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
-    href: "/osu-tech",
+    href: "https://www.afcftapolicy.net",
   },
   {
     id: "volta-energy",
@@ -29,7 +29,7 @@ const COMPANIES = [
     accentColor: "#10B981",
     image:
       "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099500/1b_dpkhdt.png",
-    href: "/volta-energy",
+    href: "https://www.africaglobalizedinvestment.org",
   },
   {
     id: "kumasi-smart",
@@ -42,7 +42,7 @@ const COMPANIES = [
     accentColor: "#C9A84C",
     image:
       "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099379/1a_zcxsx2.png",
-    href: "/kumasi-smart",
+    href: "https://www.womenofafricanetwork.org",
   },
   {
     id: "adabraka-media",
@@ -50,13 +50,11 @@ const COMPANIES = [
     name: "African Business Export Club",
     tagline: "Resonating Stories",
     sector: "Strategic Marketing",
-    description:
-      "",
     icon: BarChart3,
     accentColor: "#E879F9",
     image:
       "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778098678/apn_square_tybqra.png",
-    href: "/adabraka-media",
+    href: "https://www.abec500.com",
   },
 ];
 
@@ -93,6 +91,7 @@ function CompanyCard({
           src={company.image}
           alt={company.name}
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
           className="object-cover transition-transform duration-700 group-hover:scale-108"
           style={{ transition: "transform 0.7s ease" }}
         />
@@ -149,19 +148,6 @@ function CompanyCard({
             </p>
         </div>
 
-        {/* Description */}
-        <p
-          className="flex-1"
-          style={{
-            fontSize: 13,
-            color: "rgba(255,255,255,0.88)",
-            lineHeight: 1.75,
-            marginBottom: 24,
-          }}
-        >
-          {company.description}
-        </p>
-
         {/* CTA row */}
         <div
           className="flex items-center gap-2 transition-all duration-300 group-hover:gap-3"
@@ -187,8 +173,9 @@ export function CompanyGrid() {
   const handleRedirect = (name: string, url: string) => {
     setRedirecting({ name, url });
     setTimeout(() => {
-      window.location.href = url;
-    }, 1500);
+      window.open(url, "_blank", "noopener,noreferrer");
+      setRedirecting(null);
+    }, 1200);
   };
 
   return (
