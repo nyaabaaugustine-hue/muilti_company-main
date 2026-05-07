@@ -58,11 +58,14 @@ export default function Home() {
   return (
     <main
       style={{
-        minHeight: "100dvh",
+        height: "100dvh",
         width: "100%",
-        background: "#0A1628",
+        background: "linear-gradient(rgba(10, 22, 40, 0.85), rgba(10, 22, 40, 0.85)), url(https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125799/gefw_z5bq6y.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
         display: "flex",
         flexDirection: "column",
+        overflow: "hidden",
       }}
     >
       {/* ── Hero: APNABEC title ── */}
@@ -90,36 +93,13 @@ export default function Home() {
         >
           APNA<span style={{ color: "#C9A84C" }}>BEC</span>
         </h1>
-        <div
-          style={{
-            width: "100%",
-            maxWidth: 480,
-            height: 1,
-            background: "linear-gradient(90deg, transparent, #C9A84C, transparent)",
-            margin: "22px 0 18px",
-          }}
-        />
-        <p
-          style={{
-            fontFamily: "'DM Sans', sans-serif",
-            fontSize: "clamp(10px, 1.4vw, 13px)",
-            letterSpacing: "0.35em",
-            textTransform: "uppercase",
-            color: "rgba(201,168,76,0.85)",
-            fontWeight: 500,
-            margin: 0,
-            textAlign: "center",
-          }}
-        >
-          Group · Ghana
-        </p>
       </div>
 
       {/* ── Four Company Cards ── */}
       <div
         style={{
           flex: 1,
-          padding: "0 24px 56px",
+          padding: "0 24px 48px",
           maxWidth: 1480,
           width: "100%",
           margin: "0 auto",
