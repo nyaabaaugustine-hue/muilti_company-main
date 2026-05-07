@@ -56,32 +56,17 @@ const COMPANIES = [
 
 export default function Home() {
   return (
-    <main
-      style={{
-        height: "100dvh",
-        width: "100%",
-        background: "linear-gradient(rgba(10, 22, 40, 0.85), rgba(10, 22, 40, 0.85)), url(https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125799/gefw_z5bq6y.jpg)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        display: "flex",
-        flexDirection: "column",
-        overflow: "hidden",
-      }}
-    >
+    <main className="flex min-h-[100dvh] w-full flex-col relative" style={{
+      background: "linear-gradient(rgba(10, 22, 40, 0.85), rgba(10, 22, 40, 0.85)), url(https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125799/gefw_z5bq6y.jpg)",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}>
       {/* ── Hero: APNABEC title ── */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "72px 24px 48px",
-        }}
-      >
+      <div className="flex flex-col items-center justify-center px-5 pt-16 pb-12 md:pt-24 md:pb-16 lg:pt-32 lg:pb-20">
         <h1
           style={{
             fontFamily: "'Cormorant Garamond', Georgia, serif",
-            fontSize: "clamp(64px, 13vw, 160px)",
+            fontSize: "clamp(42px, 12vw, 150px)",
             fontWeight: 700,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
@@ -96,16 +81,7 @@ export default function Home() {
       </div>
 
       {/* ── Four Company Cards ── */}
-      <div
-        style={{
-          flex: 1,
-          padding: "0 24px 48px",
-          maxWidth: 1480,
-          width: "100%",
-          margin: "0 auto",
-          boxSizing: "border-box",
-        }}
-      >
+      <div className="flex-1 w-full max-w-[1480px] mx-auto px-5 pb-20">
         {/* Section label */}
         <p
           style={{
@@ -115,22 +91,15 @@ export default function Home() {
             textTransform: "uppercase",
             color: "rgba(201,168,76,0.65)",
             fontWeight: 600,
-            marginBottom: 20,
+            marginBottom: 16,
             textAlign: "center",
           }}
         >
           Our Companies
         </p>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: 20,
-          }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
           {COMPANIES.map((company, i) => {
-            const Icon = company.icon;
             return (
               <a
                 key={company.id}
@@ -140,29 +109,10 @@ export default function Home() {
                   e.preventDefault();
                   window.open(company.href, "_blank", "noopener,noreferrer");
                 }}
+                className="group flex flex-col bg-[#1e2f4d] border border-[rgba(201,168,76,0.28)] rounded-[4px] overflow-hidden no-underline transition-all duration-300 hover:border-[#C9A84C] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  background: "#1e2f4d",
-                  border: "1px solid rgba(201,168,76,0.28)",
-                  borderRadius: 4,
-                  overflow: "hidden",
-                  textDecoration: "none",
                   cursor: company.href === "#" ? "default" : "pointer",
-                  transition: "border-color 0.25s, transform 0.25s, box-shadow 0.25s",
                   animationDelay: `${i * 120}ms`,
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.borderColor = "#C9A84C";
-                  el.style.transform = "translateY(-3px)";
-                  el.style.boxShadow = "0 12px 40px rgba(0,0,0,0.45)";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.borderColor = "rgba(201,168,76,0.28)";
-                  el.style.transform = "translateY(0)";
-                  el.style.boxShadow = "none";
                 }}
               >
                 {/* Image strip */}
@@ -268,15 +218,11 @@ export default function Home() {
                 </div>
 
                 {/* Bottom gold bar */}
-                <div
+                <div 
+                  className="h-[2px] w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{
-                    height: 2,
                     background: `linear-gradient(90deg, ${company.accentColor}, #C9A84C)`,
-                    opacity: 0,
-                    transition: "opacity 0.3s",
                   }}
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLDivElement).style.opacity = "1")}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLDivElement).style.opacity = "0")}
                 />
               </a>
             );
@@ -285,18 +231,8 @@ export default function Home() {
       </div>
 
       {/* ── Footer bar ── */}
-      <div
-        style={{
-          background: "#070f1c",
-          borderTop: "1px solid rgba(201,168,76,0.12)",
-          padding: "7px 24px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 16,
-        }}
-      >
-        <span style={{ width: 20, height: 1, background: "rgba(201,168,76,0.35)", display: "block", flexShrink: 0 }} />
+      <div className="bg-[#070f1c] border-t border-[rgba(201,168,76,0.12)] py-5 px-6 flex items-center justify-center gap-4">
+        <span style={{ width: 16, height: 1, background: "rgba(201,168,76,0.35)", display: "block", flexShrink: 1 }} />
         <p
           style={{
             fontSize: 10,
@@ -304,12 +240,11 @@ export default function Home() {
             letterSpacing: "0.18em",
             textTransform: "uppercase",
             margin: 0,
-            whiteSpace: "nowrap",
           }}
         >
           &copy; {new Date().getFullYear()} APNABEC &mdash; All Rights Reserved
         </p>
-        <span style={{ width: 20, height: 1, background: "rgba(201,168,76,0.35)", display: "block", flexShrink: 0 }} />
+        <span style={{ width: 16, height: 1, background: "rgba(201,168,76,0.35)", display: "block", flexShrink: 1 }} />
       </div>
     </main>
   );
