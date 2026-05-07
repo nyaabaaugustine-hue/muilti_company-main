@@ -13,7 +13,7 @@ const COMPANIES = [
     color: "#3B82F6",
     bg: "rgba(59,130,246,0.06)",
     emoji: "💻",
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125277/new121_msodpt.png",
   },
   {
     index: "02",
@@ -46,7 +46,7 @@ const COMPANIES = [
     color: "#E879F9",
     bg: "rgba(232,121,249,0.06)",
     emoji: "📡",
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778098678/apn_square_tybqra.png",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
   },
 ];
 
@@ -327,14 +327,16 @@ export function CompanySelector() {
                 }}
               >
                 {/* Image strip */}
-                <div style={{ position: "relative", height: 140, overflow: "hidden", flexShrink: 0 }}>
+                <div style={{ position: "relative", height: 140, overflow: "hidden", flexShrink: 0, background: "#0d1e35" }}>
                   <img
                     src={c.image}
                     alt={c.name}
                     className="card-img"
                     style={{
                       width: "100%", height: "100%",
-                      objectFit: "cover",
+                      objectFit: "contain",
+                      objectPosition: "center",
+                      padding: "12px",
                       opacity: 1,
                     }}
                   />

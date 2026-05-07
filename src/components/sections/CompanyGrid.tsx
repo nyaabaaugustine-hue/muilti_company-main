@@ -15,7 +15,7 @@ const COMPANIES = [
     icon: Cpu,
     accentColor: "#3B82F6",
     image:
-      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
+      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125277/new121_msodpt.png",
     href: "https://www.afcftapolicy.net",
   },
   {
@@ -53,7 +53,7 @@ const COMPANIES = [
     icon: BarChart3,
     accentColor: "#E879F9",
     image:
-      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778098678/apn_square_tybqra.png",
+      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
     href: "https://www.abec500.com",
   },
 ];
@@ -86,14 +86,14 @@ function CompanyCard({
       }}
     >
       {/* Image strip */}
-      <div className="relative overflow-hidden flex-shrink-0" style={{ height: 200 }}>
+      <div className="relative overflow-hidden flex-shrink-0" style={{ height: 200, background: "#0d1e35" }}>
         <Image
           src={company.image}
           alt={company.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-108"
-          style={{ transition: "transform 0.7s ease" }}
+          className="object-contain transition-transform duration-700"
+          style={{ transition: "transform 0.7s ease", padding: "12px" }}
         />
         {/* Index badge */}
         <div
