@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import { useState } from "react";
 import Image from "next/image";
-import { ArrowRight, Cpu, Zap, Home, BarChart3 } from "lucide-react";
+import { ArrowRight, Cpu, Zap, Home, BarChart3, Loader2 } from "lucide-react";
 
 const COMPANIES = [
   {
@@ -166,8 +166,14 @@ function CompanyCard({
 }
 
 export function CompanyGrid() {
+  const [redirecting, setRedirecting] = useState<{ name: string; url: string } | null>(null);
+
   const handleRedirect = (name: string, url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer");
+    setRedirecting({ name, url });
+    setTimeout(() => {
+      window.open(url, "_blank", "noopener,noreferrer");
+      setRedirecting(null);
+    }, 1200);
   };
 
   return (
@@ -191,6 +197,38 @@ export function CompanyGrid() {
           to   { opacity: 1; }
         }
       `}</style>
+
+      {/* Redirecting Overlay */}
+      {redirecting && (
+        <div style={{ 
+          position: "fixed", inset: 0, zIndex: 10000, 
+          background: "rgba(10,22,40,0.96)", backdropFilter: "blur(10px)",
+          display: "flex", alignItems: "center", justifyContent: "center",
+          flexDirection: "column", gap: 24, animation: "selectorFadeIn 0.3s ease"
+        }}>
+          <div style={{ position: "relative" }}>
+            <Loader2 className="animate-spin" size={48} style={{ color: "#C9A84C" }} />
+            <div style={{ 
+              position: "absolute", inset: -10, borderRadius: "50%", 
+              boxShadow: "0 0 40px rgba(201,168,76,0.2)", pointerEvents: "none" 
+            }} />
+          </div>
+          <div style={{ textAlign: "center" }}>
+            <p style={{ 
+              fontFamily: "'Cormorant Garamond', serif", 
+              fontSize: 28, fontWeight: 600, color: "#fff", margin: 0 
+            }}>
+              Redirecting to <span style={{ color: "#C9A84C", fontStyle: "italic" }}>{redirecting.name}</span>
+            </p>
+            <p style={{ 
+              fontSize: 10, color: "rgba(255,255,255,0.4)", 
+              textTransform: "uppercase", letterSpacing: "0.25em", marginTop: 12 
+            }}>
+              Preparing your world-class experience
+            </p>
+          </div>
+        </div>
+      )}
 
       <div className="max-w-[1472px] mx-auto px-6 lg:px-12" style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
         {/* Header */}
