@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const OG_IMAGE = "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778124971/apn_square_i3pzri.png";
-const SITE_TITLE = "UnifiedNexus Group | Excellence Across Ghana & Beyond";
-const SITE_DESC = "UnifiedNexus is a Ghanaian multi-sector powerhouse spanning Technology, Renewable Energy, Real Estate, and Strategic Marketing.";
+const SITE_TITLE = "APNABEC | Excellence Across Ghana & Beyond";
+const SITE_DESC = "APNABEC is a Ghanaian multi-sector powerhouse spanning Technology, Renewable Energy, Real Estate, and Strategic Marketing.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tgne-groupsite.vercel.app"),
@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     title: SITE_TITLE,
     description: SITE_DESC,
     url: "https://tgne-groupsite.vercel.app",
-    siteName: "UnifiedNexus Group",
+    siteName: "APNABEC",
     images: [
       {
         url: OG_IMAGE,
         secureUrl: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "UnifiedNexus Group",
+        alt: "APNABEC Group",
         type: "image/png",
       },
     ],
@@ -60,10 +60,10 @@ export default function RootLayout({
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="UnifiedNexus Group" />
+        <meta property="og:image:alt" content="APNABEC" />
         <meta property="og:url" content="https://tgne-groupsite.vercel.app" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="UnifiedNexus Group" />
+        <meta property="og:site_name" content="APNABEC" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={OG_IMAGE} />
         {/* Favicon */}

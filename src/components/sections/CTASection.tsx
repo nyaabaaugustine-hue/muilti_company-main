@@ -71,11 +71,11 @@ export function CTASection() {
             </div>
 
             <div className="flex flex-col gap-4 flex-shrink-0">
-              <a href="mailto:hello@unifiednexus.com" className="btn-gold" style={{ minWidth: 220, justifyContent: "center" }}>
+              <a href="mailto:hello@apnabec.com" className="btn-gold" style={{ minWidth: 220, justifyContent: "center" }}>
                 Start a Project
                 <ArrowRight size={14} />
               </a>
-              <a href="mailto:hello@unifiednexus.com" className="btn-outline-gold" style={{ minWidth: 220, justifyContent: "center" }}>
+              <a href="mailto:hello@apnabec.com" className="btn-outline-gold" style={{ minWidth: 220, justifyContent: "center" }}>
                 Contact HQ
               </a>
 
@@ -86,7 +86,7 @@ export function CTASection() {
                   style={{ fontSize: 12, color: "rgba(255,255,255,0.60)" }}
                 >
                   <Mail size={12} style={{ color: "#C9A84C" }} />
-                  hello@unifiednexus.com
+                  hello@APNABEC.com
                 </div>
                 <div
                   className="flex items-center gap-2"

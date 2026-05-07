@@ -101,11 +101,10 @@ export function HeroSection() {
         >
           <a href="#companies" className="btn-gold">
             Explore Our Companies
-            <ArrowDown size={14} />
+            <ArrowRight size={14} />
           </a>
           <a href="#about" className="btn-outline-gold">
             Our Story
-            <ArrowRight size={14} />
           </a>
         </div>
 

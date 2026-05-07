@@ -50,9 +50,9 @@ export function CompanyFooter({ companyName, companyColor, tagline, email, phone
             onMouseEnter={e=>(e.currentTarget.style.color=companyColor)}
             onMouseLeave={e=>(e.currentTarget.style.color="rgba(255,255,255,0.48)")}
           >
-            ← Back to UnifiedNexus Group
+            ← Back to APNABEC
           </Link>
-          <span style={{ fontSize:10,color:"rgba(255,255,255,0.30)" }}>© {new Date().getFullYear()} UnifiedNexus Group</span>
+          <span style={{ fontSize:10,color:"rgba(255,255,255,0.30)" }}>© {new Date().getFullYear()} APNABEC</span>
         </div>
       </div>
     </footer>

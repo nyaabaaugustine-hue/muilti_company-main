@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { ArrowRight, Cpu, Zap, Home, BarChart3, Loader2 } from "lucide-react";
+import { ArrowRight, Cpu, Zap, Home, BarChart3 } from "lucide-react";
 
 const COMPANIES = [
   {
@@ -15,7 +15,7 @@ const COMPANIES = [
     accentColor: "#3B82F6",
     image:
       "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125277/new121_msodpt.png",
-    href: "https://www.afcftapolicy.net",
+    href: "#",
   },
   {
     id: "volta-energy",
@@ -27,7 +27,7 @@ const COMPANIES = [
     accentColor: "#10B981",
     image:
       "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099500/1b_dpkhdt.png",
-    href: "https://www.africaglobalizedinvestment.org",
+    href: "#",
   },
   {
     id: "kumasi-smart",
@@ -39,7 +39,7 @@ const COMPANIES = [
     accentColor: "#C9A84C",
     image:
       "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099379/1a_zcxsx2.png",
-    href: "https://www.womenofafricanetwork.org",
+    href: "#",
   },
   {
     id: "adabraka-media",
@@ -51,7 +51,7 @@ const COMPANIES = [
     accentColor: "#E879F9",
     image:
       "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
-    href: "https://www.abec500.com",
+    href: "#",
   },
 ];
 
@@ -84,7 +84,7 @@ function CompanyCard({
       }}
     >
       {/* Image strip */}
-      <div className="relative overflow-hidden flex-shrink-0" style={{ height: 180, background: "#0d1e35" }}>
+      <div className="relative overflow-hidden flex-shrink-0" style={{ height: 207, background: "#0d1e35" }}>
         <Image
           src={company.image}
           alt={company.name}
@@ -129,13 +129,13 @@ function CompanyCard({
         <div className="flex flex-col gap-1 mb-2">
             <h2
               className="font-display font-semibold leading-tight"
-              style={{ fontSize: 16, color: "#fff" }}
+              style={{ fontSize: 18.5, color: "#fff" }}
             >
               {company.name}
             </h2>
             <p
               style={{
-                fontSize: 12,
+                fontSize: 14,
                 color: "#C9A84C",
                 fontWeight: 500,
                 marginTop: 2,
@@ -166,14 +166,8 @@ function CompanyCard({
 }
 
 export function CompanyGrid() {
-  const [redirecting, setRedirecting] = useState<{ name: string; url: string } | null>(null);
-
   const handleRedirect = (name: string, url: string) => {
-    setRedirecting({ name, url });
-    setTimeout(() => {
-      window.open(url, "_blank", "noopener,noreferrer");
-      setRedirecting(null);
-    }, 1200);
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -198,43 +192,11 @@ export function CompanyGrid() {
         }
       `}</style>
 
-      {/* Redirecting Overlay */}
-      {redirecting && (
-        <div style={{ 
-          position: "fixed", inset: 0, zIndex: 10000, 
-          background: "rgba(10,22,40,0.96)", backdropFilter: "blur(10px)",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          flexDirection: "column", gap: 24, animation: "selectorFadeIn 0.3s ease"
-        }}>
-          <div style={{ position: "relative" }}>
-            <Loader2 className="animate-spin" size={48} style={{ color: "#C9A84C" }} />
-            <div style={{ 
-              position: "absolute", inset: -10, borderRadius: "50%", 
-              boxShadow: "0 0 40px rgba(201,168,76,0.2)", pointerEvents: "none" 
-            }} />
-          </div>
-          <div style={{ textAlign: "center" }}>
-            <p style={{ 
-              fontFamily: "'Cormorant Garamond', serif", 
-              fontSize: 28, fontWeight: 600, color: "#fff", margin: 0 
-            }}>
-              Redirecting to <span style={{ color: "#C9A84C", fontStyle: "italic" }}>{redirecting.name}</span>
-            </p>
-            <p style={{ 
-              fontSize: 10, color: "rgba(255,255,255,0.4)", 
-              textTransform: "uppercase", letterSpacing: "0.25em", marginTop: 12 
-            }}>
-              Preparing your world-class experience
-            </p>
-          </div>
-        </div>
-      )}
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-12" style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+      <div className="max-w-[1472px] mx-auto px-6 lg:px-12" style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-2 mb-4">
           <div>
-            <div className="eyebrow mb-1">Our Portfolio</div>
+           
             <h2
               className="font-display"
               style={{ fontSize: "clamp(22px,2.8vw,36px)", fontWeight: 600, color: "#fff", lineHeight: 1.1 }}
@@ -246,7 +208,7 @@ export function CompanyGrid() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4" style={{ flex: 1, minHeight: 0 }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6" style={{ flex: 1, minHeight: 0 }}>
           {COMPANIES.map((c, i) => (
             <CompanyCard key={c.id} company={c} delay={i * 120} onRedirect={handleRedirect} />
           ))}

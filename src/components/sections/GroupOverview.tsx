@@ -101,7 +101,7 @@ export function GroupOverview() {
           >
             <Image
               src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80"
-              alt="UnifiedNexus Group headquarters"
+              alt="APNABEC Group headquarters"
               fill
               className="object-cover"
               style={{ filter: "brightness(0.88) contrast(1.05)" }}
@@ -144,8 +144,7 @@ export function GroupOverview() {
                 marginBottom: 12,
               }}
             >
-              "Innovation happens when different perspectives collide. That's the
-              core of the UnifiedNexus philosophy."
+              ""
             </p>
             <p
               style={{

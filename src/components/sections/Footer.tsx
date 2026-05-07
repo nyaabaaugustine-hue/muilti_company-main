@@ -5,19 +5,9 @@ import { Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
 
 const FOOTER_LINKS = [
   {
-    title: "Companies",
-    links: [
-      { label: "Osu Digital Hub", href: "/osu-tech" },
-      { label: "Volta Energy", href: "/volta-energy" },
-      { label: "Kumasi Smart", href: "/kumasi-smart" },
-      { label: "Adabraka Media", href: "/adabraka-media" },
-    ],
-  },
-  {
     title: "Group",
     links: [
       { label: "About Us", href: "#about" },
-      { label: "Newsroom", href: "#" },
       { label: "Investors", href: "#" },
       { label: "Careers", href: "#" },
     ],
@@ -48,21 +38,12 @@ export function Footer() {
 
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <div
-                style={{
-                  width: 34,
-                  height: 34,
-                  background: "linear-gradient(135deg, #C9A84C, #E4C876)",
-                  clipPath: "polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%)",
-                  flexShrink: 0,
-                }}
-              />
+            <div className="flex items-center mb-5">
               <span
                 className="font-display text-lg font-semibold"
                 style={{ color: "#fff", letterSpacing: "0.04em" }}
               >
-                Unified<span style={{ color: "#C9A84C" }}>Nexus</span>
+                APNA<span style={{ color: "#C9A84C" }}>BEC</span>
               </span>
             </div>
             {/* Socials */}
@@ -139,7 +120,7 @@ export function Footer() {
           style={{ paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.10)" }}
         >
           <p style={{ fontSize: 11, color: "rgba(255,255,255,0.44)" }}>
-            © {new Date().getFullYear()} UnifiedNexus Group. All rights reserved. Accra, Ghana.
+            © {new Date().getFullYear()} APNABEC. All rights reserved. Accra, Ghana.
           </p>
           <p
             style={{

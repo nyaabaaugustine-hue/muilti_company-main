@@ -5,10 +5,8 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "Companies", href: "#companies" },
   { label: "About", href: "#about" },
   { label: "Leadership", href: "#leadership" },
-  { label: "Newsroom", href: "#" },
   { label: "Investors", href: "#" },
 ];
 
@@ -40,27 +38,13 @@ export function Navbar() {
         style={{ height: "72px" }}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 no-underline group">
-          <div
-            style={{
-              width: 36,
-              height: 36,
-              background: "linear-gradient(135deg, #C9A84C, #E4C876)",
-              clipPath: "polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexShrink: 0,
-              transition: "transform 0.4s ease",
-            }}
-            className="group-hover:scale-110"
-          />
+        <Link href="/" className="flex items-center no-underline group">
           <div>
             <span
               className="font-display text-xl font-semibold tracking-wide"
               style={{ color: "#fff", lineHeight: 1.1 }}
             >
-              Unified<span style={{ color: "#C9A84C" }}>Nexus</span>
+              APNA<span style={{ color: "#C9A84C" }}>BEC</span>
             </span>
             <div
               style={{
@@ -105,13 +89,6 @@ export function Navbar() {
             style={{ fontSize: "11px", padding: "10px 22px" }}
           >
             Contact HQ
-          </a>
-          <a
-            href="#companies"
-            className="btn-gold"
-            style={{ fontSize: "11px", padding: "10px 22px" }}
-          >
-            Explore Group
           </a>
         </div>
 
