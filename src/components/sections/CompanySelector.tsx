@@ -153,7 +153,9 @@ export function CompanySelector() {
           position: "fixed",
           inset: 0,
           zIndex: 9999,
-          background: "rgba(3,8,18,0.94)",
+          background: "linear-gradient(rgba(3,8,18,0.50), rgba(3,8,18,0.50)), url(https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125799/gefw_z5bq6y.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           backdropFilter: "blur(12px)",
           display: "flex",
           alignItems: "flex-start",
@@ -432,7 +434,7 @@ export function CompanySelector() {
             fontSize: 10, color: "rgba(255,255,255,0.4)",
             letterSpacing: "0.18em", textTransform: "uppercase",
           }}>
-            Each company delivers a dedicated world-class experience
+            All Right Reserved 
           </p>
         </div>
       </div>

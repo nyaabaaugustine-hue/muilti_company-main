@@ -11,7 +11,6 @@ const COMPANIES = [
     name: "AFCFTA Policy Network",
     tagline: "Innovation from Accra",
     sector: "Technology & AI",
-    
     icon: Cpu,
     accentColor: "#3B82F6",
     image:
@@ -24,7 +23,6 @@ const COMPANIES = [
     name: "Africa Globalized Investment",
     tagline: "Powering the Coast",
     sector: "Renewable Energy",
-    
     icon: Zap,
     accentColor: "#10B981",
     image:
@@ -37,7 +35,6 @@ const COMPANIES = [
     name: "Women of Africa Network",
     tagline: "Modernity Meets Heritage",
     sector: "Real Estate",
-    
     icon: Home,
     accentColor: "#C9A84C",
     image:
@@ -182,8 +179,11 @@ export function CompanyGrid() {
     <section
       id="companies"
       style={{
-        background: "#14253d",
-        padding: "60px 0 60px 0", // Reduced top and bottom padding
+        background: "linear-gradient(rgba(20,37,61,0.50), rgba(20,37,61,0.50)), url(https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125799/gefw_z5bq6y.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+        padding: "60px 0 60px 0",
       }}
     >
       <style>{`
