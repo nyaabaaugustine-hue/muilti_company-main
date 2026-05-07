@@ -427,15 +427,6 @@ export function CompanySelector() {
               </a>
             ))}
           </div>
-
-          {/* Footer note */}
-          <p style={{
-            textAlign: "center", marginTop: 32,
-            fontSize: 10, color: "rgba(255,255,255,0.4)",
-            letterSpacing: "0.18em", textTransform: "uppercase",
-          }}>
-            All Right Reserved 
-          </p>
         </div>
       </div>
     </>

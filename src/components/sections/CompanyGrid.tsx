@@ -80,10 +80,11 @@ function CompanyCard({
         border: "1px solid rgba(201,168,76,0.30)",
         borderRadius: 4,
         textDecoration: "none",
+        height: "100%",
       }}
     >
       {/* Image strip */}
-      <div className="relative overflow-hidden flex-shrink-0" style={{ height: 200, background: "#0d1e35" }}>
+      <div className="relative overflow-hidden flex-shrink-0" style={{ height: 180, background: "#0d1e35" }}>
         <Image
           src={company.image}
           alt={company.name}
@@ -123,12 +124,12 @@ function CompanyCard({
       </div>
 
       {/* Body */}
-      <div className="flex flex-col flex-1 p-6">
+      <div className="flex flex-col flex-1 p-3">
         {/* Icon + name */}
-        <div className="flex flex-col gap-1 mb-4">
+        <div className="flex flex-col gap-1 mb-2">
             <h2
               className="font-display font-semibold leading-tight"
-              style={{ fontSize: 20, color: "#fff" }}
+              style={{ fontSize: 16, color: "#fff" }}
             >
               {company.name}
             </h2>
@@ -183,7 +184,11 @@ export function CompanyGrid() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
-        padding: "60px 0 60px 0",
+        padding: "14px 0 10px 0",
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+        overflow: "hidden",
       }}
     >
       <style>{`
@@ -225,14 +230,14 @@ export function CompanyGrid() {
         </div>
       )}
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12" style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-2 mb-4">
           <div>
-            <div className="eyebrow mb-4">Our Portfolio</div>
+            <div className="eyebrow mb-1">Our Portfolio</div>
             <h2
               className="font-display"
-              style={{ fontSize: "clamp(36px,4vw,54px)", fontWeight: 600, color: "#fff", lineHeight: 1.15 }}
+              style={{ fontSize: "clamp(22px,2.8vw,36px)", fontWeight: 600, color: "#fff", lineHeight: 1.1 }}
             >
               Four Companies,{" "}
               <span style={{ color: "#C9A84C", fontStyle: "italic" }}>One Vision</span>
@@ -241,20 +246,14 @@ export function CompanyGrid() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4" style={{ flex: 1, minHeight: 0 }}>
           {COMPANIES.map((c, i) => (
             <CompanyCard key={c.id} company={c} delay={i * 120} onRedirect={handleRedirect} />
           ))}
         </div>
 
-        {/* Divider note */}
-        <div className="gold-divider mt-10 mb-6" /> {/* Reduced top margin */}
-        <p
-          className="text-center"
-          style={{ fontSize: 11, color: "rgba(255,255,255,0.60)", letterSpacing: "0.15em", textTransform: "uppercase" }}
-        >
-          All Rights Reserved 
-        </p>
+        {/* Divider */}
+        <div className="gold-divider mt-3" />
       </div>
     </section>
   );

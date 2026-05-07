@@ -1,72 +1,71 @@
 import { CompanySelector } from "@/components/sections/CompanySelector";
 import { CompanyGrid } from "@/components/sections/CompanyGrid";
-
-const MARQUEE_ITEMS = [
-  "Technology & AI",
-  "Renewable Energy",
-  "Smart Real Estate",
-  "Strategic Marketing",
-  "Accra · Kumasi · Tema",
-  "12+ Countries",
-  "400+ Experts",
-  "Est. 2015",
-  "Technology & AI",
-  "Renewable Energy",
-  "Smart Real Estate",
-  "Strategic Marketing",
-  "Accra · Kumasi · Tema",
-  "12+ Countries",
-  "400+ Experts",
-  "Est. 2015",
-];
+import { NewsScroller } from "@/components/sections/NewsScroller";
 
 export default function Home() {
   return (
     <main
-      style={{ minHeight: "100vh", width: "100%", overflowX: "hidden", background: "#0A1628" }}
+      style={{
+        height: "100dvh",
+        width: "100%",
+        overflow: "hidden",
+        background: "#0A1628",
+        display: "flex",
+        flexDirection: "column",
+      }}
     >
-      {/* Company selector overlay — shows on load */}
+      {/* Company selector overlay */}
       <CompanySelector />
 
-      {/* Gold ticker marquee */}
-      <div
-        style={{
-          background: "linear-gradient(90deg, #D4B760 0%, #F5E09E 50%, #D4B760 100%)",
-          padding: "12px 0",
-          overflow: "hidden",
-        }}
-      >
-        <div className="animate-marquee flex gap-16 whitespace-nowrap" style={{ width: "max-content" }}>
-          {MARQUEE_ITEMS.map((item, i) => (
-            <span key={i} className="flex items-center gap-4">
-              <span
-                style={{
-                  fontSize: 11,
-                  fontWeight: 700,
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "#02050C",
-                }}
-              >
-                {item}
-              </span>
-              <span
-                style={{
-                  width: 4,
-                  height: 4,
-                  borderRadius: "50%",
-                background: "rgba(2,5,12,0.45)",
-                  display: "inline-block",
-                  flexShrink: 0,
-                }}
-              />
-            </span>
-          ))}
-        </div>
+      {/* Company portfolio — grows to fill remaining space */}
+      <div style={{ flex: 1, overflow: "hidden", display: "flex", flexDirection: "column", minHeight: 0 }}>
+        <CompanyGrid />
       </div>
 
-      {/* Company portfolio */}
-      <CompanyGrid />
+      {/* News scroller — fixed at bottom */}
+      <NewsScroller />
+
+      {/* All Rights Reserved — very bottom */}
+      <div
+        style={{
+          background: "#070f1c",
+          borderTop: "1px solid rgba(201,168,76,0.12)",
+          padding: "7px 24px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 16,
+          flexShrink: 0,
+        }}
+      >
+        <span
+          style={{
+            width: 20,
+            height: 1,
+            background: "rgba(201,168,76,0.35)",
+            display: "block",
+          }}
+        />
+        <p
+          style={{
+            fontSize: 10,
+            color: "rgba(255,255,255,0.45)",
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            margin: 0,
+          }}
+        >
+          &copy; {new Date().getFullYear()} UnifiedNexus Group &mdash; All Rights Reserved
+        </p>
+        <span
+          style={{
+            width: 20,
+            height: 1,
+            background: "rgba(201,168,76,0.35)",
+            display: "block",
+          }}
+        />
+      </div>
     </main>
   );
 }
