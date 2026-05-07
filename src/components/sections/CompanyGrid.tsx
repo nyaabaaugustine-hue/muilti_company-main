@@ -253,7 +253,7 @@ export function CompanyGrid() {
           className="text-center"
           style={{ fontSize: 11, color: "rgba(255,255,255,0.60)", letterSpacing: "0.15em", textTransform: "uppercase" }}
         >
-          Each company delivers a dedicated world-class experience
+          All Rights Reserved 
         </p>
       </div>
     </section>
