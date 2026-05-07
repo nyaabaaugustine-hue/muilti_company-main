@@ -8,6 +8,17 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          // Allow social crawlers (Facebook, WhatsApp, etc.)
+          { key: 'X-Robots-Tag', value: 'index, follow' },
+        ],
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
