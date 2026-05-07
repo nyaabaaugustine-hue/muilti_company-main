@@ -15,20 +15,20 @@ const COMPANIES = [
     color: "#3B82F6",
     bg: "rgba(59,130,246,0.06)",
     emoji: "💻",
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778098678/apn_square_tybqra.jpg",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
   },
   {
     index: "02",
-    sector: "Africa Globalized Investment",
+    sector: "Renewable Energy",
     name: "Africa Globalized Investment",
     tagline: "Powering the Coast",
     description:
       "",
-    href: "Www.womenofafricanetwork.org",
+    href: "Www.africaglobalizedinvestment.org",
     color: "#10B981",
     bg: "rgba(16,185,129,0.06)",
     emoji: "⚡",
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777112845/a10_jjnjkv.jpg",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099500/1b_dpkhdt.png",
   },
   {
     index: "03",
@@ -37,11 +37,11 @@ const COMPANIES = [
     tagline: "Modernity Meets Heritage",
     description:
       "",
-    href: "Www.africaglobalizedinvestment.org",
+    href: "Www.womenofafricanetwork.org",
     color: "#C9A84C",
     bg: "rgba(201,168,76,0.06)",
     emoji: "🏛",
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777112850/a11_fvr487.jpg",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099379/1a_zcxsx2.png",
   },
   {
     index: "04",
@@ -54,7 +54,7 @@ const COMPANIES = [
     color: "#E879F9",
     bg: "rgba(232,121,249,0.06)",
     emoji: "📡",
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778098678/apn_square_tybqra.png",
   },
 ];
 

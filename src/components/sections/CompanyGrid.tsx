@@ -15,7 +15,7 @@ const COMPANIES = [
     icon: Cpu,
     accentColor: "#3B82F6",
     image:
-      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778098678/apn_square_tybqra.jpg",
+      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
     href: "/osu-tech",
   },
   {
@@ -55,7 +55,7 @@ const COMPANIES = [
     icon: BarChart3,
     accentColor: "#E879F9",
     image:
-      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
+      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778098678/apn_square_tybqra.png",
     href: "/adabraka-media",
   },
 ];
