@@ -36,6 +36,16 @@ const INITIATIVES = [
 export default function EducationPage() {
   return (
     <>
+      <style>{`
+        .wan-initiative-card {
+          transition: all 0.3s;
+        }
+        .wan-initiative-card:hover {
+          border-color: #EC4899 !important;
+          box-shadow: 0 8px 32px rgba(236,72,153,0.09);
+        }
+      `}</style>
+
       {/* Hero */}
       <section
         style={{
@@ -97,7 +107,7 @@ export default function EducationPage() {
               <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="Education" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 6 }} />
               <div style={{ position: "absolute", bottom: 24, left: 24, right: 24, background: "rgba(26,5,32,0.88)", borderRadius: 4, padding: "16px 20px", backdropFilter: "blur(8px)" }}>
                 <div style={{ fontSize: 12, color: "#fff", fontWeight: 500 }}>
-                  "Education is the most powerful investment we can make in Africa's future — and women must be at its centre."
+                  &ldquo;Education is the most powerful investment we can make in Africa&apos;s future — and women must be at its centre.&rdquo;
                 </div>
                 <div style={{ fontSize: 10, color: A, marginTop: 6, fontWeight: 600, letterSpacing: "0.1em" }}>DR. GLADYS NKRUMAH · Executive Director</div>
               </div>
@@ -122,14 +132,12 @@ export default function EducationPage() {
             {INITIATIVES.map(({ icon, title, desc }) => (
               <div
                 key={title}
+                className="wan-initiative-card"
                 style={{
                   background: "#fff", border: `1px solid rgba(236,72,153,0.12)`,
                   borderRadius: 6, padding: "32px 28px",
                   display: "flex", gap: 20, alignItems: "flex-start",
-                  transition: "all 0.3s",
                 }}
-                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = A; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(236,72,153,0.09)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(236,72,153,0.12)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; }}
               >
                 <div style={{ color: A, flexShrink: 0, marginTop: 4 }}>{icon}</div>
                 <div>

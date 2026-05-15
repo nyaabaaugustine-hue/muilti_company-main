@@ -20,6 +20,17 @@ const VALUES = [
 export default function AboutPage() {
   return (
     <>
+      <style>{`
+        .wan-value-card {
+          transition: all 0.3s;
+        }
+        .wan-value-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 36px rgba(236,72,153,0.10);
+          border-color: #EC4899 !important;
+        }
+      `}</style>
+
       {/* Hero */}
       <section
         style={{
@@ -137,20 +148,10 @@ export default function AboutPage() {
             {VALUES.map(({ icon, title, desc }) => (
               <div
                 key={title}
+                className="wan-value-card"
                 style={{
                   background: "#fdf8fb", border: `1px solid rgba(236,72,153,0.12)`,
                   borderRadius: 6, padding: "32px 24px", textAlign: "center",
-                  transition: "all 0.3s",
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)";
-                  (e.currentTarget as HTMLDivElement).style.boxShadow = "0 12px 36px rgba(236,72,153,0.10)";
-                  (e.currentTarget as HTMLDivElement).style.borderColor = A;
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
-                  (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-                  (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(236,72,153,0.12)";
                 }}
               >
                 <div style={{ fontSize: 36, marginBottom: 16 }}>{icon}</div>
