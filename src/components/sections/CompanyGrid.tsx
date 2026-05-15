@@ -11,11 +11,16 @@ const COMPANIES = [
     name: "AFCFTA Policy Network",
     tagline: "Innovation from Accra",
     sector: "Technology & AI",
+    name: "AfCFTA Policy Network",
+    tagline: "Intra-Africa Trade & Advocacy",
+    sector: "Trade Policy",
+    description: "Africa's largest AfCFTA NGO think tank — championing free trade implementation, policy research and capacity building across 54 nations since 2019.",
+    ctaLabel: "Visit AfCFTA Policy Network",
     icon: Cpu,
     accentColor: "#3B82F6",
     image:
       "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125277/new121_msodpt.png",
-    href: "#",
+    href: "/afcfta-policy",
   },
   {
     id: "volta-energy",
@@ -23,23 +28,47 @@ const COMPANIES = [
     name: "Africa Globalized Investment",
     tagline: "Powering the Coast",
     sector: "Renewable Energy",
+    name: "Africa Globalized Investment Forum",
+    tagline: "Connecting Capital to Africa",
+    sector: "Investment ↗",
+    description: "The premier international investment summit unlocking Africa's $2.5 trillion economic potential through PPP projects, sovereign deals and institutional investment.",
+    ctaLabel: "Visit AGIF",
     icon: Zap,
     accentColor: "#10B981",
     image:
       "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099500/1b_dpkhdt.png",
-    href: "#",
+    href: "/africa-investment",
+  },
+  {
+    id: "adabraka-media",
+    index: "03",
+    name: "African Business Export Club 500",
+    tagline: "Exporting African Excellence",
+    sector: "Export & Trade",
+    description: "Africa's premier export facilitation network connecting 500+ businesses with global markets through the AfCFTA framework — from trade finance to market entry.",
+    ctaLabel: "Visit ABEC500",
+    icon: BarChart3,
+    accentColor: "#E879F9",
+    image:
+      "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
+    href: "/abec",
   },
   {
     id: "kumasi-smart",
     index: "03",
+    index: "04",
     name: "Women of Africa Network",
     tagline: "Modernity Meets Heritage",
     sector: "Real Estate",
+    tagline: "Empowering African Women",
+    sector: "Empowerment",
+    description: "A pan-African network positively impacting women's lives through education, trade facilitation, economic empowerment, health and policy advocacy across the continent.",
+    ctaLabel: "Visit WAN",
     icon: Home,
     accentColor: "#C9A84C",
     image:
       "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099379/1a_zcxsx2.png",
-    href: "#",
+    href: "/women-of-africa",
   },
   {
     id: "adabraka-media",
@@ -51,7 +80,7 @@ const COMPANIES = [
     accentColor: "#E879F9",
     image:
       "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
-    href: "#",
+    href: "/abec",
   },
 ];
 
@@ -72,11 +101,13 @@ function CompanyCard({
   return (
     <a
       href={company.href}
+      target="_blank"
+      rel="noopener noreferrer"
       onClick={(e) => {
         e.preventDefault();
         setIsClicked(true);
         onRedirect(company.name, company.href);
-        setTimeout(() => setIsClicked(false), 2000);
+        setTimeout(() => setIsClicked(false), 3000);
       }}
       className={`card-lift animate-scale-in group relative flex flex-col overflow-hidden no-underline border-gold/30 transition-all duration-700 ${
         isClicked ? "scale-95 opacity-50" : isGlobalRedirecting ? "opacity-20 blur-[2px] pointer-events-none" : "opacity-100"
@@ -92,6 +123,7 @@ function CompanyCard({
     >
       {/* Image strip */}
       <div className="relative overflow-hidden flex-shrink-0" style={{ height: 207, background: "#0d1e35" }}>
+      <div className="relative overflow-hidden flex-shrink-0" style={{ height: 180, background: "#0d1e35" }}>
         <Image
           src={company.image}
           alt={company.name}
@@ -132,6 +164,7 @@ function CompanyCard({
 
       {/* Body */}
       <div className="flex flex-col flex-1 p-3">
+      <div className="flex flex-col flex-1 p-5">
         {/* Icon + name */}
         <div className="flex flex-col gap-1 mb-2">
             <h2
@@ -151,14 +184,20 @@ function CompanyCard({
             >
               {company.tagline}
             </p>
+            <p style={{ fontSize: 12.5, color: "rgba(255,255,255,0.6)", lineHeight: 1.6, marginTop: 12 }}>
+              {company.description}
+            </p>
         </div>
 
         {/* CTA row */}
         <div
           className="flex items-center gap-2 transition-all duration-300 group-hover:gap-3"
           style={{ color: "#C9A84C", fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" }}
+          className="flex items-center gap-2 transition-all duration-300 group-hover:gap-3 mt-auto pt-4"
+          style={{ color: "#C9A84C", fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}
         >
-          <span>Visit {company.name.split(" ")[0]}</span>
+          <span>{isClicked ? "Entering..." : `Visit ${company.name.split(" ")[0]}`}</span>
+          <span>{isClicked ? "Entering..." : company.ctaLabel}</span>
           <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
         </div>
       </div>
@@ -203,36 +242,42 @@ export function CompanyGrid() {
           from { opacity: 0; }
           to   { opacity: 1; }
         }
+        @keyframes progressLoad {
+          from { transform: translateX(-100%); }
+          to   { transform: translateX(0); }
+        }
       `}</style>
 
       {/* Redirecting Overlay */}
       {redirecting && (
         <div style={{ 
           position: "fixed", inset: 0, zIndex: 10000, 
-          background: "rgba(10,22,40,0.96)", backdropFilter: "blur(10px)",
+          background: "rgba(10,22,40,0.98)", backdropFilter: "blur(16px)",
           display: "flex", alignItems: "center", justifyContent: "center",
           flexDirection: "column", gap: 24, animation: "selectorFadeIn 0.3s ease"
         }}>
-          <div style={{ position: "relative" }}>
-            <Loader2 className="animate-spin" size={48} style={{ color: "#C9A84C" }} />
-            <div style={{ 
-              position: "absolute", inset: -10, borderRadius: "50%", 
-              boxShadow: "0 0 40px rgba(201,168,76,0.2)", pointerEvents: "none" 
-            }} />
-          </div>
+          <Loader2 className="animate-spin" size={48} style={{ color: "#C9A84C" }} />
           <div style={{ textAlign: "center" }}>
             <p style={{ 
               fontFamily: "'Cormorant Garamond', serif", 
-              fontSize: 28, fontWeight: 600, color: "#fff", margin: 0 
+              fontSize: 32, fontWeight: 600, color: "#fff", margin: 0 
             }}>
-              Redirecting to <span style={{ color: "#C9A84C", fontStyle: "italic" }}>{redirecting.name}</span>
+              Entering <span style={{ color: "#C9A84C", fontStyle: "italic" }}>{redirecting.name}</span>
+              Entering portal...
             </p>
             <p style={{ 
-              fontSize: 10, color: "rgba(255,255,255,0.4)", 
-              textTransform: "uppercase", letterSpacing: "0.25em", marginTop: 12 
+              fontSize: 9, color: "rgba(255,255,255,0.45)", 
+              textTransform: "uppercase", letterSpacing: "0.3em", marginTop: 16 
             }}>
-              Preparing your world-class experience
+              Initiating secure portal connection
             </p>
+          </div>
+          {/* Animated Progress Bar */}
+          <div style={{ width: 260, height: 1, background: "rgba(255,255,255,0.1)", position: "relative", overflow: "hidden" }}>
+            <div style={{ 
+              position: "absolute", inset: 0, background: "#C9A84C", 
+              animation: "progressLoad 1.2s linear forwards" 
+            }} />
           </div>
         </div>
       )}
@@ -242,12 +287,15 @@ export function CompanyGrid() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-2 mb-4">
           <div>
            
+            <h2 className="eyebrow mb-2">Portfolio</h2>
             <h2
               className="font-display"
               style={{ fontSize: "clamp(22px,2.8vw,36px)", fontWeight: 600, color: "#fff", lineHeight: 1.1 }}
+              style={{ fontSize: "clamp(24px,3vw,42px)", fontWeight: 600, color: "#fff", lineHeight: 1.1 }}
             >
               Four Companies,{" "}
               <span style={{ color: "#C9A84C", fontStyle: "italic" }}>One Vision</span>
+              Our Companies
             </h2>
           </div>
         </div>

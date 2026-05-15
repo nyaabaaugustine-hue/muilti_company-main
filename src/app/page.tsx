@@ -16,8 +16,7 @@ const COMPANIES = [
     image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778750984/logo-afcfta-policy-network_oyf0rb.png",
     href: "/afcfta-policy",
     external: false,
-    visitLabel: "Visit AfCFTA Policy Network",
-    stats: [{ v: "54", l: "Nations" }, { v: "2019", l: "Founded" }, { v: "#1", l: "AfCFTA NGO" }],
+    visitLabel: "Visit AfCFTA Policy Network",  
   },
   {
     id: "agif",
@@ -32,7 +31,7 @@ const COMPANIES = [
     href: "https://africaglobalizedinvestment.com/",
     external: true,
     visitLabel: "Visit AGIF",
-    stats: [{ v: "54", l: "Nations" }, { v: "$2.5B", l: "Deal Pipeline" }, { v: "500+", l: "Delegates" }],
+   
   },
   {
     id: "abec500",
@@ -47,7 +46,7 @@ const COMPANIES = [
     href: "/abec500",
     external: false,
     visitLabel: "Visit ABEC500",
-    stats: [{ v: "500+", l: "Members" }, { v: "54", l: "Nations" }, { v: "AfCFTA", l: "Certified" }],
+    
   },
   {
     id: "women-of-africa",

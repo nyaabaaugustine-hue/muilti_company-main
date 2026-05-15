@@ -33,6 +33,11 @@ const SOCIALS = [
 export function Footer() {
   return (
     <footer style={{ background: "#0D1A2C", borderTop: "1px solid rgba(201,168,76,0.18)" }}>
+      <style jsx>{`
+        .social-link:hover { border-color: #C9A84C !important; color: #C9A84C !important; }
+        .footer-link:hover { color: rgba(255,255,255,0.95) !important; }
+      `}</style>
+
       <div className="max-w-7xl mx-auto px-6 lg:px-12" style={{ paddingTop: 72, paddingBottom: 40 }}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
 
@@ -53,21 +58,13 @@ export function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="flex items-center justify-center transition-all duration-300"
+                  className="social-link flex items-center justify-center transition-all duration-300"
                   style={{
                     width: 34,
                     height: 34,
                     border: "1px solid rgba(201,168,76,0.25)",
                     borderRadius: 2,
                     color: "rgba(255,255,255,0.58)",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "#C9A84C";
-                    (e.currentTarget as HTMLAnchorElement).style.color = "#C9A84C";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,168,76,0.25)";
-                    (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.58)";
                   }}
                 >
                   <Icon size={14} />
@@ -96,14 +93,8 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="transition-colors duration-300 no-underline"
+                      className="footer-link transition-colors duration-300 no-underline"
                       style={{ fontSize: 13, color: "rgba(255,255,255,0.65)", fontWeight: 300 }}
-                      onMouseEnter={(e) =>
-                        (e.currentTarget.style.color = "rgba(255,255,255,0.95)")
-                      }
-                      onMouseLeave={(e) =>
-                        (e.currentTarget.style.color = "rgba(255,255,255,0.65)")
-                      }
                     >
                       {link.label}
                     </Link>

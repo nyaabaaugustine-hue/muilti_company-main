@@ -22,8 +22,19 @@ export function AbecFooter() {
       style={{
         background: NAVY,
         borderTop: `1px solid rgba(242,141,1,0.20)`,
+        // @ts-ignore
+        "--accent": A
       }}
     >
+      <style jsx>{`
+        .footer-link:hover { color: var(--accent) !important; padding-left: 4px; }
+        .social-icon:hover { 
+           background: var(--accent) !important; 
+           color: #fff !important; 
+           border-color: var(--accent) !important; 
+        }
+      `}</style>
+
       {/* Main footer body */}
       <div style={{ padding: "72px 64px 48px" }}>
         <div
@@ -117,6 +128,7 @@ export function AbecFooter() {
                 <li key={link.label}>
                   <a
                     href={link.href}
+                    className="footer-link"
                     style={{
                       fontSize: 13,
                       color: "rgba(255,255,255,0.60)",
@@ -125,14 +137,6 @@ export function AbecFooter() {
                       alignItems: "center",
                       gap: 6,
                       transition: "color 0.2s, gap 0.2s",
-                    }}
-                    onMouseEnter={e => {
-                      (e.currentTarget as HTMLAnchorElement).style.color = A;
-                      (e.currentTarget as HTMLAnchorElement).style.gap = "10px";
-                    }}
-                    onMouseLeave={e => {
-                      (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.60)";
-                      (e.currentTarget as HTMLAnchorElement).style.gap = "6px";
                     }}
                   >
                     <ArrowRight size={10} />
@@ -229,6 +233,7 @@ export function AbecFooter() {
                   key={s.title}
                   href="#"
                   title={s.title}
+                  className="social-icon"
                   style={{
                     width: 34,
                     height: 34,
@@ -242,16 +247,6 @@ export function AbecFooter() {
                     color: "rgba(255,255,255,0.60)",
                     textDecoration: "none",
                     transition: "all 0.2s",
-                  }}
-                  onMouseEnter={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.background = A;
-                    (e.currentTarget as HTMLAnchorElement).style.color = "#fff";
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = A;
-                  }}
-                  onMouseLeave={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.07)";
-                    (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.60)";
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(242,141,1,0.20)";
                   }}
                 >
                   {s.label}
@@ -293,6 +288,7 @@ export function AbecFooter() {
         </p>
         <Link
           href="/"
+          className="footer-link"
           style={{
             fontSize: 11,
             color: "rgba(255,255,255,0.40)",
@@ -302,8 +298,6 @@ export function AbecFooter() {
             gap: 5,
             transition: "color 0.2s",
           }}
-          onMouseEnter={e => (e.currentTarget.style.color = A)}
-          onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.40)")}
         >
           ← Back to APNABEC Group
         </Link>

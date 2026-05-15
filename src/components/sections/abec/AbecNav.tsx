@@ -37,6 +37,8 @@ export function AbecNav() {
   return (
     <nav
       style={{
+        // @ts-ignore
+        "--accent": A,
         position: "fixed",
         top: 0,
         left: 0,
@@ -50,6 +52,12 @@ export function AbecNav() {
         transition: "all 0.4s ease",
       }}
     >
+      <style jsx>{`
+        .nav-link:hover { color: var(--accent) !important; }
+        .nav-link:hover .icon-rotate { transform: rotate(180deg); }
+        .social-icon:hover { color: var(--accent) !important; }
+      `}</style>
+
       {/* Top bar */}
       <div
         style={{
@@ -69,17 +77,11 @@ export function AbecNav() {
           <span>✉️ info@abec500.com</span>
         </div>
         <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
-          <Link href="/" style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none", display: "flex", alignItems: "center", gap: 4, fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", transition: "color 0.2s" }}
-            onMouseEnter={e => (e.currentTarget.style.color = A)}
-            onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}
-          >
+          <Link href="/" className="social-icon" style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none", display: "flex", alignItems: "center", gap: 4, fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", transition: "color 0.2s" }}>
             <ArrowLeft size={10} /> Group
           </Link>
           {["facebook-f", "twitter", "instagram", "linkedin"].map(s => (
-            <a key={s} href="#" style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none", fontSize: 11, transition: "color 0.2s" }}
-              onMouseEnter={e => (e.currentTarget.style.color = A)}
-              onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}
-            >
+            <a key={s} href="#" className="social-icon" style={{ color: "rgba(255,255,255,0.45)", textDecoration: "none", fontSize: 11, transition: "color 0.2s" }}>
               {s === "facebook-f" ? "f" : s === "twitter" ? "𝕏" : s === "instagram" ? "◎" : "in"}
             </a>
           ))}
@@ -118,6 +120,7 @@ export function AbecNav() {
             >
               <a
                 href={link.href}
+                className="nav-link"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -132,11 +135,9 @@ export function AbecNav() {
                   transition: "color 0.2s, background 0.2s",
                   background: dropdown === link.label ? "rgba(242,141,1,0.10)" : "transparent",
                 }}
-                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = A; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.78)"; }}
               >
                 {link.label}
-                {link.children && <ChevronDown size={12} style={{ transition: "transform 0.2s", transform: dropdown === link.label ? "rotate(180deg)" : "rotate(0deg)" }} />}
+                {link.children && <ChevronDown size={12} className="icon-rotate" style={{ transition: "transform 0.2s", transform: dropdown === link.label ? "rotate(180deg)" : "rotate(0deg)" }} />}
               </a>
               {link.children && dropdown === link.label && (
                 <div style={{
@@ -149,17 +150,16 @@ export function AbecNav() {
                   zIndex: 200,
                 }}>
                   {link.children.map(c => (
-                    <a key={c.label} href={c.href} style={{
-                      display: "block",
-                      padding: "11px 18px",
-                      fontSize: 12,
-                      color: "rgba(255,255,255,0.75)",
-                      textDecoration: "none",
-                      transition: "all 0.2s",
-                      borderBottom: "1px solid rgba(242,141,1,0.08)",
-                    }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = A; (e.currentTarget as HTMLAnchorElement).style.background = "rgba(242,141,1,0.08)"; }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.75)"; (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; }}
+                    <a key={c.label} href={c.href} className="nav-link" 
+                      style={{
+                        display: "block",
+                        padding: "11px 18px",
+                        fontSize: 12,
+                        color: "rgba(255,255,255,0.75)",
+                        textDecoration: "none",
+                        transition: "all 0.2s",
+                        borderBottom: "1px solid rgba(242,141,1,0.08)",
+                      }}
                     >{c.label}</a>
                   ))}
                 </div>

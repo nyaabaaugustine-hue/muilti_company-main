@@ -33,6 +33,10 @@ export function Navbar() {
           : "1px solid transparent",
       }}
     >
+      <style jsx>{`
+        .nav-item:hover { color: #C9A84C !important; }
+      `}</style>
+
       <div
         className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"
         style={{ height: "72px" }}
@@ -66,14 +70,8 @@ export function Navbar() {
             <li key={l.label}>
               <a
                 href={l.href}
-                className="relative text-xs font-medium tracking-widest uppercase transition-colors duration-300 no-underline"
+                className="nav-item relative text-xs font-medium tracking-widest uppercase transition-colors duration-300 no-underline"
                 style={{ color: "rgba(255,255,255,0.80)" }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.color = "#C9A84C")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = "rgba(255,255,255,0.80)")
-                }
               >
                 {l.label}
               </a>
