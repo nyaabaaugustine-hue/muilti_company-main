@@ -52,7 +52,7 @@ export function CompanyFooter({ companyName, companyColor, tagline, email, phone
           >
             ← Back to APNABEC
           </Link>
-          <span style={{ fontSize:10,color:"rgba(255,255,255,0.30)" }}>© {new Date().getFullYear()} APNABEC</span>
+          <span style={{ fontSize:10,color:"rgba(255,255,255,0.30)" }}>© 2024 All Rights Reserved | Powered by: FRIIS IT Solutions</span>
         </div>
       </div>
     </footer>

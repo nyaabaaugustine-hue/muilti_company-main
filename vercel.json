@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/agif",
+      "destination": "https://africaglobalizedinvestment.com/",
+      "permanent": false
+    },
+    {
+      "source": "/agif/:path*",
+      "destination": "https://africaglobalizedinvestment.com/:path*",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

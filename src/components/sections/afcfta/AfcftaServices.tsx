@@ -1,0 +1,45 @@
+"use client";
+import { useState } from "react";
+const SERVICES = [
+  { title:"Media Sensitization & Advocacy", desc:"Extensive media and public advocacy through print, electronic and social media platforms to promote AfCFTA awareness across Africa.", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716829/fd2ce89b-3a0e-473d-b42f-d13f1c4eef29-300x212_x4qqnw.jpg" },
+  { title:"Institutional Partnerships", desc:"Deep networking with CSOs, private sector organisations, government bodies, and international institutions to strengthen AfCFTA implementation.", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716831/afcfta-institutional-partnership-384x256_negvck.jpg" },
+  { title:"Ongoing Flagship Programs", desc:"The HOPE Project — acquiring land to build a Centre of Excellence in intra-Africa trade, free trade zones and capacity development hubs.", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716830/slide111_ptbh1n.jpg" },
+  { title:"Global Investment Summit", desc:"Connecting investors beyond Africa to take opportunities through AfCFTA, creating linkages between global capital and African enterprise.", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716826/afctfa-132_sq4kvo.jpg" },
+  { title:"Policy Research & Think Tank", desc:"Publishing research, white papers and policy briefs on intra-African trade, tariff frameworks, rules of origin and trade facilitation.", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716827/afctfa-45_dhoyzp.jpg" },
+  { title:"Capacity Building & Training", desc:"Empowering businesses, SMEs and government officials with the knowledge and tools to leverage AfCFTA opportunities effectively.", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716826/afctfa-132_sq4kvo.jpg" },
+];
+export function AfcftaServices() {
+  const [hov,setHov]=useState<number|null>(null);
+  const A="#F59E0B";
+  return (
+    <section id="services" style={{background:"#0F172A",padding:"100px 64px"}}>
+      <div style={{maxWidth:1100,margin:"0 auto"}}>
+        <div style={{display:"inline-flex",alignItems:"center",gap:10,fontSize:10,fontWeight:700,letterSpacing:"0.22em",textTransform:"uppercase",color:A,marginBottom:16}}>
+          <span style={{width:28,height:1,background:A,display:"block"}}/>What We Do
+        </div>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:56}}>
+          <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(32px,3.5vw,48px)",fontWeight:600,color:"#fff",lineHeight:1.15}}>
+            Our <em style={{color:A,fontStyle:"italic",fontWeight:400}}>Activities</em>
+          </h2>
+          <p style={{fontSize:13,color:"rgba(255,255,255,0.60)",maxWidth:300,lineHeight:1.75,fontWeight:300}}>
+            Building the foundations for Africa's biggest economic transformation.
+          </p>
+        </div>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(320px,1fr))",gap:4}}>
+          {SERVICES.map((s,i)=>(
+            <div key={i} onMouseEnter={()=>setHov(i)} onMouseLeave={()=>setHov(null)}
+              style={{position:"relative",height:260,overflow:"hidden",cursor:"pointer",transition:"transform 0.4s",transform:hov===i?"scale(1.02)":"scale(1)"}}>
+              <img src={s.img} alt={s.title} style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+              <div style={{position:"absolute",inset:0,background:hov===i?"rgba(15,23,42,0.82)":"rgba(15,23,42,0.65)",transition:"background 0.4s"}}/>
+              <div style={{position:"absolute",bottom:0,left:0,right:0,padding:"20px 24px"}}>
+                <div style={{width:4,height:24,background:A,marginBottom:10}}/>
+                <h3 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:18,fontWeight:600,color:"#fff",marginBottom:8}}>{s.title}</h3>
+                <p style={{fontSize:12,color:"rgba(255,255,255,0.75)",lineHeight:1.7,fontWeight:300,display:hov===i?"block":"none"}}>{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

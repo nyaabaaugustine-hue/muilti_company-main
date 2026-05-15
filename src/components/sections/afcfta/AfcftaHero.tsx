@@ -1,0 +1,48 @@
+"use client";
+import { useState, useEffect } from "react";
+import { ArrowRight } from "lucide-react";
+const SLIDES = [
+  { sub:"AfCFTA Secretariat & APN Group", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716832/Landmark-MOU-signing-between-AfCFTA-Secretariat-and-APN-Group3-1_ufvv5e.jpg" },
+  { sub:"Implementation & Advocacy", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716830/slide111_ptbh1n.jpg" },
+  { sub:"Think Tank for AfCFTA", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716827/afctfa-45_dhoyzp.jpg" },
+  { sub:"4th Annual Women in Trade Summit", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716832/WhatsApp-Image-2020-08-28-at-08.11.21-384x256_vch3ni.jpg" },
+];
+export function AfcftaHero() {
+  const [cur,setCur]=useState(0);
+  useEffect(()=>{const t=setInterval(()=>setCur(p=>(p+1)%SLIDES.length),5000);return()=>clearInterval(t);},[]);
+  const A="#F59E0B";
+  return (
+    <section id="overview" style={{position:"relative",minHeight:"100vh",overflow:"hidden",display:"flex",alignItems:"center"}}>
+      {SLIDES.map((s,i)=>(
+        <div key={i} style={{position:"absolute",inset:0,transition:"opacity 1s",opacity:i===cur?1:0}}>
+          <img src={s.img} alt={s.sub} style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+          <div style={{position:"absolute",inset:0,background:"linear-gradient(135deg,rgba(15,23,42,0.92) 0%,rgba(15,23,42,0.45) 100%)"}}/>
+        </div>
+      ))}
+      <div style={{position:"relative",zIndex:2,padding:"130px 64px 80px",maxWidth:760}}>
+        <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:28}}>
+          <img src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778750984/logo-afcfta-policy-network_oyf0rb.png" alt="logo" style={{height:44,objectFit:"contain"}}/>
+          <span style={{fontSize:10,fontWeight:700,letterSpacing:"0.22em",textTransform:"uppercase",color:A}}>· UnifiedNexus Group</span>
+        </div>
+        <h1 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(48px,6.5vw,82px)",fontWeight:600,lineHeight:1.05,color:"#fff",marginBottom:24}}>
+          Championing Africa's <em style={{color:A,fontStyle:"italic",fontWeight:400}}>Free Trade Future</em>
+        </h1>
+        <p style={{fontSize:16,color:"rgba(255,255,255,0.78)",lineHeight:1.85,fontWeight:300,maxWidth:500,marginBottom:48}}>
+          The largest international NGO think tank on AfCFTA implementation — building intra-Africa trade partnerships, economies of scale, and food security across 54 nations since 2019.
+        </p>
+        <div style={{display:"flex",gap:14,flexWrap:"wrap",marginBottom:72}}>
+          <a href="#services" style={{background:`linear-gradient(135deg,#B45309,${A})`,color:"#0C0A04",fontSize:12,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"14px 32px",borderRadius:2,textDecoration:"none",display:"flex",alignItems:"center",gap:8}}>Our Activities <ArrowRight size={14}/></a>
+          <a href="#team" style={{background:"transparent",border:`1px solid rgba(245,158,11,0.5)`,color:A,fontSize:12,fontWeight:500,letterSpacing:"0.08em",textTransform:"uppercase",padding:"13px 28px",borderRadius:2,textDecoration:"none"}}>Meet the Team</a>
+        </div>
+        <div style={{display:"flex",gap:48,paddingTop:36,borderTop:`1px solid rgba(245,158,11,0.20)`}}>
+          {[["54","African Nations"],["2019","Established"],["#1","Largest AfCFTA NGO"]].map(([n,l])=>(
+            <div key={l}><div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:36,fontWeight:600,color:A,lineHeight:1}}>{n}</div><div style={{fontSize:10,color:"rgba(255,255,255,0.55)",textTransform:"uppercase",letterSpacing:"0.15em",marginTop:5}}>{l}</div></div>
+          ))}
+        </div>
+      </div>
+      <div style={{position:"absolute",bottom:32,left:"50%",transform:"translateX(-50%)",display:"flex",gap:8,zIndex:3}}>
+        {SLIDES.map((_,i)=>(<button key={i} onClick={()=>setCur(i)} style={{width:10,height:10,borderRadius:"50%",border:"none",cursor:"pointer",background:i===cur?A:"rgba(255,255,255,0.35)",transition:"background 0.3s"}}/>))}
+      </div>
+    </section>
+  );
+}

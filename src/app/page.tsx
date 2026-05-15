@@ -1,74 +1,105 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, Cpu, Zap, Home as HomeIcon, BarChart3 } from "lucide-react";
+import { ArrowRight, Globe, TrendingUp, Users, Award } from "lucide-react";
 
 const COMPANIES = [
   {
-    id: "osu-tech",
+    id: "afcfta-policy",
     index: "01",
-    name: "AFCFTA Policy Network",
-    tagline: "Innovation from Accra",
-    sector: "Technology & AI",
-    icon: Cpu,
-    accentColor: "#3B82F6",
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125277/new121_msodpt.png",
-    href: "#",
-    visitLabel: "Visit AFCFTA",
+    name: "AfCFTA Policy Network",
+    tagline: "Intra-Africa Trade & Advocacy",
+    description: "Africa's largest AfCFTA NGO think tank — championing free trade implementation, policy research and capacity building across 54 nations since 2019.",
+    sector: "Trade Policy",
+    icon: Globe,
+    accentColor: "#F59E0B",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778750984/logo-afcfta-policy-network_oyf0rb.png",
+    href: "/afcfta-policy",
+    external: false,
+    visitLabel: "Visit AfCFTA Policy Network",
+    stats: [{ v: "54", l: "Nations" }, { v: "2019", l: "Founded" }, { v: "#1", l: "AfCFTA NGO" }],
   },
   {
-    id: "volta-energy",
+    id: "agif",
     index: "02",
-    name: "Africa Globalized Investment",
-    tagline: "Powering the Coast",
-    sector: "Renewable Energy",
-    icon: Zap,
+    name: "Africa Globalized Investment Forum",
+    tagline: "Connecting Capital to Africa",
+    description: "The premier international investment summit unlocking Africa's $2.5 trillion economic potential through PPP projects, sovereign deals and institutional investment.",
+    sector: "Investment",
+    icon: TrendingUp,
     accentColor: "#10B981",
     image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099500/1b_dpkhdt.png",
-    href: "#",
-    visitLabel: "Visit Africa",
+    href: "https://africaglobalizedinvestment.com/",
+    external: true,
+    visitLabel: "Visit AGIF",
+    stats: [{ v: "54", l: "Nations" }, { v: "$2.5B", l: "Deal Pipeline" }, { v: "500+", l: "Delegates" }],
   },
   {
-    id: "kumasi-smart",
+    id: "abec500",
     index: "03",
-    name: "Women of Africa Network",
-    tagline: "Modernity Meets Heritage",
-    sector: "Real Estate",
-    icon: HomeIcon,
-    accentColor: "#C9A84C",
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099379/1a_zcxsx2.png",
-    href: "#",
-    visitLabel: "Visit Women",
+    name: "Africa Business Export Club 500",
+    tagline: "Exporting African Excellence",
+    description: "Africa's premier export facilitation network connecting 500+ businesses with global markets through the AfCFTA framework — from trade finance to market entry.",
+    sector: "Export & Trade",
+    icon: Award,
+    accentColor: "#f28d01",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
+    href: "/abec500",
+    external: false,
+    visitLabel: "Visit ABEC500",
+    stats: [{ v: "500+", l: "Members" }, { v: "54", l: "Nations" }, { v: "AfCFTA", l: "Certified" }],
   },
   {
-    id: "adabraka-media",
+    id: "women-of-africa",
     index: "04",
-    name: "African Business Export Club",
-    tagline: "Resonating Stories",
-    sector: "Strategic Marketing",
-    icon: BarChart3,
-    accentColor: "#E879F9",
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
-    href: "#",
-    visitLabel: "Visit African",
+    name: "Women of Africa Network",
+    tagline: "Empowering African Women",
+    description: "A pan-African network positively impacting women's lives through education, trade facilitation, economic empowerment, health and policy advocacy across the continent.",
+    sector: "Empowerment",
+    icon: Users,
+    accentColor: "#EC4899",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099379/1a_zcxsx2.png",
+    href: "/women-of-africa",
+    external: false,
+    visitLabel: "Visit WAN",
+    stats: [{ v: "10K+", l: "Women" }, { v: "54", l: "Nations" }, { v: "5", l: "Pillars" }],
   },
 ];
 
 export default function Home() {
   return (
-    <main className="flex min-h-[100dvh] w-full flex-col relative" style={{
-      background: "linear-gradient(rgba(10, 22, 40, 0.85), rgba(10, 22, 40, 0.85)), url(https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125799/gefw_z5bq6y.jpg)",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-    }}>
-      {/* ── Hero: APNABEC title ── */}
-      <div className="flex flex-col items-center justify-center px-5 pt-16 pb-12 md:pt-24 md:pb-16 lg:pt-32 lg:pb-20">
+    <main
+      className="flex min-h-[100dvh] w-full flex-col relative"
+      style={{
+        background:
+          "linear-gradient(rgba(8, 18, 34, 0.88), rgba(8, 18, 34, 0.88)), url(https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125799/gefw_z5bq6y.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* ── Hero ── */}
+      <div className="flex flex-col items-center justify-center px-5 pt-16 pb-10 md:pt-24 md:pb-14 lg:pt-32 lg:pb-16">
+        <p
+          style={{
+            fontFamily: "'DM Sans', sans-serif",
+            fontSize: 10,
+            letterSpacing: "0.30em",
+            textTransform: "uppercase",
+            color: "rgba(201,168,76,0.60)",
+            fontWeight: 600,
+            marginBottom: 18,
+            textAlign: "center",
+          }}
+        >
+          A UnifiedNexus Group Company
+        </p>
+
         <h1
           style={{
             fontFamily: "'Cormorant Garamond', Georgia, serif",
-            fontSize: "clamp(42px, 12vw, 150px)",
+            fontSize: "clamp(42px, 12vw, 148px)",
             fontWeight: 700,
-            letterSpacing: "0.12em",
+            letterSpacing: "0.10em",
             textTransform: "uppercase",
             color: "#fff",
             margin: 0,
@@ -78,75 +109,70 @@ export default function Home() {
         >
           APNA<span style={{ color: "#C9A84C" }}>BEC</span>
         </h1>
+
+        <p
+          style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: "clamp(14px, 2.2vw, 20px)",
+            color: "rgba(255,255,255,0.55)",
+            fontWeight: 300,
+            fontStyle: "italic",
+            marginTop: 12,
+            textAlign: "center",
+            letterSpacing: "0.04em",
+          }}
+        >
+          Four organisations. One transformative vision for Africa.
+        </p>
       </div>
 
-      {/* ── Four Company Cards ── */}
-      <div className="flex-1 w-full max-w-[1480px] mx-auto px-5 pb-20">
-        {/* Section label */}
+      {/* ── Company Cards ── */}
+      <div className="flex-1 w-full max-w-[1520px] mx-auto px-5 pb-20">
         <p
           style={{
             fontFamily: "'DM Sans', sans-serif",
             fontSize: 10,
             letterSpacing: "0.28em",
             textTransform: "uppercase",
-            color: "rgba(201,168,76,0.65)",
+            color: "rgba(201,168,76,0.55)",
             fontWeight: 600,
-            marginBottom: 16,
+            marginBottom: 20,
             textAlign: "center",
           }}
         >
           Our Companies
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-          {COMPANIES.map((company, i) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+          {COMPANIES.map((company) => {
+            const Icon = company.icon;
             return (
               <a
                 key={company.id}
                 href={company.href}
-                onClick={(e) => {
-                  if (company.href === "#") return; // placeholder — do nothing
-                  e.preventDefault();
-                  window.open(company.href, "_blank", "noopener,noreferrer");
-                }}
-                className="group flex flex-col bg-[#1e2f4d] border border-[rgba(201,168,76,0.28)] rounded-[4px] overflow-hidden no-underline transition-all duration-300 hover:border-[#C9A84C] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
-                style={{
-                  cursor: company.href === "#" ? "default" : "pointer",
-                  animationDelay: `${i * 120}ms`,
-                }}
+                target={company.external ? "_blank" : undefined}
+                rel={company.external ? "noopener noreferrer" : undefined}
+                className="group flex flex-col bg-[#111e33] border border-[rgba(201,168,76,0.22)] rounded-[3px] overflow-hidden no-underline transition-all duration-300 hover:border-[#C9A84C] hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)]"
               >
                 {/* Image strip */}
-                <div
-                  style={{
-                    position: "relative",
-                    height: 200,
-                    background: "#0d1e35",
-                    flexShrink: 0,
-                    overflow: "hidden",
-                  }}
-                >
+                <div className="relative h-[188px] bg-[#0a1525] flex-shrink-0 overflow-hidden">
                   <Image
                     src={company.image}
                     alt={company.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                    style={{ objectFit: "contain", padding: "12px" }}
+                    style={{ objectFit: "contain", padding: "14px" }}
                   />
                   {/* Index badge */}
                   <div
                     style={{
-                      position: "absolute",
-                      top: 12,
-                      left: 12,
+                      position: "absolute", top: 10, left: 10,
                       fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: 11,
-                      fontWeight: 600,
-                      letterSpacing: "0.12em",
-                      background: "rgba(16,32,50,0.88)",
+                      fontSize: 11, fontWeight: 600, letterSpacing: "0.12em",
+                      background: "rgba(10,20,38,0.90)",
                       color: "#C9A84C",
-                      border: "1px solid rgba(201,168,76,0.50)",
-                      borderRadius: 2,
-                      padding: "3px 8px",
+                      border: "1px solid rgba(201,168,76,0.45)",
+                      borderRadius: 2, padding: "3px 8px",
                     }}
                   >
                     {company.index}
@@ -154,75 +180,110 @@ export default function Home() {
                   {/* Sector pill */}
                   <div
                     style={{
-                      position: "absolute",
-                      top: 12,
-                      right: 12,
-                      fontSize: 9,
-                      fontWeight: 600,
-                      letterSpacing: "0.14em",
+                      position: "absolute", top: 10, right: 10,
+                      fontSize: 9, fontWeight: 600, letterSpacing: "0.14em",
                       textTransform: "uppercase",
-                      background: "rgba(16,32,50,0.88)",
+                      background: "rgba(10,20,38,0.90)",
                       color: company.accentColor,
-                      border: `1px solid ${company.accentColor}66`,
-                      borderRadius: 2,
-                      padding: "3px 8px",
+                      border: `1px solid ${company.accentColor}55`,
+                      borderRadius: 2, padding: "3px 8px",
                     }}
                   >
                     {company.sector}
                   </div>
+                  {/* External link indicator */}
+                  {company.external && (
+                    <div
+                      style={{
+                        position: "absolute", bottom: 10, right: 10,
+                        fontSize: 9, fontWeight: 600, letterSpacing: "0.12em",
+                        textTransform: "uppercase",
+                        background: "rgba(16,185,129,0.15)",
+                        color: "#10B981",
+                        border: "1px solid rgba(16,185,129,0.35)",
+                        borderRadius: 2, padding: "3px 8px",
+                      }}
+                    >
+                      ↗ External Site
+                    </div>
+                  )}
+                  {/* Bottom gradient */}
+                  <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#111e33] to-transparent" />
                 </div>
 
                 {/* Body */}
-                <div style={{ padding: "16px 16px 18px", display: "flex", flexDirection: "column", gap: 6 }}>
-                  <h2
-                    style={{
-                      fontFamily: "'Cormorant Garamond', Georgia, serif",
-                      fontSize: 18,
-                      fontWeight: 600,
-                      color: "#fff",
-                      margin: 0,
-                      lineHeight: 1.25,
-                    }}
-                  >
-                    {company.name}
-                  </h2>
+                <div style={{ padding: "14px 16px 6px", display: "flex", flexDirection: "column", gap: 6, flex: 1 }}>
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
+                    <Icon size={14} style={{ color: company.accentColor, marginTop: 3, flexShrink: 0 }} />
+                    <h2
+                      style={{
+                        fontFamily: "'Cormorant Garamond', Georgia, serif",
+                        fontSize: 17,
+                        fontWeight: 600,
+                        color: "#fff",
+                        margin: 0,
+                        lineHeight: 1.25,
+                      }}
+                    >
+                      {company.name}
+                    </h2>
+                  </div>
                   <p
                     style={{
                       fontFamily: "'DM Sans', sans-serif",
-                      fontSize: 13,
-                      color: "#C9A84C",
-                      fontWeight: 500,
+                      fontSize: 11,
+                      color: company.accentColor,
+                      fontWeight: 600,
                       margin: 0,
-                      letterSpacing: "0.03em",
+                      letterSpacing: "0.05em",
+                      textTransform: "uppercase",
                     }}
                   >
                     {company.tagline}
                   </p>
+                  <p
+                    style={{
+                      fontSize: 12,
+                      color: "rgba(255,255,255,0.52)",
+                      lineHeight: 1.65,
+                      margin: 0,
+                      display: "-webkit-box",
+                      WebkitLineClamp: 3,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {company.description}
+                  </p>
+
+                  {/* Stats row */}
+                  <div style={{ display: "flex", gap: 0, marginTop: 6, borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 10 }}>
+                    {company.stats.map((s, si) => (
+                      <div key={si} style={{ flex: 1, textAlign: "center", borderRight: si < company.stats.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
+                        <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 18, fontWeight: 600, color: company.accentColor, lineHeight: 1 }}>{s.v}</div>
+                        <div style={{ fontSize: 9, color: "rgba(255,255,255,0.40)", textTransform: "uppercase", letterSpacing: "0.10em", marginTop: 3 }}>{s.l}</div>
+                      </div>
+                    ))}
+                  </div>
+
                   {/* CTA row */}
                   <div
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 6,
-                      marginTop: 8,
-                      color: "rgba(201,168,76,0.80)",
-                      fontSize: 11,
-                      fontWeight: 600,
-                      letterSpacing: "0.10em",
-                      textTransform: "uppercase",
+                      display: "flex", alignItems: "center", gap: 6, marginTop: 8, marginBottom: 12,
+                      color: "rgba(201,168,76,0.75)",
+                      fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase",
                     }}
                   >
                     <span>{company.visitLabel}</span>
-                    <ArrowRight size={13} />
+                    <ArrowRight size={12} />
+                    {company.external && <span style={{ fontSize: 9, color: "rgba(16,185,129,0.70)" }}>↗</span>}
                   </div>
                 </div>
 
-                {/* Bottom gold bar */}
-                <div 
-                  className="h-[2px] w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    background: `linear-gradient(90deg, ${company.accentColor}, #C9A84C)`,
-                  }}
+                {/* Bottom accent bar */}
+                <div
+                  className="h-[2.5px] w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: `linear-gradient(90deg, ${company.accentColor}88, ${company.accentColor}, #C9A84C)` }}
                 />
               </a>
             );
@@ -231,20 +292,20 @@ export default function Home() {
       </div>
 
       {/* ── Footer bar ── */}
-      <div className="bg-[#070f1c] border-t border-[rgba(201,168,76,0.12)] py-5 px-6 flex items-center justify-center gap-4">
-        <span style={{ width: 16, height: 1, background: "rgba(201,168,76,0.35)", display: "block", flexShrink: 1 }} />
+      <div
+        className="border-t border-[rgba(201,168,76,0.10)] py-5 px-6 flex items-center justify-center gap-4"
+        style={{ background: "rgba(5,10,20,0.95)" }}
+      >
+        <span style={{ width: 20, height: 1, background: "rgba(201,168,76,0.30)", display: "block" }} />
         <p
           style={{
-            fontSize: 10,
-            color: "rgba(255,255,255,0.45)",
-            letterSpacing: "0.18em",
-            textTransform: "uppercase",
-            margin: 0,
+            fontSize: 10, color: "rgba(255,255,255,0.38)",
+            letterSpacing: "0.18em", textTransform: "uppercase", margin: 0,
           }}
         >
-          &copy; {new Date().getFullYear()} APNABEC &mdash; All Rights Reserved
+          &copy; {new Date().getFullYear()} APNABEC — All Rights Reserved
         </p>
-        <span style={{ width: 16, height: 1, background: "rgba(201,168,76,0.35)", display: "block", flexShrink: 1 }} />
+        <span style={{ width: 20, height: 1, background: "rgba(201,168,76,0.30)", display: "block" }} />
       </div>
     </main>
   );
