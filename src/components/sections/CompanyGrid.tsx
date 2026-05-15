@@ -59,21 +59,28 @@ function CompanyCard({
   company,
   delay,
   onRedirect,
+  isGlobalRedirecting,
 }: {
   company: (typeof COMPANIES)[0];
   delay: number;
   onRedirect: (name: string, url: string) => void;
+  isGlobalRedirecting: boolean;
 }) {
   const Icon = company.icon;
+  const [isClicked, setIsClicked] = useState(false);
 
   return (
     <a
       href={company.href}
       onClick={(e) => {
         e.preventDefault();
+        setIsClicked(true);
         onRedirect(company.name, company.href);
+        setTimeout(() => setIsClicked(false), 2000);
       }}
-      className="card-lift animate-scale-in group relative flex flex-col overflow-hidden no-underline border-gold/30"
+      className={`card-lift animate-scale-in group relative flex flex-col overflow-hidden no-underline border-gold/30 transition-all duration-700 ${
+        isClicked ? "scale-95 opacity-50" : isGlobalRedirecting ? "opacity-20 blur-[2px] pointer-events-none" : "opacity-100"
+      }`}
       style={{
         animationDelay: `${delay}ms`,
         background: "#1e2f4d",
@@ -248,7 +255,13 @@ export function CompanyGrid() {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6" style={{ flex: 1, minHeight: 0 }}>
           {COMPANIES.map((c, i) => (
-            <CompanyCard key={c.id} company={c} delay={i * 120} onRedirect={handleRedirect} />
+            <CompanyCard 
+              key={c.id} 
+              company={c} 
+              delay={i * 120} 
+              onRedirect={handleRedirect} 
+              isGlobalRedirecting={!!redirecting}
+            />
           ))}
         </div>
 
