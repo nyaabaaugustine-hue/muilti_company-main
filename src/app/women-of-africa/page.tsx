@@ -1,33 +1,47 @@
-import { WANNav } from "@/components/women/WANNav";
-import { WANFooter } from "@/components/women/WANFooter";
 import { WomenHero } from "@/components/sections/women/WomenHero";
+import { WomenAbout } from "@/components/sections/women/WomenAbout";
 import { WomenServices } from "@/components/sections/women/WomenServices";
-import { WomenPartners } from "@/components/sections/women/WomenPartners";
+import { WomenActivities } from "@/components/sections/women/WomenActivities";
+import { WomenInitiatives } from "@/components/sections/women/WomenInitiatives";
 import { WomenTeam } from "@/components/sections/women/WomenTeam";
-import { WomenNews } from "@/components/sections/women/WomenNews";
+import { WomenNewsletter } from "@/components/sections/women/WomenNewsletter";
+import { WomenPartners } from "@/components/sections/women/WomenPartners";
 import { WomenContact } from "@/components/sections/women/WomenContact";
-import { HomeStats } from "@/components/women/HomeStats";
-import { HomeProgramsCTA } from "@/components/women/HomeProgramsCTA";
+import { CompanyNav } from "@/components/sections/CompanyNav";
+import { CompanyFooter } from "@/components/sections/CompanyFooter";
+
+const WAN_LOGO = "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099379/1a_zcxsx2.png";
+const GOLD = "#D4A017";
 
 export const metadata = {
   title: "Women of Africa Network | APNABEC Group",
   description:
     "Positively impacting the lives of women across Africa through education, trade facilitation, economic empowerment, health and policy advocacy.",
+  icons: {
+    icon: WAN_LOGO,
+    shortcut: WAN_LOGO,
+    apple: WAN_LOGO,
+  },
 };
 
-export default function WANHomePage() {
+export default function WomenOfAfricaPage() {
   return (
-    <>
-      <WANNav />
+    <main>
+      <CompanyNav
+        companyName="Women of Africa Network"
+        accentColor={GOLD}
+        logo={WAN_LOGO}
+      />
       <WomenHero />
-      <HomeStats />
+      <WomenAbout />
       <WomenServices />
-      <HomeProgramsCTA />
-      <WomenPartners />
+      <WomenActivities />
+      <WomenInitiatives />
       <WomenTeam />
-      <WomenNews />
+      <WomenNewsletter />
+      <WomenPartners />
       <WomenContact />
-      <WANFooter />
-    </>
+      <CompanyFooter companyName="Women of Africa Network" accentColor={GOLD} />
+    </main>
   );
 }

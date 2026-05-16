@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useCallback } from "react";
 import Image from "next/image";
 import { ArrowRight, Globe, TrendingUp, Users, Award } from "lucide-react";
 
@@ -13,7 +14,7 @@ const COMPANIES = [
     sector: "Trade Policy",
     icon: Globe,
     accentColor: "#F59E0B",
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778750984/logo-afcfta-policy-network_oyf0rb.png",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716831/Untitled-design-306x306_uc8rrz.png",
     href: "/afcfta-policy",
     external: false,
     visitLabel: "Visit AfCFTA Policy Network",  
@@ -27,7 +28,7 @@ const COMPANIES = [
     sector: "Investment",
     icon: TrendingUp,
     accentColor: "#10B981",
-    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099500/1b_dpkhdt.png",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778951617/logo-modified-rcwu8zd15uqvlujv0xasfhjru4gpfjtw9dtv6mfmyo_nq4f79.png",
     href: "https://africaglobalizedinvestment.com/",
     external: true,
     visitLabel: "Visit AGIF",
@@ -43,8 +44,8 @@ const COMPANIES = [
     icon: Award,
     accentColor: "#f28d01",
     image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099874/apn_square-logo_a4nl1q.png",
-    href: "/abec500",
-    external: false,
+    href: "https://abec500.com/",
+    external: true,
     visitLabel: "Visit ABEC500",
     
   },
@@ -61,21 +62,128 @@ const COMPANIES = [
     href: "/women-of-africa",
     external: false,
     visitLabel: "Visit WAN",
-    stats: [{ v: "10K+", l: "Women" }, { v: "54", l: "Nations" }, { v: "5", l: "Pillars" }],
+   
   },
 ];
 
 export default function Home() {
+  const [redirect, setRedirect] = useState<{
+    name: string;
+    accentColor: string;
+    href: string;
+  } | null>(null);
+
+  const handleClick = useCallback(
+    (name: string, accentColor: string, href: string, e: React.MouseEvent) => {
+      e.preventDefault();
+      setRedirect({ name, accentColor, href });
+      setTimeout(() => {
+        setRedirect(null);
+        window.open(href, "_blank", "noopener,noreferrer");
+      }, 800);
+    },
+    []
+  );
+
   return (
-    <main
-      className="flex min-h-[100dvh] w-full flex-col relative"
-      style={{
-        background:
-          "linear-gradient(rgba(8, 18, 34, 0.88), rgba(8, 18, 34, 0.88)), url(https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125799/gefw_z5bq6y.jpg)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <>
+      {/* ════ Redirect overlay ════ */}
+      {redirect && (
+        <div
+          style={{
+            position: "fixed", inset: 0, zIndex: 9999,
+            display: "flex", flexDirection: "column",
+            alignItems: "center", justifyContent: "center",
+            background: "#0a1422",
+            animation: "wanFadeIn 0.35s ease-out",
+            overflow: "hidden",
+          }}
+        >
+          {/* Glow */}
+          <div
+            style={{
+              position: "absolute",
+              width: "60vmax", height: "60vmax",
+              borderRadius: "50%",
+              background: `radial-gradient(circle, ${redirect.accentColor}44 0%, transparent 70%)`,
+              animation: "wanPulse 0.8s ease-out",
+            }}
+          />
+          {/* Accent bar */}
+          <div
+            style={{
+              width: 0, height: 2,
+              background: redirect.accentColor,
+              borderRadius: 1,
+              marginBottom: 28,
+              animation: "wanExpand 0.5s 0.15s ease-out forwards",
+            }}
+          />
+          {/* Company name */}
+          <h2
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(24px,4vw,42px)",
+              fontWeight: 600,
+              color: "#fff",
+              lineHeight: 1.2,
+              textAlign: "center",
+              padding: "0 24px",
+              opacity: 0,
+              animation: "wanFadeUp 0.4s 0.25s ease-out forwards",
+              margin: 0,
+            }}
+          >
+            {redirect.name}
+          </h2>
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: "0.28em",
+              textTransform: "uppercase",
+              color: redirect.accentColor,
+              marginTop: 12,
+              opacity: 0,
+              animation: "wanFadeUp 0.4s 0.35s ease-out forwards",
+            }}
+          >
+            Opening in new tab...
+          </p>
+          <div style={{ display: "flex", gap: 6, marginTop: 36, opacity: 0, animation: "wanFadeUp 0.4s 0.45s ease-out forwards" }}>
+            {[0, 1, 2].map((i) => (
+              <div
+                key={i}
+                style={{
+                  width: 8, height: 8,
+                  borderRadius: "50%",
+                  background: redirect.accentColor,
+                  animation: `wanBounce 0.6s ${i * 0.12}s ease-in-out infinite alternate`,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes wanFadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes wanFadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes wanExpand { from { width: 0; } to { width: 120px; } }
+        @keyframes wanPulse { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        @keyframes wanBounce { from { transform: translateY(0); opacity: 0.4; } to { transform: translateY(-10px); opacity: 1; } }
+      `}</style>
+
+      <main
+        className="flex min-h-[100dvh] w-full flex-col relative"
+        style={{
+          background:
+            "linear-gradient(rgba(8, 18, 34, 0.88), rgba(8, 18, 34, 0.88)), url(https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125799/gefw_z5bq6y.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
       {/* ── Hero ── */}
       <div className="flex flex-col items-center justify-center px-5 pt-16 pb-10 md:pt-24 md:pb-14 lg:pt-32 lg:pb-16">
         <p
@@ -90,7 +198,7 @@ export default function Home() {
             textAlign: "center",
           }}
         >
-          A UnifiedNexus Group Company
+         
         </p>
 
         <h1
@@ -121,7 +229,7 @@ export default function Home() {
             letterSpacing: "0.04em",
           }}
         >
-          Four organisations. One transformative vision for Africa.
+          
         </p>
       </div>
 
@@ -149,8 +257,9 @@ export default function Home() {
               <a
                 key={company.id}
                 href={company.href}
-                target={company.external ? "_blank" : undefined}
-                rel={company.external ? "noopener noreferrer" : undefined}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => handleClick(company.name, company.accentColor, company.href, e)}
                 className="group flex flex-col bg-[#111e33] border border-[rgba(201,168,76,0.22)] rounded-[3px] overflow-hidden no-underline transition-all duration-300 hover:border-[#C9A84C] hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)]"
               >
                 {/* Image strip */}
@@ -191,21 +300,19 @@ export default function Home() {
                     {company.sector}
                   </div>
                   {/* External link indicator */}
-                  {company.external && (
-                    <div
-                      style={{
-                        position: "absolute", bottom: 10, right: 10,
-                        fontSize: 9, fontWeight: 600, letterSpacing: "0.12em",
-                        textTransform: "uppercase",
-                        background: "rgba(16,185,129,0.15)",
-                        color: "#10B981",
-                        border: "1px solid rgba(16,185,129,0.35)",
-                        borderRadius: 2, padding: "3px 8px",
-                      }}
-                    >
-                      ↗ External Site
-                    </div>
-                  )}
+                  <div
+                    style={{
+                      position: "absolute", bottom: 10, right: 10,
+                      fontSize: 8, fontWeight: 600, letterSpacing: "0.10em",
+                      textTransform: "uppercase",
+                      background: "rgba(201,168,76,0.12)",
+                      color: "#C9A84C",
+                      border: "1px solid rgba(201,168,76,0.25)",
+                      borderRadius: 2, padding: "2px 7px",
+                    }}
+                  >
+                    ↗ New Tab
+                  </div>
                   {/* Bottom gradient */}
                   <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#111e33] to-transparent" />
                 </div>
@@ -277,7 +384,7 @@ export default function Home() {
                   >
                     <span>{company.visitLabel}</span>
                     <ArrowRight size={12} />
-                    {company.external && <span style={{ fontSize: 9, color: "rgba(16,185,129,0.70)" }}>↗</span>}
+                    <span style={{ fontSize: 9, color: "rgba(201,168,76,0.55)" }}>↗</span>
                   </div>
                 </div>
 
@@ -309,5 +416,6 @@ export default function Home() {
         <span style={{ width: 20, height: 1, background: "rgba(201,168,76,0.30)", display: "block" }} />
       </div>
     </main>
+    </>
   );
 }

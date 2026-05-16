@@ -13,19 +13,29 @@ export function AfcftaServices() {
   const A="#F59E0B";
   return (
     <section id="services" style={{background:"#0F172A",padding:"100px 64px"}}>
+      <style>{`
+        @media(max-width:600px){
+          #services{padding:60px 20px!important;}
+          .afcfta-svc-header{flex-direction:column!important;align-items:flex-start!important;gap:12px!important;}
+          .afcfta-svc-grid{grid-template-columns:1fr!important;}
+        }
+        @media(max-width:900px) and (min-width:601px){
+          #services{padding:80px 32px!important;}
+        }
+      `}</style>
       <div style={{maxWidth:1100,margin:"0 auto"}}>
         <div style={{display:"inline-flex",alignItems:"center",gap:10,fontSize:10,fontWeight:700,letterSpacing:"0.22em",textTransform:"uppercase",color:A,marginBottom:16}}>
           <span style={{width:28,height:1,background:A,display:"block"}}/>What We Do
         </div>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:56}}>
-          <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(32px,3.5vw,48px)",fontWeight:600,color:"#fff",lineHeight:1.15}}>
+        <div className="afcfta-svc-header" style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:56,flexWrap:"wrap",gap:16}}>
+          <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(28px,3.5vw,48px)",fontWeight:600,color:"#fff",lineHeight:1.15,margin:0}}>
             Our <em style={{color:A,fontStyle:"italic",fontWeight:400}}>Activities</em>
           </h2>
-          <p style={{fontSize:13,color:"rgba(255,255,255,0.60)",maxWidth:300,lineHeight:1.75,fontWeight:300}}>
+          <p style={{fontSize:13,color:"rgba(255,255,255,0.60)",maxWidth:300,lineHeight:1.75,fontWeight:300,margin:0}}>
             Building the foundations for Africa's biggest economic transformation.
           </p>
         </div>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(320px,1fr))",gap:4}}>
+        <div className="afcfta-svc-grid" style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(300px,1fr))",gap:4}}>
           {SERVICES.map((s,i)=>(
             <div key={i} onMouseEnter={()=>setHov(i)} onMouseLeave={()=>setHov(null)}
               style={{position:"relative",height:260,overflow:"hidden",cursor:"pointer",transition:"transform 0.4s",transform:hov===i?"scale(1.02)":"scale(1)"}}>
@@ -34,8 +44,11 @@ export function AfcftaServices() {
               <div style={{position:"absolute",bottom:0,left:0,right:0,padding:"20px 24px"}}>
                 <div style={{width:4,height:24,background:A,marginBottom:10}}/>
                 <h3 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:18,fontWeight:600,color:"#fff",marginBottom:8}}>{s.title}</h3>
-                <p style={{fontSize:12,color:"rgba(255,255,255,0.75)",lineHeight:1.7,fontWeight:300,display:hov===i?"block":"none"}}>{s.desc}</p>
+                <p style={{fontSize:12,color:"rgba(255,255,255,0.80)",lineHeight:1.7,fontWeight:300,display:hov===i?"block":"none"}}>{s.desc}</p>
               </div>
+              {/* Always show desc on mobile (no hover) */}
+              <style>{`.afcfta-svc-desc-${i}{display:none;} @media(max-width:600px){.afcfta-svc-desc-${i}{display:block!important;}}`}</style>
+              <p className={`afcfta-svc-desc-${i}`} style={{position:"absolute",bottom:0,left:0,right:0,padding:"0 24px 16px",fontSize:11,color:"rgba(255,255,255,0.75)",lineHeight:1.6,display:"none"}}>{s.desc}</p>
             </div>
           ))}
         </div>

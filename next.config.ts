@@ -1,4 +1,3 @@
-
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -13,7 +12,6 @@ const nextConfig: NextConfig = {
       {
         source: '/(.*)',
         headers: [
-          // Allow social crawlers (Facebook, WhatsApp, etc.)
           { key: 'X-Robots-Tag', value: 'index, follow' },
         ],
       },
@@ -21,30 +19,16 @@ const nextConfig: NextConfig = {
   },
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
-        port: '',
-        pathname: '/**',
-      },
+      { protocol: 'https', hostname: 'placehold.co', pathname: '/**' },
+      { protocol: 'https', hostname: 'images.unsplash.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'picsum.photos', pathname: '/**' },
+      { protocol: 'https', hostname: 'res.cloudinary.com', pathname: '/**' },
+      // Team / content images from company sites
+      { protocol: 'https', hostname: 'womenofafricanetwork.org', pathname: '/**' },
+      { protocol: 'https', hostname: 'africaglobalizedinvestment.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'afcftapolicy.net', pathname: '/**' },
+      { protocol: 'https', hostname: 'abec500.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'web.archive.org', pathname: '/**' },
     ],
   },
 };

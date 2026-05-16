@@ -38,13 +38,28 @@ export function AfcftaActivities() {
   const [hov, setHov] = useState<number | null>(null);
   return (
     <section id="activities" style={{ background: "#F8FAFC", padding: "100px 64px" }}>
+      <style>{`
+        .afcfta-act-card{display:flex;border-radius:4px;overflow:hidden;}
+        .afcfta-act-img{width:180px;flex-shrink:0;overflow:hidden;}
+        @media(max-width:600px){
+          #activities{padding:60px 20px!important;}
+          .afcfta-act-grid{grid-template-columns:1fr!important;}
+          .afcfta-act-card{flex-direction:column!important;}
+          .afcfta-act-img{width:100%!important;height:180px!important;}
+          .afcfta-act-header{flex-direction:column!important;align-items:flex-start!important;gap:12px!important;}
+        }
+        @media(max-width:900px) and (min-width:601px){
+          #activities{padding:80px 32px!important;}
+          .afcfta-act-grid{grid-template-columns:1fr!important;}
+        }
+      `}</style>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: 10, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: A, marginBottom: 16 }}>
           <span style={{ width: 28, height: 1, background: A, display: "block" }} />
           What We Do
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 56, flexWrap: "wrap", gap: 24 }}>
-          <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(32px,3.5vw,48px)", fontWeight: 600, color: "#0F172A", lineHeight: 1.15, margin: 0 }}>
+        <div className="afcfta-act-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 56, flexWrap: "wrap", gap: 24 }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(28px,3.5vw,48px)", fontWeight: 600, color: "#0F172A", lineHeight: 1.15, margin: 0 }}>
             Our <em style={{ color: A, fontStyle: "italic", fontWeight: 400 }}>Core Activities</em>
           </h2>
           <p style={{ fontSize: 13, color: "#666", maxWidth: 340, lineHeight: 1.75, fontWeight: 400, margin: 0 }}>
@@ -52,24 +67,22 @@ export function AfcftaActivities() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(480px,1fr))", gap: 20 }}>
+        <div className="afcfta-act-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(460px,1fr))", gap: 20 }}>
           {ACTIVITIES.map((act, i) => (
             <div
               key={i}
               onMouseEnter={() => setHov(i)}
               onMouseLeave={() => setHov(null)}
+              className="afcfta-act-card"
               style={{
                 background: "#fff",
                 border: `1px solid ${hov === i ? "rgba(245,158,11,0.45)" : "rgba(245,158,11,0.12)"}`,
-                borderRadius: 4,
-                overflow: "hidden",
-                display: "flex",
                 transition: "all 0.35s cubic-bezier(0.22,1,0.36,1)",
                 transform: hov === i ? "translateY(-3px)" : "none",
                 boxShadow: hov === i ? "0 12px 40px rgba(245,158,11,0.10)" : "0 2px 12px rgba(0,0,0,0.04)",
               }}
             >
-              <div style={{ width: 180, flexShrink: 0, overflow: "hidden" }}>
+              <div className="afcfta-act-img">
                 <img src={act.img} alt={act.title} style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s", transform: hov === i ? "scale(1.06)" : "scale(1)" }} />
               </div>
               <div style={{ padding: "24px 24px 24px 20px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
@@ -78,7 +91,7 @@ export function AfcftaActivities() {
                     <span style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 28, fontWeight: 600, color: "rgba(245,158,11,0.25)", lineHeight: 1 }}>{act.num}</span>
                     <span style={{ background: "rgba(245,158,11,0.10)", color: A, fontSize: 10, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", padding: "3px 10px", borderRadius: 2 }}>{act.tag}</span>
                   </div>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 21, fontWeight: 600, color: "#0F172A", marginBottom: 10, lineHeight: 1.25 }}>{act.title}</h3>
+                  <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 20, fontWeight: 600, color: "#0F172A", marginBottom: 10, lineHeight: 1.25 }}>{act.title}</h3>
                   <p style={{ fontSize: 12.5, color: "#666", lineHeight: 1.75, margin: 0 }}>{act.desc}</p>
                 </div>
                 <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 6, color: A, fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", cursor: "pointer" }}>

@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { WANNav } from "@/components/women/WANNav";
-import { WANFooter } from "@/components/women/WANFooter";
 
 export const metadata: Metadata = {
   title: {
@@ -16,11 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function WANLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <div style={{ fontFamily: "'Poppins', sans-serif", minHeight: "100vh", background: "#fff" }}>
-      <WANNav />
-      <main style={{ paddingTop: 70 }}>{children}</main>
-      <WANFooter />
-    </div>
-  );
+  return <>{children}</>;
 }

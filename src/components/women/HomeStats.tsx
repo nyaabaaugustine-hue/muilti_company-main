@@ -1,7 +1,14 @@
 "use client";
-import { STATS } from "@/components/women/data";
 
 const A = "#EC4899";
+
+// Defined directly as '@/components/women/data' was not provided in context.
+const STATS = [
+  { number: "54", label: "African Nations" },
+  { number: "10K+", label: "Women Impacted" },
+  { number: "2020", label: "Founded" },
+  { number: "5", label: "Core Pillars" },
+];
 
 export function HomeStats() {
   return (
