@@ -9,10 +9,13 @@ const BLACK = "#0A0A0A";
 const WAN_LOGO = "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099379/1a_zcxsx2.png";
 
 const SLIDES = [
-  { sub: "Empowering Women Across Africa",       img: "https://womenofafricanetwork.org/wp-content/uploads/2021/10/Women-of-Africa-Network-14.jpeg" },
-  { sub: "Education & Scholarships",             img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&q=80" },
-  { sub: "Trade Facilitation",                   img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=80" },
-  { sub: "Economic Empowerment",                 img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80" },
+  { sub: "Trade Facilitation",                   img: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778957583/tradee_fyywm1.jpg" },
+  { sub: "Women in Business",                    img: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778957583/njhd_wwmgch.avif" },
+  { sub: "Education & Scholarships",             img: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778957584/edu_tdqmm3.jpg" },
+  { sub: "Economic Empowerment",                 img: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778957583/jyy_tyiya0.avif" },
+  { sub: "Women Entrepreneurs",                  img: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778957584/asd_lzvstv.jpg" },
+  { sub: "Community Development",                img: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778958677/res_glqxi4.jpg" },
+  { sub: "Leadership & Mentorship",              img: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778957675/uyy_awjku8.avif" },
 ];
 
 export function WomenHero() {
