@@ -29,18 +29,31 @@ export function AfcftaContact() {
 
   return (
     <section id="contact" style={{ background: "#1E293B", padding: "100px 64px" }}>
+      <style>{`
+        .afcfta-contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start;}
+        .afcfta-offices-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+        @media(max-width:768px){
+          #contact{padding:60px 20px!important;}
+          .afcfta-contact-grid{grid-template-columns:1fr!important;gap:32px!important;}
+          .afcfta-contact-header{flex-direction:column!important;align-items:flex-start!important;gap:12px!important;}
+        }
+        @media(max-width:900px) and (min-width:769px){
+          #contact{padding:80px 32px!important;}
+          .afcfta-contact-grid{grid-template-columns:1fr!important;}
+        }
+      `}</style>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: 10, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: A, marginBottom: 16 }}>
           <span style={{ width: 28, height: 1, background: A, display: "block" }} />
           Contact Us
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 56, flexWrap: "wrap", gap: 16 }}>
-          <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(32px,3.5vw,48px)", fontWeight: 600, color: "#fff", lineHeight: 1.15, margin: 0 }}>
+        <div className="afcfta-contact-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 56, flexWrap: "wrap", gap: 16 }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(28px,3.5vw,48px)", fontWeight: 600, color: "#fff", lineHeight: 1.15, margin: 0 }}>
             Get <em style={{ color: A, fontStyle: "italic", fontWeight: 400 }}>In Touch</em>
           </h2>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 48, alignItems: "start" }}>
+        <div className="afcfta-contact-grid">
           {/* Left */}
           <div>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.85, marginBottom: 32 }}>
@@ -60,10 +73,9 @@ export function AfcftaContact() {
               ))}
             </div>
 
-            {/* Regional offices */}
             <div style={{ borderTop: "1px solid rgba(245,158,11,0.15)", paddingTop: 28 }}>
               <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: A, marginBottom: 16 }}>Regional Offices</div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+              <div className="afcfta-offices-grid">
                 {OFFICES.map((o, i) => (
                   <div key={i} style={{ background: "rgba(245,158,11,0.06)", border: "1px solid rgba(245,158,11,0.12)", borderRadius: 3, padding: "10px 14px", display: "flex", alignItems: "center", gap: 8 }}>
                     <span style={{ fontSize: 18 }}>{o.flag}</span>
@@ -104,7 +116,7 @@ export function AfcftaContact() {
                       value={form[key as keyof typeof form]}
                       onChange={e => setForm(p => ({ ...p, [key]: e.target.value }))}
                       required
-                      style={{ width: "100%", padding: "11px 14px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(245,158,11,0.20)", borderRadius: 3, fontSize: 13, color: "#fff", outline: "none", fontFamily: "inherit", transition: "border-color 0.2s", boxSizing: "border-box" }}
+                      style={{ width: "100%", padding: "12px 14px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(245,158,11,0.20)", borderRadius: 3, fontSize: 14, color: "#fff", outline: "none", fontFamily: "inherit", transition: "border-color 0.2s", boxSizing: "border-box" }}
                       onFocus={e => (e.target.style.borderColor = A)}
                       onBlur={e => (e.target.style.borderColor = "rgba(245,158,11,0.20)")}
                     />
@@ -118,14 +130,14 @@ export function AfcftaContact() {
                     onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
                     required
                     rows={4}
-                    style={{ width: "100%", padding: "11px 14px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(245,158,11,0.20)", borderRadius: 3, fontSize: 13, color: "#fff", outline: "none", fontFamily: "inherit", resize: "vertical", transition: "border-color 0.2s", boxSizing: "border-box" }}
+                    style={{ width: "100%", padding: "12px 14px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(245,158,11,0.20)", borderRadius: 3, fontSize: 14, color: "#fff", outline: "none", fontFamily: "inherit", resize: "vertical", transition: "border-color 0.2s", boxSizing: "border-box" }}
                     onFocus={e => (e.target.style.borderColor = A)}
                     onBlur={e => (e.target.style.borderColor = "rgba(245,158,11,0.20)")}
                   />
                 </div>
                 <button
                   type="submit"
-                  style={{ background: `linear-gradient(135deg,#B45309,${A})`, color: "#0C0A04", border: "none", padding: "13px 28px", borderRadius: 2, cursor: "pointer", fontSize: 12, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", alignSelf: "flex-start" }}
+                  style={{ background: `linear-gradient(135deg,#B45309,${A})`, color: "#0C0A04", border: "none", padding: "14px 28px", borderRadius: 2, cursor: "pointer", fontSize: 13, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", alignSelf: "flex-start" }}
                 >
                   Send Message →
                 </button>
