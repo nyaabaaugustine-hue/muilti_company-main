@@ -12,14 +12,23 @@ export function AfcftaTeam() {
   const A="#F59E0B";
   return (
     <section id="team" style={{background:"#1E293B",padding:"100px 64px"}}>
+      <style>{`
+        @media(max-width:600px){
+          #team{padding:60px 20px!important;}
+          .afcfta-team-grid{grid-template-columns:repeat(2,1fr)!important;gap:12px!important;}
+        }
+        @media(max-width:900px) and (min-width:601px){
+          #team{padding:80px 32px!important;}
+        }
+      `}</style>
       <div style={{maxWidth:1100,margin:"0 auto"}}>
         <div style={{display:"inline-flex",alignItems:"center",gap:10,fontSize:10,fontWeight:700,letterSpacing:"0.22em",textTransform:"uppercase",color:A,marginBottom:16}}>
           <span style={{width:28,height:1,background:A,display:"block"}}/>Leadership
         </div>
-        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(32px,3.5vw,48px)",fontWeight:600,color:"#fff",marginBottom:52}}>
+        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(28px,3.5vw,48px)",fontWeight:600,color:"#fff",marginBottom:52}}>
           The Team <em style={{color:A,fontStyle:"italic",fontWeight:400}}>Driving Change</em>
         </h2>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(230px,1fr))",gap:16}}>
+        <div className="afcfta-team-grid" style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(200px,1fr))",gap:16}}>
           {TEAM.map((m,i)=>(
             <div key={i}
               onMouseEnter={e=>{(e.currentTarget as HTMLDivElement).style.borderColor="rgba(245,158,11,0.50)";(e.currentTarget as HTMLDivElement).style.transform="translateY(-6px)"}}
@@ -29,8 +38,8 @@ export function AfcftaTeam() {
                 <img src={m.img} alt={m.name} style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"top"}}/>
               </div>
               <div style={{padding:"16px 18px 20px"}}>
-                <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:18,fontWeight:600,color:"#fff",marginBottom:4}}>{m.name}</div>
-                <div style={{fontSize:11,color:A,fontWeight:600,letterSpacing:"0.05em"}}>{m.role}</div>
+                <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:17,fontWeight:600,color:"#fff",marginBottom:4,lineHeight:1.2}}>{m.name}</div>
+                <div style={{fontSize:11,color:A,fontWeight:600,letterSpacing:"0.04em"}}>{m.role}</div>
               </div>
             </div>
           ))}
