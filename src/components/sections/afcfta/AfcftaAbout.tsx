@@ -1,4 +1,5 @@
 "use client";
+import SafeImage from "../SafeImage";
 
 const A = "#F59E0B";
 

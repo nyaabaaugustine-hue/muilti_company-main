@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import SafeImage from "../SafeImage";
 
 const GOLD = "#D4A017";
 
@@ -35,7 +36,7 @@ export function WomenServices() {
             <div key={i} onMouseEnter={() => setHov(i)} onMouseLeave={() => setHov(null)}
               className="wan-services-card"
               style={{ position: "relative", height: 270, overflow: "hidden", cursor: "pointer", transition: "transform 0.4s", transform: hov === i ? "scale(1.03)" : "scale(1)" }}>
-              <img src={s.img} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%" }} />
+              <SafeImage src={s.img} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%" }} wrapperStyle={{ position: "absolute", inset: 0 }} />
               <div style={{ position: "absolute", inset: 0, background: hov === i ? "rgba(0,0,0,0.82)" : "rgba(0,0,0,0.58)", transition: "background 0.4s" }} />
               {/* Gold top accent on hover */}
               <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: GOLD, opacity: hov === i ? 1 : 0, transition: "opacity 0.3s" }} />

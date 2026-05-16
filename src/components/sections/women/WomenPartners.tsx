@@ -1,4 +1,5 @@
 "use client";
+import SafeImage from "../SafeImage";
 
 const GOLD = "#D4A017";
 
@@ -26,7 +27,7 @@ export function WomenPartners() {
           {PARTNERS.map((src, i) => (
             <div key={i} className="wan-partner"
               style={{ width: 130, height: 80, display: "flex", alignItems: "center", justifyContent: "center", opacity: 0.55, filter: "grayscale(1)", transition: "all 0.35s", cursor: "pointer" }}>
-              <img src={src} alt={`Partner ${i + 1}`} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+              <SafeImage src={src} alt={`Partner ${i + 1}`} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} wrapperStyle={{ width: "100%", height: "100%" }} />
             </div>
           ))}
         </div>

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
+import SafeImage from "../SafeImage";
 const SLIDES = [
   { sub:"AfCFTA Secretariat & APN Group", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716832/Landmark-MOU-signing-between-AfCFTA-Secretariat-and-APN-Group3-1_ufvv5e.jpg" },
   { sub:"Implementation & Advocacy", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716830/slide111_ptbh1n.jpg" },
@@ -29,13 +30,13 @@ export function AfcftaHero() {
       `}</style>
       {SLIDES.map((s,i)=>(
         <div key={i} style={{position:"absolute",inset:0,transition:"opacity 1s",opacity:i===cur?1:0}}>
-          <img src={s.img} alt={s.sub} style={{width:"100%",height:"100%",objectFit:"cover",maxWidth:"100%"}}/>
+          <SafeImage src={s.img} alt={s.sub} style={{width:"100%",height:"100%",objectFit:"cover",maxWidth:"100%"}} wrapperStyle={{position:"absolute",inset:0}}/>
           <div style={{position:"absolute",inset:0,background:"linear-gradient(135deg,rgba(15,23,42,0.92) 0%,rgba(15,23,42,0.45) 100%)"}}/>
         </div>
       ))}
       <div className="afcfta-hero-inner" style={{position:"relative",zIndex:2}}>
         <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:28}}>
-          <img src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778750984/logo-afcfta-policy-network_oyf0rb.png" alt="logo" style={{height:44,objectFit:"contain",maxWidth:"100%"}}/>
+          <SafeImage src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778750984/logo-afcfta-policy-network_oyf0rb.png" alt="logo" style={{height:44,objectFit:"contain",maxWidth:"100%"}}/>
           <span style={{fontSize:10,fontWeight:700,letterSpacing:"0.22em",textTransform:"uppercase",color:A}}>· UnifiedNexus Group</span>
         </div>
         <h1 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(38px,6.5vw,82px)",fontWeight:600,lineHeight:1.05,color:"#fff",marginBottom:24}}>

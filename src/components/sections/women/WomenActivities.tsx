@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import SafeImage from "../SafeImage";
 
 const GOLD = "#D4A017";
 
@@ -43,7 +44,7 @@ export function WomenActivities() {
             >
               {/* Gold top bar on hover */}
               <div className="wan-activities-img" style={{ position: "relative", width: 180, flexShrink: 0, overflow: "hidden" }}>
-                <img src={act.img} alt={act.title} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%", transition: "transform 0.5s", transform: hov === i ? "scale(1.07)" : "scale(1)" }} />
+                <SafeImage src={act.img} alt={act.title} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%", transition: "transform 0.5s", transform: hov === i ? "scale(1.07)" : "scale(1)" }} />
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: GOLD, opacity: hov === i ? 1 : 0, transition: "opacity 0.3s" }} />
               </div>
               <div style={{ padding: "24px 24px 24px 20px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>

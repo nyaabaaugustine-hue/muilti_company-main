@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
+import SafeImage from "../SafeImage";
 
 // ── WAN brand palette ──────────────────────────────────────────────────────
 const GOLD = "#D4A017";
@@ -30,7 +31,7 @@ export function WomenHero() {
       {/* Slides */}
       {SLIDES.map((s, i) => (
         <div key={i} style={{ position: "absolute", inset: 0, transition: "opacity 1s", opacity: i === cur ? 1 : 0 }}>
-          <img src={s.img} alt={s.sub} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%" }} />
+          <SafeImage src={s.img} alt={s.sub} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%" }} wrapperStyle={{ position: "absolute", inset: 0 }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg,rgba(0,0,0,0.90) 0%,rgba(0,0,0,0.40) 100%)" }} />
         </div>
       ))}
@@ -41,7 +42,7 @@ export function WomenHero() {
       <div className="wan-hero-content" style={{ position: "relative", zIndex: 2, padding: "clamp(40px, 8vw, 130px) clamp(16px, 4vw, 64px) clamp(40px, 8vw, 80px)", maxWidth: 780 }}>
         {/* Logo + badge */}
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
-          <img src={WAN_LOGO} alt="WAN Logo" style={{ height: 52, width: 52, objectFit: "contain", borderRadius: "50%", background: "#fff", padding: 3, boxShadow: `0 0 0 2px ${GOLD}` }} />
+          <SafeImage src={WAN_LOGO} alt="WAN Logo" style={{ height: 52, width: 52, objectFit: "contain", borderRadius: "50%", background: "#fff", padding: 3, boxShadow: `0 0 0 2px ${GOLD}` }} wrapperStyle={{ width: 52, height: 52, flexShrink: 0 }} />
           <div>
             <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.28em", textTransform: "uppercase", color: GOLD }}>APNABEC Group</div>
             <div style={{ fontSize: 9, color: "rgba(255,255,255,0.50)", letterSpacing: "0.15em", textTransform: "uppercase" }}>Since 2020</div>

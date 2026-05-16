@@ -1,4 +1,5 @@
 "use client";
+import SafeImage from "../SafeImage";
 
 const GOLD = "#D4A017";
 const WAN_LOGO = "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099379/1a_zcxsx2.png";
@@ -20,7 +21,7 @@ export function WomenAbout() {
           {/* ── Left image stack ── */}
           <div style={{ position: "relative" }}>
             <div className="wan-about-image-wrap" style={{ position: "relative", height: "clamp(260px, 45vw, 460px)", borderRadius: 4, overflow: "hidden", boxShadow: "0 24px 64px rgba(0,0,0,0.18)" }}>
-              <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80" alt="Women of Africa Network" style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%" }} />
+              <SafeImage src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80" alt="Women of Africa Network" style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%" }} wrapperStyle={{ position: "absolute", inset: 0 }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg,rgba(0,0,0,0.22) 0%,transparent 60%)" }} />
             </div>
             {/* Gold badge */}
@@ -30,7 +31,7 @@ export function WomenAbout() {
             </div>
             {/* Secondary image */}
             <div className="wan-about-secondary" style={{ position: "absolute", top: 24, left: -24, width: "clamp(80px, 15vw, 160px)", height: "clamp(60px, 12vw, 120px)", borderRadius: 4, overflow: "hidden", border: "3px solid #fff", boxShadow: "0 8px 32px rgba(0,0,0,0.20)" }}>
-              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80" alt="Women Leadership" style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%" }} />
+              <SafeImage src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80" alt="Women Leadership" style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%" }} wrapperStyle={{ position: "absolute", inset: 0 }} />
             </div>
             {/* Gold accent line */}
             <div style={{ position: "absolute", bottom: -24, left: 0, width: "60%", height: 3, background: `linear-gradient(90deg,${GOLD},transparent)`, borderRadius: 2 }} />
@@ -71,7 +72,7 @@ export function WomenAbout() {
 
             {/* Logo strip */}
             <div style={{ marginTop: 36, paddingTop: 28, borderTop: `1px solid ${GOLD}22`, display: "flex", alignItems: "center", gap: 14 }}>
-              <img src={WAN_LOGO} alt="WAN" style={{ height: 48, width: 48, objectFit: "contain", borderRadius: "50%", background: "#0A0A0A", padding: 3, boxShadow: `0 0 0 1.5px ${GOLD}` }} />
+              <SafeImage src={WAN_LOGO} alt="WAN" style={{ height: 48, width: 48, objectFit: "contain", borderRadius: "50%", background: "#0A0A0A", padding: 3, boxShadow: `0 0 0 1.5px ${GOLD}` }} wrapperStyle={{ width: 48, height: 48, flexShrink: 0 }} />
               <div>
                 <div style={{ fontSize: "clamp(13px, 2.5vw, 16px)", fontWeight: 700, color: "#0A0A0A" }}>Women of Africa Network</div>
                 <div style={{ fontSize: "clamp(10px, 2vw, 12px)", color: "#888" }}>Sakumono, Accra — Ghana</div>

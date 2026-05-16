@@ -1,4 +1,5 @@
 "use client";
+import SafeImage from "../SafeImage";
 const A = "#EC4899";
 const BG = "#1a0520";
 
@@ -49,7 +50,7 @@ export function WomenNews() {
           {NEWS.map((item, i) => (
             <div key={i} style={{ background: "#fff", borderRadius: 4, overflow: "hidden", border: `1px solid rgba(236,72,153,0.1)`, transition: "all 0.3s" }} className="news-card">
               <div style={{ height: 160, overflow: "hidden" }}>
-                <img src={item.img} alt={item.title} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%", transition: "transform 0.4s" }} className="news-img" />
+                <SafeImage src={item.img} alt={item.title} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%", transition: "transform 0.4s" }} className="news-img" />
               </div>
               <div style={{ padding: "16px 18px 20px" }}>
                 <div style={{ fontSize: "clamp(9px, 1.5vw, 10px)", color: A, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 6 }}>{item.category}</div>

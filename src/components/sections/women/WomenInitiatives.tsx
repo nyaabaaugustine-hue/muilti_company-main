@@ -1,4 +1,5 @@
 "use client";
+import SafeImage from "../SafeImage";
 
 const GOLD = "#D4A017";
 
@@ -32,7 +33,7 @@ export function WomenInitiatives() {
               onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = `${GOLD}22`; (e.currentTarget as HTMLDivElement).style.transform = "none"; }}
               style={{ background: "#1A1A1A", border: `1px solid ${GOLD}22`, borderRadius: 4, overflow: "hidden", display: "flex", transition: "all 0.35s cubic-bezier(0.22,1,0.36,1)" }}>
               <div className="wan-initiatives-img" style={{ width: 180, flexShrink: 0, overflow: "hidden", position: "relative" }}>
-                <img src={p.img} alt={p.title} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%" }} />
+                <SafeImage src={p.img} alt={p.title} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg,transparent,rgba(26,26,26,0.2))" }} />
               </div>
               <div style={{ padding: "24px 24px 24px 20px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>

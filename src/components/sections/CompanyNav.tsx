@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowLeft, Menu, X } from "lucide-react";
+import SafeImage from "./SafeImage";
 
 interface CompanyNavProps {
   companyName: string;
@@ -67,7 +68,7 @@ export function CompanyNav({
           <div style={{ width: 1, height: 20, background: "rgba(255,255,255,0.15)" }} />
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             {logo ? (
-              <img src={logo} alt={companyName} style={{ height: "clamp(28px, 4vw, 36px)", width: "clamp(28px, 4vw, 36px)", objectFit: "contain", borderRadius: "50%", background: "#fff", padding: 2 }} />
+              <SafeImage src={logo} alt={companyName} style={{ height: "clamp(28px, 4vw, 36px)", width: "clamp(28px, 4vw, 36px)", objectFit: "contain", borderRadius: "50%", background: "#fff", padding: 2 }} wrapperStyle={{ width: "clamp(28px, 4vw, 36px)", height: "clamp(28px, 4vw, 36px)", flexShrink: 0 }} />
             ) : (
               <div style={{ width: 8, height: 8, borderRadius: "50%", background: color, boxShadow: `0 0 10px ${color}` }} />
             )}

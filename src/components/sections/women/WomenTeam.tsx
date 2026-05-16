@@ -1,4 +1,5 @@
 "use client";
+import SafeImage from "../SafeImage";
 
 const GOLD = "#D4A017";
 
@@ -31,7 +32,7 @@ export function WomenTeam() {
               {/* Gold top bar */}
               <div style={{ height: 3, background: `linear-gradient(90deg,${GOLD},#F0C040)` }} />
               <div style={{ height: 220, overflow: "hidden" }}>
-                <img src={m.img} alt={m.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", maxWidth: "100%" }} />
+                <SafeImage src={m.img} alt={m.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", maxWidth: "100%" }} />
               </div>
               <div style={{ padding: "16px 18px 20px", borderTop: `1px solid ${GOLD}18` }}>
                 <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(15px, 2.5vw, 17px)", fontWeight: 700, color: "#0A0A0A", marginBottom: 5, lineHeight: 1.2 }}>{m.name}</div>
