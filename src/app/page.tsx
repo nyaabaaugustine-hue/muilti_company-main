@@ -139,7 +139,7 @@ export default function Home() {
           <p
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: 11,
+              fontSize: "clamp(10px, 1.5vw, 13px)",
               fontWeight: 600,
               letterSpacing: "0.28em",
               textTransform: "uppercase",
@@ -173,249 +173,301 @@ export default function Home() {
         @keyframes wanExpand { from { width: 0; } to { width: 120px; } }
         @keyframes wanPulse { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         @keyframes wanBounce { from { transform: translateY(0); opacity: 0.4; } to { transform: translateY(-10px); opacity: 1; } }
+
+        .home-hero {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: clamp(64px, 7vw, 128px) clamp(20px, 4vw, 40px) clamp(40px, 5vw, 64px);
+        }
+
+        .home-companies-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        @media (min-width: 640px) {
+          .home-companies-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1280px) {
+          .home-companies-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        .home-footer-bar {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          padding: clamp(16px, 3vw, 24px) clamp(16px, 4vw, 24px);
+        }
+        @media (min-width: 768px) {
+          .home-footer-bar { flex-direction: row; gap: 16px; }
+        }
       `}</style>
 
       <main
-        className="flex min-h-[100dvh] w-full flex-col relative"
         style={{
+          display: "flex", minHeight: "100dvh", width: "100%",
+          flexDirection: "column", position: "relative",
           background:
             "linear-gradient(rgba(8, 18, 34, 0.88), rgba(8, 18, 34, 0.88)), url(https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778125799/gefw_z5bq6y.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-      {/* ── Hero ── */}
-      <div className="flex flex-col items-center justify-center px-5 pt-16 pb-10 md:pt-24 md:pb-14 lg:pt-32 lg:pb-16">
-        <p
-          style={{
-            fontFamily: "'DM Sans', sans-serif",
-            fontSize: 10,
-            letterSpacing: "0.30em",
-            textTransform: "uppercase",
-            color: "rgba(201,168,76,0.60)",
-            fontWeight: 600,
-            marginBottom: 18,
-            textAlign: "center",
-          }}
-        >
-         
-        </p>
+        {/* ── Hero ── */}
+        <div className="home-hero">
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 10,
+              letterSpacing: "0.30em",
+              textTransform: "uppercase",
+              color: "rgba(201,168,76,0.60)",
+              fontWeight: 600,
+              marginBottom: 18,
+              textAlign: "center",
+            }}
+          >
+           
+          </p>
 
-        <h1
-          style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
-            fontSize: "clamp(42px, 12vw, 148px)",
-            fontWeight: 700,
-            letterSpacing: "0.10em",
-            textTransform: "uppercase",
-            color: "#fff",
-            margin: 0,
-            lineHeight: 1,
-            textAlign: "center",
-          }}
-        >
-          APNA<span style={{ color: "#C9A84C" }}>BEC</span>
-        </h1>
+          <h1
+            style={{
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontSize: "clamp(42px, 12vw, 148px)",
+              fontWeight: 700,
+              letterSpacing: "0.10em",
+              textTransform: "uppercase",
+              color: "#fff",
+              margin: 0,
+              lineHeight: 1,
+              textAlign: "center",
+            }}
+          >
+            APNA<span style={{ color: "#C9A84C" }}>BEC</span>
+          </h1>
 
-        <p
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(14px, 2.2vw, 20px)",
-            color: "rgba(255,255,255,0.55)",
-            fontWeight: 300,
-            fontStyle: "italic",
-            marginTop: 12,
-            textAlign: "center",
-            letterSpacing: "0.04em",
-          }}
-        >
-          
-        </p>
-      </div>
+          <p
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(14px, 2.2vw, 20px)",
+              color: "rgba(255,255,255,0.55)",
+              fontWeight: 300,
+              fontStyle: "italic",
+              marginTop: 12,
+              textAlign: "center",
+              letterSpacing: "0.04em",
+            }}
+          >
+            
+          </p>
+        </div>
 
-      {/* ── Company Cards ── */}
-      <div className="flex-1 w-full max-w-[1520px] mx-auto px-5 pb-20">
-        <p
-          style={{
-            fontFamily: "'DM Sans', sans-serif",
-            fontSize: 10,
-            letterSpacing: "0.28em",
-            textTransform: "uppercase",
-            color: "rgba(201,168,76,0.55)",
-            fontWeight: 600,
-            marginBottom: 20,
-            textAlign: "center",
-          }}
-        >
-          Our Companies
-        </p>
+        {/* ── Company Cards ── */}
+        <div style={{
+          flex: 1, width: "100%", maxWidth: 1520,
+          margin: "0 auto",
+          padding: "0 clamp(16px, 4vw, 24px) clamp(40px, 8vw, 80px)",
+        }}>
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 10,
+              letterSpacing: "0.28em",
+              textTransform: "uppercase",
+              color: "rgba(201,168,76,0.55)",
+              fontWeight: 600,
+              marginBottom: 20,
+              textAlign: "center",
+            }}
+          >
+            Our Companies
+          </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
-          {COMPANIES.map((company) => {
-            const Icon = company.icon;
-            return (
-              <a
-                key={company.id}
-                href={company.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => handleClick(company.name, company.accentColor, company.href, e)}
-                className="group flex flex-col bg-[#111e33] border border-[rgba(201,168,76,0.22)] rounded-[3px] overflow-hidden no-underline transition-all duration-300 hover:border-[#C9A84C] hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)]"
-              >
-                {/* Image strip */}
-                <div className="relative h-[188px] bg-[#0a1525] flex-shrink-0 overflow-hidden">
-                  <Image
-                    src={company.image}
-                    alt={company.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                    style={{ objectFit: "contain", padding: "14px" }}
-                  />
-                  {/* Index badge */}
+          <div className="home-companies-grid">
+            {COMPANIES.map((company) => {
+              const Icon = company.icon;
+              return (
+                <a
+                  key={company.id}
+                  href={company.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => handleClick(company.name, company.accentColor, company.href, e)}
+                  className="group bg-[#111e33] border border-[rgba(201,168,76,0.22)] rounded-[3px] overflow-hidden no-underline transition-all duration-300 hover:border-[#C9A84C] hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(0,0,0,0.55)]"
+                  style={{
+                    display: "flex", flexDirection: "column",
+                  }}
+                >
+                  {/* Image strip */}
                   <div
+                    className="h-[188px] bg-[#0a1525] overflow-hidden"
                     style={{
-                      position: "absolute", top: 10, left: 10,
-                      fontFamily: "'Cormorant Garamond', serif",
-                      fontSize: 11, fontWeight: 600, letterSpacing: "0.12em",
-                      background: "rgba(10,20,38,0.90)",
-                      color: "#C9A84C",
-                      border: "1px solid rgba(201,168,76,0.45)",
-                      borderRadius: 2, padding: "3px 8px",
+                      position: "relative", flexShrink: 0,
                     }}
                   >
-                    {company.index}
-                  </div>
-                  {/* Sector pill */}
-                  <div
-                    style={{
-                      position: "absolute", top: 10, right: 10,
-                      fontSize: 9, fontWeight: 600, letterSpacing: "0.14em",
-                      textTransform: "uppercase",
-                      background: "rgba(10,20,38,0.90)",
-                      color: company.accentColor,
-                      border: `1px solid ${company.accentColor}55`,
-                      borderRadius: 2, padding: "3px 8px",
-                    }}
-                  >
-                    {company.sector}
-                  </div>
-                  {/* External link indicator */}
-                  <div
-                    style={{
-                      position: "absolute", bottom: 10, right: 10,
-                      fontSize: 8, fontWeight: 600, letterSpacing: "0.10em",
-                      textTransform: "uppercase",
-                      background: "rgba(201,168,76,0.12)",
-                      color: "#C9A84C",
-                      border: "1px solid rgba(201,168,76,0.25)",
-                      borderRadius: 2, padding: "2px 7px",
-                    }}
-                  >
-                    ↗ New Tab
-                  </div>
-                  {/* Bottom gradient */}
-                  <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#111e33] to-transparent" />
-                </div>
-
-                {/* Body */}
-                <div style={{ padding: "14px 16px 6px", display: "flex", flexDirection: "column", gap: 6, flex: 1 }}>
-                  <div style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
-                    <Icon size={14} style={{ color: company.accentColor, marginTop: 3, flexShrink: 0 }} />
-                    <h2
+                    <Image
+                      src={company.image}
+                      alt={company.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                      style={{ objectFit: "contain", padding: "14px" }}
+                    />
+                    {/* Index badge */}
+                    <div
                       style={{
-                        fontFamily: "'Cormorant Garamond', Georgia, serif",
-                        fontSize: 17,
-                        fontWeight: 600,
-                        color: "#fff",
-                        margin: 0,
-                        lineHeight: 1.25,
+                        position: "absolute", top: 10, left: 10,
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontSize: 11, fontWeight: 600, letterSpacing: "0.12em",
+                        background: "rgba(10,20,38,0.90)",
+                        color: "#C9A84C",
+                        border: "1px solid rgba(201,168,76,0.45)",
+                        borderRadius: 2, padding: "3px 8px",
                       }}
                     >
-                      {company.name}
-                    </h2>
-                  </div>
-                  <p
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: 11,
-                      color: company.accentColor,
-                      fontWeight: 600,
-                      margin: 0,
-                      letterSpacing: "0.05em",
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    {company.tagline}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: 12,
-                      color: "rgba(255,255,255,0.52)",
-                      lineHeight: 1.65,
-                      margin: 0,
-                      display: "-webkit-box",
-                      WebkitLineClamp: 3,
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                    }}
-                  >
-                    {company.description}
-                  </p>
-
-                  {/* Stats row */}
-                  {company.stats && company.stats.length > 0 && (
-                    <div style={{ display: "flex", gap: 0, marginTop: 6, borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 10 }}>
-                      {company.stats.map((s, si) => (
-                        <div key={si} style={{ flex: 1, textAlign: "center", borderRight: si < company.stats.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
-                          <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 18, fontWeight: 600, color: company.accentColor, lineHeight: 1 }}>{s.v}</div>
-                          <div style={{ fontSize: 9, color: "rgba(255,255,255,0.40)", textTransform: "uppercase", letterSpacing: "0.10em", marginTop: 3 }}>{s.l}</div>
-                        </div>
-                      ))}
+                      {company.index}
                     </div>
-                  )}
-
-                  {/* CTA row */}
-                  <div
-                    style={{
-                      display: "flex", alignItems: "center", gap: 6, marginTop: 8, marginBottom: 12,
-                      color: "rgba(201,168,76,0.75)",
-                      fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase",
-                    }}
-                  >
-                    <span>{company.visitLabel}</span>
-                    <ArrowRight size={12} />
-                    <span style={{ fontSize: 9, color: "rgba(201,168,76,0.55)" }}>↗</span>
+                    {/* Sector pill */}
+                    <div
+                      style={{
+                        position: "absolute", top: 10, right: 10,
+                        fontSize: 9, fontWeight: 600, letterSpacing: "0.14em",
+                        textTransform: "uppercase",
+                        background: "rgba(10,20,38,0.90)",
+                        color: company.accentColor,
+                        border: `1px solid ${company.accentColor}55`,
+                        borderRadius: 2, padding: "3px 8px",
+                      }}
+                    >
+                      {company.sector}
+                    </div>
+                    {/* External link indicator */}
+                    <div
+                      style={{
+                        position: "absolute", bottom: 10, right: 10,
+                        fontSize: 8, fontWeight: 600, letterSpacing: "0.10em",
+                        textTransform: "uppercase",
+                        background: "rgba(201,168,76,0.12)",
+                        color: "#C9A84C",
+                        border: "1px solid rgba(201,168,76,0.25)",
+                        borderRadius: 2, padding: "2px 7px",
+                      }}
+                    >
+                      ↗ New Tab
+                    </div>
+                    {/* Bottom gradient */}
+                    <div
+                      className="h-12 bg-gradient-to-t from-[#111e33] to-transparent"
+                      style={{
+                        position: "absolute", left: 0, right: 0, bottom: 0,
+                      }}
+                    />
                   </div>
-                </div>
 
-                {/* Bottom accent bar */}
-                <div
-                  className="h-[2.5px] w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: `linear-gradient(90deg, ${company.accentColor}88, ${company.accentColor}, #C9A84C)` }}
-                />
-              </a>
-            );
-          })}
+                  {/* Body */}
+                  <div style={{ padding: "14px 16px 6px", display: "flex", flexDirection: "column", gap: 6, flex: 1 }}>
+                    <div style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
+                      <Icon size={14} style={{ color: company.accentColor, marginTop: 3, flexShrink: 0 }} />
+                      <h2
+                        style={{
+                          fontFamily: "'Cormorant Garamond', Georgia, serif",
+                          fontSize: 17,
+                          fontWeight: 600,
+                          color: "#fff",
+                          margin: 0,
+                          lineHeight: 1.25,
+                        }}
+                      >
+                        {company.name}
+                      </h2>
+                    </div>
+                    <p
+                      style={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        fontSize: 11,
+                        color: company.accentColor,
+                        fontWeight: 600,
+                        margin: 0,
+                        letterSpacing: "0.05em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {company.tagline}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: 12,
+                        color: "rgba(255,255,255,0.52)",
+                        lineHeight: 1.65,
+                        margin: 0,
+                        display: "-webkit-box",
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {company.description}
+                    </p>
+
+                    {/* Stats row */}
+                    {company.stats && company.stats.length > 0 && (
+                      <div
+                        style={{
+                          display: "flex", flexWrap: "wrap", gap: 8, marginTop: 6,
+                          borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 10,
+                        }}
+                      >
+                        {company.stats.map((s, si) => (
+                          <div key={si} style={{ flex: "1 1 80px", textAlign: "center", borderRight: si < company.stats.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
+                            <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 18, fontWeight: 600, color: company.accentColor, lineHeight: 1 }}>{s.v}</div>
+                            <div style={{ fontSize: 9, color: "rgba(255,255,255,0.40)", textTransform: "uppercase", letterSpacing: "0.10em", marginTop: 3 }}>{s.l}</div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* CTA row */}
+                    <div
+                      style={{
+                        display: "flex", alignItems: "center", gap: 6, marginTop: 8, marginBottom: 12,
+                        color: "rgba(201,168,76,0.75)",
+                        fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase",
+                      }}
+                    >
+                      <span>{company.visitLabel}</span>
+                      <ArrowRight size={12} />
+                      <span style={{ fontSize: 9, color: "rgba(201,168,76,0.55)" }}>↗</span>
+                    </div>
+                  </div>
+
+                  {/* Bottom accent bar */}
+                  <div
+                    className="h-[2.5px] w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{ background: `linear-gradient(90deg, ${company.accentColor}88, ${company.accentColor}, #C9A84C)` }}
+                  />
+                </a>
+              );
+            })}
+          </div>
         </div>
-      </div>
 
-      {/* ── Footer bar ── */}
-      <div
-        className="border-t border-[rgba(201,168,76,0.10)] py-5 px-6 flex items-center justify-center gap-4"
-        style={{ background: "rgba(5,10,20,0.95)" }}
-      >
-        <span style={{ width: 20, height: 1, background: "rgba(201,168,76,0.30)", display: "block" }} />
-        <p
-          style={{
-            fontSize: 10, color: "rgba(255,255,255,0.38)",
-            letterSpacing: "0.18em", textTransform: "uppercase", margin: 0,
-          }}
-        >
-          &copy; {new Date().getFullYear()} APNABEC — All Rights Reserved
-        </p>
-        <span style={{ width: 20, height: 1, background: "rgba(201,168,76,0.30)", display: "block" }} />
-      </div>
-    </main>
+        {/* ── Footer bar ── */}
+        <div className="home-footer-bar border-t border-[rgba(201,168,76,0.10)]" style={{ background: "rgba(5,10,20,0.95)" }}>
+          <span style={{ width: 20, height: 1, background: "rgba(201,168,76,0.30)", display: "block", flexShrink: 0 }} />
+          <p
+            style={{
+              fontSize: 10, color: "rgba(255,255,255,0.38)",
+              letterSpacing: "0.18em", textTransform: "uppercase", margin: 0, textAlign: "center",
+            }}
+          >
+            &copy; {new Date().getFullYear()} APNABEC — All Rights Reserved
+          </p>
+          <span style={{ width: 20, height: 1, background: "rgba(201,168,76,0.30)", display: "block", flexShrink: 0 }} />
+        </div>
+      </main>
     </>
   );
 }

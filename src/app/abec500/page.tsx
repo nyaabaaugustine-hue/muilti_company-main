@@ -18,6 +18,12 @@ export const metadata = {
 export default function Abec500Page() {
   return (
     <main>
+      <style>{`
+        img, video, iframe { max-width: 100%; height: auto; }
+        @media (max-width: 640px) {
+          main > * { overflow-x: hidden; }
+        }
+      `}</style>
       <AbecNav />
       <AbecHero />
       <AbecAbout />

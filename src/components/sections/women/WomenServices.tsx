@@ -15,38 +15,44 @@ const PILLARS = [
 export function WomenServices() {
   const [hov, setHov] = useState<number | null>(null);
   return (
-    <section id="services" style={{ background: "#0A0A0A", padding: "100px 64px" }}>
+    <section id="services" className="wan-services" style={{ background: "#0A0A0A", padding: "clamp(40px, 8vw, 100px) clamp(16px, 4vw, 64px)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: 10, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: GOLD, marginBottom: 16 }}>
           <span style={{ width: 28, height: 2, background: GOLD, display: "block", borderRadius: 1 }} />
           Our Programmes
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 56 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 56, flexWrap: "wrap", gap: 24 }}>
           <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(32px,3.5vw,50px)", fontWeight: 700, color: "#fff", lineHeight: 1.1 }}>
             Pillars of <em style={{ color: GOLD, fontStyle: "italic", fontWeight: 400 }}>Change</em>
           </h2>
-          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", maxWidth: 300, lineHeight: 1.75, fontWeight: 300 }}>
+          <p style={{ fontSize: "clamp(13px, 2.5vw, 16px)", color: "rgba(255,255,255,0.55)", maxWidth: 300, lineHeight: 1.75, fontWeight: 300 }}>
             Holistic programmes transforming lives across Africa.
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(320px,1fr))", gap: 3 }}>
+        <div className="wan-services-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", gap: 3 }}>
           {PILLARS.map((s, i) => (
             <div key={i} onMouseEnter={() => setHov(i)} onMouseLeave={() => setHov(null)}
+              className="wan-services-card"
               style={{ position: "relative", height: 270, overflow: "hidden", cursor: "pointer", transition: "transform 0.4s", transform: hov === i ? "scale(1.03)" : "scale(1)" }}>
-              <img src={s.img} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src={s.img} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%" }} />
               <div style={{ position: "absolute", inset: 0, background: hov === i ? "rgba(0,0,0,0.82)" : "rgba(0,0,0,0.58)", transition: "background 0.4s" }} />
               {/* Gold top accent on hover */}
               <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: GOLD, opacity: hov === i ? 1 : 0, transition: "opacity 0.3s" }} />
               <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 24px" }}>
                 <div style={{ width: 4, height: 26, background: GOLD, marginBottom: 12, borderRadius: 2 }} />
-                <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 20, fontWeight: 700, color: "#fff", marginBottom: 8 }}>{s.title}</h3>
-                <p style={{ fontSize: 12, color: "rgba(255,255,255,0.80)", lineHeight: 1.70, fontWeight: 300, display: hov === i ? "block" : "none" }}>{s.desc}</p>
+                <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(18px, 3vw, 20px)", fontWeight: 700, color: "#fff", marginBottom: 8 }}>{s.title}</h3>
+                <p style={{ fontSize: "clamp(12px, 2.5vw, 14px)", color: "rgba(255,255,255,0.80)", lineHeight: 1.70, fontWeight: 300, display: hov === i ? "block" : "none" }}>{s.desc}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
+      <style>{`
+@media(max-width:767px){
+  .wan-services-card{height:clamp(200px,50vw,270px)!important}
+}
+`}</style>
     </section>
   );
 }

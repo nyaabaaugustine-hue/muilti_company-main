@@ -28,18 +28,20 @@ export function AfcftaContact() {
   };
 
   return (
-    <section id="contact" style={{ background: "#1E293B", padding: "100px 64px" }}>
+    <section id="contact" style={{ background: "#1E293B", padding: "clamp(40px, 8vw, 100px) clamp(16px, 4vw, 64px)" }}>
       <style>{`
-        .afcfta-contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start;}
+        .afcfta-contact-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:start;}
         .afcfta-offices-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-        @media(max-width:768px){
-          #contact{padding:60px 20px!important;}
-          .afcfta-contact-grid{grid-template-columns:1fr!important;gap:32px!important;}
-          .afcfta-contact-header{flex-direction:column!important;align-items:flex-start!important;gap:12px!important;}
+        @media(min-width:768px){
+          .afcfta-contact-grid{grid-template-columns:1fr 1.4fr;gap:48px;}
         }
-        @media(max-width:900px) and (min-width:769px){
+        @media(max-width:600px){
+          #contact{padding:60px 20px!important;}
+          .afcfta-contact-header{flex-direction:column!important;align-items:flex-start!important;gap:12px!important;}
+          .afcfta-offices-grid{grid-template-columns:1fr!important;}
+        }
+        @media(max-width:900px) and (min-width:601px){
           #contact{padding:80px 32px!important;}
-          .afcfta-contact-grid{grid-template-columns:1fr!important;}
         }
       `}</style>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
@@ -48,15 +50,14 @@ export function AfcftaContact() {
           Contact Us
         </div>
         <div className="afcfta-contact-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 56, flexWrap: "wrap", gap: 16 }}>
-          <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(28px,3.5vw,48px)", fontWeight: 600, color: "#fff", lineHeight: 1.15, margin: 0 }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(28px,5vw,48px)", fontWeight: 600, color: "#fff", lineHeight: 1.15, margin: 0 }}>
             Get <em style={{ color: A, fontStyle: "italic", fontWeight: 400 }}>In Touch</em>
           </h2>
         </div>
 
         <div className="afcfta-contact-grid">
-          {/* Left */}
           <div>
-            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.85, marginBottom: 32 }}>
+            <p style={{ fontSize: "clamp(13px,2.5vw,16px)", color: "rgba(255,255,255,0.65)", lineHeight: 1.85, marginBottom: 32 }}>
               Whether you're a government official, trade practitioner, researcher, CSO or business leader — we want to hear from you. Let's advance Africa's free trade agenda together.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 18, marginBottom: 36 }}>
@@ -67,7 +68,7 @@ export function AfcftaContact() {
                   </div>
                   <div>
                     <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: A, marginBottom: 2 }}>{item.label}</div>
-                    <div style={{ fontSize: 13, color: "rgba(255,255,255,0.80)", fontWeight: 500 }}>{item.value}</div>
+                    <div style={{ fontSize: "clamp(12px,2.2vw,14px)", color: "rgba(255,255,255,0.80)", fontWeight: 500 }}>{item.value}</div>
                   </div>
                 </div>
               ))}
@@ -81,7 +82,7 @@ export function AfcftaContact() {
                     <span style={{ fontSize: 18 }}>{o.flag}</span>
                     <div>
                       <div style={{ fontSize: 10, color: A, fontWeight: 700, letterSpacing: "0.06em" }}>{o.region}</div>
-                      <div style={{ fontSize: 12, color: "rgba(255,255,255,0.70)" }}>{o.city}</div>
+                      <div style={{ fontSize: "clamp(11px,2vw,13px)", color: "rgba(255,255,255,0.70)" }}>{o.city}</div>
                     </div>
                   </div>
                 ))}
@@ -89,20 +90,19 @@ export function AfcftaContact() {
             </div>
           </div>
 
-          {/* Form */}
-          <div style={{ background: "rgba(15,23,42,0.80)", border: "1px solid rgba(245,158,11,0.15)", borderRadius: 4, padding: 36 }}>
+          <div style={{ background: "rgba(15,23,42,0.80)", border: "1px solid rgba(245,158,11,0.15)", borderRadius: 4, padding: "clamp(24px,4vw,36px)" }}>
             {sent ? (
               <div style={{ textAlign: "center", padding: "40px 0" }}>
                 <div style={{ fontSize: 48, marginBottom: 16 }}>📬</div>
-                <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 28, color: "#fff", marginBottom: 10 }}>Message Received!</h3>
-                <p style={{ fontSize: 14, color: "rgba(255,255,255,0.65)" }}>Our team will respond within 2 business days.</p>
+                <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(22px,4vw,28px)", color: "#fff", marginBottom: 10 }}>Message Received!</h3>
+                <p style={{ fontSize: "clamp(13px,2.5vw,16px)", color: "rgba(255,255,255,0.65)" }}>Our team will respond within 2 business days.</p>
                 <button onClick={() => setSent(false)} style={{ marginTop: 20, background: A, color: "#0C0A04", border: "none", padding: "10px 24px", borderRadius: 2, cursor: "pointer", fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
                   Send Another
                 </button>
               </div>
             ) : (
               <form onSubmit={handle} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 26, color: "#fff", marginBottom: 4 }}>Send a Message</h3>
+                <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(22px,4vw,26px)", color: "#fff", marginBottom: 4 }}>Send a Message</h3>
                 {[
                   { key: "name", label: "Full Name", placeholder: "Your name", type: "text" },
                   { key: "email", label: "Email Address", placeholder: "your@email.com", type: "email" },
@@ -116,7 +116,7 @@ export function AfcftaContact() {
                       value={form[key as keyof typeof form]}
                       onChange={e => setForm(p => ({ ...p, [key]: e.target.value }))}
                       required
-                      style={{ width: "100%", padding: "12px 14px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(245,158,11,0.20)", borderRadius: 3, fontSize: 14, color: "#fff", outline: "none", fontFamily: "inherit", transition: "border-color 0.2s", boxSizing: "border-box" }}
+                      style={{ width: "100%", padding: "12px 14px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(245,158,11,0.20)", borderRadius: 3, fontSize: "clamp(12px,2.2vw,14px)", color: "#fff", outline: "none", fontFamily: "inherit", transition: "border-color 0.2s", boxSizing: "border-box" }}
                       onFocus={e => (e.target.style.borderColor = A)}
                       onBlur={e => (e.target.style.borderColor = "rgba(245,158,11,0.20)")}
                     />
@@ -130,14 +130,14 @@ export function AfcftaContact() {
                     onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
                     required
                     rows={4}
-                    style={{ width: "100%", padding: "12px 14px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(245,158,11,0.20)", borderRadius: 3, fontSize: 14, color: "#fff", outline: "none", fontFamily: "inherit", resize: "vertical", transition: "border-color 0.2s", boxSizing: "border-box" }}
+                    style={{ width: "100%", padding: "12px 14px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(245,158,11,0.20)", borderRadius: 3, fontSize: "clamp(12px,2.2vw,14px)", color: "#fff", outline: "none", fontFamily: "inherit", resize: "vertical", transition: "border-color 0.2s", boxSizing: "border-box" }}
                     onFocus={e => (e.target.style.borderColor = A)}
                     onBlur={e => (e.target.style.borderColor = "rgba(245,158,11,0.20)")}
                   />
                 </div>
                 <button
                   type="submit"
-                  style={{ background: `linear-gradient(135deg,#B45309,${A})`, color: "#0C0A04", border: "none", padding: "14px 28px", borderRadius: 2, cursor: "pointer", fontSize: 13, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", alignSelf: "flex-start" }}
+                  style={{ background: `linear-gradient(135deg,#B45309,${A})`, color: "#0C0A04", border: "none", padding: "14px 28px", borderRadius: 2, cursor: "pointer", fontSize: "clamp(12px,2.2vw,14px)", fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", alignSelf: "flex-start" }}
                 >
                   Send Message →
                 </button>

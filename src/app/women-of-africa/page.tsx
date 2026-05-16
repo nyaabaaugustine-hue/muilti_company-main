@@ -27,6 +27,12 @@ export const metadata = {
 export default function WomenOfAfricaPage() {
   return (
     <main>
+      <style>{`
+        img, video, iframe { max-width: 100%; height: auto; }
+        @media (max-width: 640px) {
+          main > * { overflow-x: hidden; }
+        }
+      `}</style>
       <CompanyNav
         companyName="Women of Africa Network"
         accentColor={GOLD}

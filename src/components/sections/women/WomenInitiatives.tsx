@@ -11,7 +11,7 @@ const INITIATIVES = [
 
 export function WomenInitiatives() {
   return (
-    <section id="projects" style={{ background: "#111", padding: "100px 64px" }}>
+    <section id="projects" className="wan-initiatives" style={{ background: "#111", padding: "clamp(40px, 8vw, 100px) clamp(16px, 4vw, 64px)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: 10, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: GOLD, marginBottom: 16 }}>
           <span style={{ width: 28, height: 2, background: GOLD, display: "block", borderRadius: 1 }} />
@@ -21,17 +21,18 @@ export function WomenInitiatives() {
           <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(32px,3.5vw,50px)", fontWeight: 700, color: "#fff", lineHeight: 1.1, margin: 0 }}>
             Key <em style={{ color: GOLD, fontStyle: "italic", fontWeight: 400 }}>Initiatives</em>
           </h2>
-          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.50)", maxWidth: 300, lineHeight: 1.75, margin: 0 }}>Milestones in our mission to empower women across Africa.</p>
+          <p style={{ fontSize: "clamp(13px, 2.5vw, 16px)", color: "rgba(255,255,255,0.50)", maxWidth: 300, lineHeight: 1.75, margin: 0 }}>Milestones in our mission to empower women across Africa.</p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(480px,1fr))", gap: 16 }}>
+        <div className="wan-initiatives-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(480px,1fr))", gap: 16 }}>
           {INITIATIVES.map((p, i) => (
             <div key={i}
+              className="wan-initiatives-card"
               onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = GOLD; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-3px)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = `${GOLD}22`; (e.currentTarget as HTMLDivElement).style.transform = "none"; }}
               style={{ background: "#1A1A1A", border: `1px solid ${GOLD}22`, borderRadius: 4, overflow: "hidden", display: "flex", transition: "all 0.35s cubic-bezier(0.22,1,0.36,1)" }}>
-              <div style={{ width: 180, flexShrink: 0, overflow: "hidden", position: "relative" }}>
-                <img src={p.img} alt={p.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <div className="wan-initiatives-img" style={{ width: 180, flexShrink: 0, overflow: "hidden", position: "relative" }}>
+                <img src={p.img} alt={p.title} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg,transparent,rgba(26,26,26,0.2))" }} />
               </div>
               <div style={{ padding: "24px 24px 24px 20px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
@@ -40,14 +41,21 @@ export function WomenInitiatives() {
                     <span style={{ background: `${GOLD}20`, color: GOLD, fontSize: 10, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", padding: "3px 10px", borderRadius: 2 }}>{p.tag}</span>
                     <span style={{ fontSize: 11, color: "rgba(255,255,255,0.38)", letterSpacing: "0.05em" }}>{p.year}</span>
                   </div>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 20, fontWeight: 700, color: "#fff", marginBottom: 10, lineHeight: 1.25 }}>{p.title}</h3>
-                  <p style={{ fontSize: 12, color: "rgba(255,255,255,0.65)", lineHeight: 1.75, fontWeight: 300, margin: 0 }}>{p.desc}</p>
+                  <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(18px, 3vw, 20px)", fontWeight: 700, color: "#fff", marginBottom: 10, lineHeight: 1.25 }}>{p.title}</h3>
+                  <p style={{ fontSize: "clamp(13px, 2.5vw, 16px)", color: "rgba(255,255,255,0.65)", lineHeight: 1.75, fontWeight: 300, margin: 0 }}>{p.desc}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+      <style>{`
+@media(max-width:767px){
+  .wan-initiatives-grid{grid-template-columns:1fr!important}
+  .wan-initiatives-card{flex-direction:column!important}
+  .wan-initiatives-img{width:100%!important;height:clamp(160px,40vw,200px)!important}
+}
+`}</style>
     </section>
   );
 }

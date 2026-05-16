@@ -8,20 +8,22 @@ const PROJECTS = [
 export function AfcftaProjects() {
   const A="#F59E0B";
   return (
-    <section id="projects" style={{background:"#0F172A",padding:"100px 64px"}}>
+    <section id="projects" style={{background:"#0F172A",padding:"clamp(40px, 8vw, 100px) clamp(16px, 4vw, 64px)"}}>
       <style>{`
         .afcfta-proj-card{display:flex;overflow:hidden;}
         .afcfta-proj-img{width:180px;flex-shrink:0;overflow:hidden;}
+        .afcfta-proj-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+        @media(min-width:768px){
+          .afcfta-proj-grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));}
+        }
         @media(max-width:600px){
           #projects{padding:60px 20px!important;}
-          .afcfta-proj-grid{grid-template-columns:1fr!important;}
           .afcfta-proj-card{flex-direction:column!important;}
           .afcfta-proj-img{width:100%!important;height:180px!important;}
           .afcfta-proj-header{flex-direction:column!important;align-items:flex-start!important;gap:12px!important;}
         }
         @media(max-width:900px) and (min-width:601px){
           #projects{padding:80px 32px!important;}
-          .afcfta-proj-grid{grid-template-columns:1fr!important;}
         }
       `}</style>
       <div style={{maxWidth:1100,margin:"0 auto"}}>
@@ -29,12 +31,12 @@ export function AfcftaProjects() {
           <span style={{width:28,height:1,background:A,display:"block"}}/>Impact
         </div>
         <div className="afcfta-proj-header" style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:56,flexWrap:"wrap",gap:16}}>
-          <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(28px,3.5vw,48px)",fontWeight:600,color:"#fff",lineHeight:1.15,margin:0}}>
+          <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(28px,5vw,48px)",fontWeight:600,color:"#fff",lineHeight:1.15,margin:0}}>
             Key <em style={{color:A,fontStyle:"italic",fontWeight:400}}>Initiatives</em>
           </h2>
-          <p style={{fontSize:13,color:"rgba(255,255,255,0.60)",maxWidth:300,lineHeight:1.75,fontWeight:300,margin:0}}>Milestones in our mission to advance continental free trade.</p>
+          <p style={{fontSize:"clamp(13px,2.5vw,16px)",color:"rgba(255,255,255,0.60)",maxWidth:300,lineHeight:1.75,fontWeight:300,margin:0}}>Milestones in our mission to advance continental free trade.</p>
         </div>
-        <div className="afcfta-proj-grid" style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(460px,1fr))",gap:16}}>
+        <div className="afcfta-proj-grid">
           {PROJECTS.map((p,i)=>(
             <div key={i}
               onMouseEnter={e=>{(e.currentTarget as HTMLDivElement).style.borderColor="rgba(245,158,11,0.45)"}}
@@ -42,7 +44,7 @@ export function AfcftaProjects() {
               className="afcfta-proj-card"
               style={{background:"rgba(30,41,59,0.80)",border:"1px solid rgba(245,158,11,0.15)",borderRadius:4,transition:"border-color 0.4s"}}>
               <div className="afcfta-proj-img">
-                <img src={p.img} alt={p.title} style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+                <img src={p.img} alt={p.title} style={{width:"100%",height:"100%",objectFit:"cover",maxWidth:"100%"}}/>
               </div>
               <div style={{padding:"24px 24px 24px 20px",display:"flex",flexDirection:"column",justifyContent:"space-between"}}>
                 <div>
@@ -50,8 +52,8 @@ export function AfcftaProjects() {
                     <span style={{background:`rgba(245,158,11,0.15)`,color:A,fontSize:10,fontWeight:700,letterSpacing:"0.08em",textTransform:"uppercase",padding:"3px 10px",borderRadius:2}}>{p.tag}</span>
                     <span style={{fontSize:11,color:"rgba(255,255,255,0.45)"}}>{p.year}</span>
                   </div>
-                  <h3 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:20,fontWeight:600,color:"#fff",marginBottom:10,lineHeight:1.25}}>{p.title}</h3>
-                  <p style={{fontSize:12,color:"rgba(255,255,255,0.70)",lineHeight:1.75,fontWeight:300}}>{p.desc}</p>
+                  <h3 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(18px,3vw,22px)",fontWeight:600,color:"#fff",marginBottom:10,lineHeight:1.25}}>{p.title}</h3>
+                  <p style={{fontSize:"clamp(12px,2.2vw,14px)",color:"rgba(255,255,255,0.70)",lineHeight:1.75,fontWeight:300}}>{p.desc}</p>
                 </div>
               </div>
             </div>

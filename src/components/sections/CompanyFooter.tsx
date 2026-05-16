@@ -54,16 +54,30 @@ export function CompanyFooter({
   const phone = phoneProp ?? defaults.phone;
 
   return (
+    <>
+    <style>{`
+      .footer-cta-inner { flex-direction: column; text-align: center; }
+      @media (min-width: 768px) {
+        .footer-cta-inner { flex-direction: row; text-align: left; }
+      }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      @media (min-width: 768px) {
+        .footer-bottom { flex-direction: row; text-align: left; }
+      }
+      @media (max-width: 480px) {
+        .footer-bottom > div:last-child { flex-direction: column; gap: 8px; }
+      }
+    `}</style>
     <footer id="contact" style={{ background: "#0A1422", borderTop: `1px solid ${color}30` }}>
       {/* CTA band */}
       <div
         style={{
           background: "linear-gradient(135deg,#102032,#182E52)",
           borderBottom: `1px solid ${color}25`,
-          padding: "72px 64px",
+          padding: "clamp(40px, 6vw, 72px) clamp(24px, 4vw, 64px)",
         }}
       >
-        <div
+        <div className="footer-cta-inner"
           style={{
             maxWidth: 1100, margin: "0 auto",
             display: "flex", flexWrap: "wrap",
@@ -114,9 +128,9 @@ export function CompanyFooter({
       </div>
 
       {/* Bottom bar */}
-      <div
+      <div className="footer-bottom"
         style={{
-          padding: "28px 64px",
+          padding: "clamp(20px, 4vw, 28px) clamp(24px, 4vw, 64px)",
           display: "flex", justifyContent: "space-between",
           alignItems: "center", flexWrap: "wrap", gap: 12,
         }}
@@ -159,5 +173,6 @@ export function CompanyFooter({
         </div>
       </div>
     </footer>
+    </>
   );
 }

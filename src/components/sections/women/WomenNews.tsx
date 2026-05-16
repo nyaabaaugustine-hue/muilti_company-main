@@ -31,7 +31,7 @@ const NEWS = [
 
 export function WomenNews() {
   return (
-    <section style={{ background: "#fdf8fb", padding: "100px 64px" }}>
+    <section className="wan-news" style={{ background: "#fdf8fb", padding: "clamp(40px, 8vw, 100px) clamp(16px, 4vw, 64px)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: 10, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: A, marginBottom: 16 }}>
           <span style={{ width: 28, height: 1, background: A, display: "block" }} />
@@ -41,26 +41,32 @@ export function WomenNews() {
           <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(28px,3vw,40px)", fontWeight: 600, color: BG, lineHeight: 1.15, margin: 0 }}>
             Updates & <em style={{ color: A, fontStyle: "italic", fontWeight: 400 }}>Events</em>
           </h2>
-          <a href="https://womenofafricanetwork.org" target="_blank" rel="noopener noreferrer" style={{ color: A, fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
+          <a href="https://womenofafricanetwork.org" target="_blank" rel="noopener noreferrer" style={{ color: A, fontSize: "clamp(10px, 2vw, 11px)", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
             View Updates →
           </a>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(240px,1fr))", gap: 20 }}>
+        <div className="wan-news-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(240px,1fr))", gap: 20 }}>
           {NEWS.map((item, i) => (
             <div key={i} style={{ background: "#fff", borderRadius: 4, overflow: "hidden", border: `1px solid rgba(236,72,153,0.1)`, transition: "all 0.3s" }} className="news-card">
               <div style={{ height: 160, overflow: "hidden" }}>
-                <img src={item.img} alt={item.title} style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} className="news-img" />
+                <img src={item.img} alt={item.title} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%", transition: "transform 0.4s" }} className="news-img" />
               </div>
               <div style={{ padding: "16px 18px 20px" }}>
-                <div style={{ fontSize: 9, color: A, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 6 }}>{item.category}</div>
-                <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 17, fontWeight: 600, color: BG, lineHeight: 1.25, margin: 0 }}>{item.title}</h3>
-                <div style={{ fontSize: 10, color: "#999", marginTop: 8 }}>{item.date}</div>
+                <div style={{ fontSize: "clamp(9px, 1.5vw, 10px)", color: A, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 6 }}>{item.category}</div>
+                <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(15px, 2.5vw, 17px)", fontWeight: 600, color: BG, lineHeight: 1.25, margin: 0 }}>{item.title}</h3>
+                <div style={{ fontSize: "clamp(10px, 2vw, 12px)", color: "#999", marginTop: 8 }}>{item.date}</div>
               </div>
             </div>
           ))}
         </div>
       </div>
-      <style>{`.news-card:hover .news-img { transform: scale(1.06); } .news-card:hover { box-shadow: 0 8px 32px rgba(236,72,153,0.1); }`}</style>
+      <style>{`
+.news-card:hover .news-img { transform: scale(1.06); }
+.news-card:hover { box-shadow: 0 8px 32px rgba(236,72,153,0.1); }
+@media(max-width:767px){
+  .wan-news-grid{grid-template-columns:1fr!important}
+}
+`}</style>
     </section>
   );
 }

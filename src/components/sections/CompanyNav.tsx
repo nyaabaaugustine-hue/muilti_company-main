@@ -45,7 +45,7 @@ export function CompanyNav({
             : "1px solid transparent",
           transition: "all 0.4s ease",
           display: "flex", alignItems: "center",
-          padding: "0 48px",
+          padding: "0 clamp(16px, 4vw, 48px)",
           justifyContent: "space-between",
         }}
       >
@@ -67,11 +67,11 @@ export function CompanyNav({
           <div style={{ width: 1, height: 20, background: "rgba(255,255,255,0.15)" }} />
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             {logo ? (
-              <img src={logo} alt={companyName} style={{ height: 36, width: 36, objectFit: "contain", borderRadius: "50%", background: "#fff", padding: 2 }} />
+              <img src={logo} alt={companyName} style={{ height: "clamp(28px, 4vw, 36px)", width: "clamp(28px, 4vw, 36px)", objectFit: "contain", borderRadius: "50%", background: "#fff", padding: 2 }} />
             ) : (
               <div style={{ width: 8, height: 8, borderRadius: "50%", background: color, boxShadow: `0 0 10px ${color}` }} />
             )}
-            <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 17, fontWeight: 600, color: "#fff", letterSpacing: "0.03em", whiteSpace: "nowrap" }}>
+            <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(14px, 2vw, 17px)", fontWeight: 600, color: "#fff", letterSpacing: "0.03em", whiteSpace: "nowrap" }}>
               {companyName}
             </span>
           </div>
