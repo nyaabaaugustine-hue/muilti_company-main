@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import SafeImage from "../SafeImage";
 
 const A = "#F59E0B";
 
@@ -85,7 +86,7 @@ export function AfcftaActivities() {
               }}
             >
               <div className="afcfta-act-img">
-                <img src={act.img} alt={act.title} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%", transition: "transform 0.5s", transform: hov === i ? "scale(1.06)" : "scale(1)" }} />
+                <SafeImage src={act.img} alt={act.title} style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%", transition: "transform 0.5s", transform: hov === i ? "scale(1.06)" : "scale(1)" }} />
               </div>
               <div style={{ padding: "24px 24px 24px 20px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div>

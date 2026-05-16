@@ -1,4 +1,5 @@
 "use client";
+import SafeImage from "../SafeImage";
 const TEAM = [
   { name:"Joe Tackie", role:"Board Chairman", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778751233/Joe-Tackie-270x315_hztdld.jpg" },
   { name:"Prudence Sebahizi", role:"Head of Int. Advisory Board", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716830/prudence-270x315_zoepyu.jpg" },
@@ -39,7 +40,7 @@ export function AfcftaTeam() {
               onMouseLeave={e=>{(e.currentTarget as HTMLDivElement).style.borderColor="rgba(245,158,11,0.18)";(e.currentTarget as HTMLDivElement).style.transform="translateY(0)"}}
               style={{background:"rgba(15,23,42,0.90)",border:"1px solid rgba(245,158,11,0.18)",borderRadius:4,overflow:"hidden",transition:"all 0.4s cubic-bezier(0.22,1,0.36,1)"}}>
               <div style={{height:"clamp(180px,30vw,220px)",overflow:"hidden"}}>
-                <img src={m.img} alt={m.name} style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"top",maxWidth:"100%"}}/>
+                <SafeImage src={m.img} alt={m.name} style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"top",maxWidth:"100%"}}/>
               </div>
               <div style={{padding:"16px 18px 20px"}}>
                 <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(15px,2.5vw,17px)",fontWeight:600,color:"#fff",marginBottom:4,lineHeight:1.2}}>{m.name}</div>

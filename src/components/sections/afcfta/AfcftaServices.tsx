@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import SafeImage from "../SafeImage";
 const SERVICES = [
   { title:"Media Sensitization & Advocacy", desc:"Extensive media and public advocacy through print, electronic and social media platforms to promote AfCFTA awareness across Africa.", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716829/fd2ce89b-3a0e-473d-b42f-d13f1c4eef29-300x212_x4qqnw.jpg" },
   { title:"Institutional Partnerships", desc:"Deep networking with CSOs, private sector organisations, government bodies, and international institutions to strengthen AfCFTA implementation.", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716831/afcfta-institutional-partnership-384x256_negvck.jpg" },
@@ -42,7 +43,7 @@ export function AfcftaServices() {
           {SERVICES.map((s,i)=>(
             <div key={i} onMouseEnter={()=>setHov(i)} onMouseLeave={()=>setHov(null)}
               style={{position:"relative",height:260,overflow:"hidden",cursor:"pointer",transition:"transform 0.4s",transform:hov===i?"scale(1.02)":"scale(1)"}}>
-              <img src={s.img} alt={s.title} style={{width:"100%",height:"100%",objectFit:"cover",maxWidth:"100%"}}/>
+              <SafeImage src={s.img} alt={s.title} style={{width:"100%",height:"100%",objectFit:"cover",maxWidth:"100%"}} wrapperStyle={{position:"absolute",inset:0}}/>
               <div style={{position:"absolute",inset:0,background:hov===i?"rgba(15,23,42,0.82)":"rgba(15,23,42,0.65)",transition:"background 0.4s"}}/>
               <div style={{position:"absolute",bottom:0,left:0,right:0,padding:"20px 24px"}}>
                 <div style={{width:4,height:24,background:A,marginBottom:10}}/>

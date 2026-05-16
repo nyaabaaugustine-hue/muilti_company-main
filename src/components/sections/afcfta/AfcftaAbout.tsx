@@ -33,10 +33,11 @@ export function AfcftaAbout() {
         <div className="afcfta-about-grid">
           <div style={{ position: "relative" }}>
             <div className="afcfta-about-imgbox">
-              <img
+              <SafeImage
                 src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716832/Landmark-MOU-signing-between-AfCFTA-Secretariat-and-APN-Group3-1_ufvv5e.jpg"
                 alt="AfCFTA MOU Signing"
                 style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%" }}
+                wrapperStyle={{ position: "absolute", inset: 0 }}
               />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg,rgba(15,23,42,0.30) 0%,transparent 60%)" }} />
             </div>
@@ -45,10 +46,11 @@ export function AfcftaAbout() {
               <div style={{ fontSize: 10, color: "rgba(255,255,255,0.60)", textTransform: "uppercase", letterSpacing: "0.15em", marginTop: 6 }}>Established</div>
             </div>
             <div className="afcfta-about-secondimg">
-              <img
+              <SafeImage
                 src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716827/afctfa-45_dhoyzp.jpg"
                 alt="AfCFTA Activity"
                 style={{ width: "100%", height: "100%", objectFit: "cover", maxWidth: "100%" }}
+                wrapperStyle={{ position: "absolute", inset: 0 }}
               />
             </div>
           </div>
@@ -83,7 +85,7 @@ export function AfcftaAbout() {
             </div>
 
             <div style={{ marginTop: 36, paddingTop: 28, borderTop: "1px solid rgba(245,158,11,0.15)", display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
-              <img
+              <SafeImage
                 src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778750984/logo-afcfta-policy-network_oyf0rb.png"
                 alt="AfCFTA Policy Network"
                 style={{ height: 48, objectFit: "contain", maxWidth: "100%" }}

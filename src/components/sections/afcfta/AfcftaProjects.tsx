@@ -1,4 +1,5 @@
 "use client";
+import SafeImage from "../SafeImage";
 const PROJECTS = [
   { title:"MOU with AfCFTA Secretariat", year:"2023", desc:"Historic Memorandum of Understanding signed between the AfCFTA Secretariat and APN Group — a landmark for civil society in trade policy.", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716832/Landmark-MOU-signing-between-AfCFTA-Secretariat-and-APN-Group3-1_ufvv5e.jpg", tag:"Partnership" },
   { title:"4th Women in Trade Conference", year:"2022", desc:"Annual summit empowering women entrepreneurs across Africa with AfCFTA tools, networks and market access strategies.", img:"https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778716832/WhatsApp-Image-2020-08-28-at-08.11.21-384x256_vch3ni.jpg", tag:"Conference" },
@@ -44,7 +45,7 @@ export function AfcftaProjects() {
               className="afcfta-proj-card"
               style={{background:"rgba(30,41,59,0.80)",border:"1px solid rgba(245,158,11,0.15)",borderRadius:4,transition:"border-color 0.4s"}}>
               <div className="afcfta-proj-img">
-                <img src={p.img} alt={p.title} style={{width:"100%",height:"100%",objectFit:"cover",maxWidth:"100%"}}/>
+                <SafeImage src={p.img} alt={p.title} style={{width:"100%",height:"100%",objectFit:"cover",maxWidth:"100%"}}/>
               </div>
               <div style={{padding:"24px 24px 24px 20px",display:"flex",flexDirection:"column",justifyContent:"space-between"}}>
                 <div>

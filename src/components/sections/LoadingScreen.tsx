@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import SafeImage from "./SafeImage";
 
 interface Props {
   logo: string;
@@ -63,16 +64,19 @@ export function LoadingScreen({ logo, accentColor, companyName }: Props) {
       />
 
       {/* Logo */}
-      <img
+      <SafeImage
         src={logo}
         alt={companyName || ""}
         style={{
           height: "clamp(56px, 8vw, 100px)",
           width: "auto",
           objectFit: "contain",
-          position: "relative",
-          zIndex: 1,
+        }}
+        wrapperStyle={{
+          position: "relative", zIndex: 1,
           animation: "loadLogoIn 0.5s 0.15s ease-out both",
+          width: "clamp(56px, 8vw, 100px)",
+          height: "clamp(56px, 8vw, 100px)",
         }}
       />
 

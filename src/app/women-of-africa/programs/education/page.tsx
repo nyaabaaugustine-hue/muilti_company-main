@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Users, Globe, Award } from "lucide-react";
 import { LoadingScreen } from "@/components/sections/LoadingScreen";
+import SafeImage from "@/components/sections/SafeImage";
 
 const WAN_LOGO = "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099379/1a_zcxsx2.png";
 
@@ -60,7 +61,7 @@ export default function EducationPage() {
       >
         <div style={{ position: "absolute", inset: 0, backgroundImage: `linear-gradient(rgba(236,72,153,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(236,72,153,0.06) 1px,transparent 1px)`, backgroundSize: "64px 64px", pointerEvents: "none" }} />
         <div style={{ position: "absolute", right: 0, top: 0, width: "46%", height: "100%", overflow: "hidden" }}>
-          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Education" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.30 }} />
+          <SafeImage src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Education" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.30 }} wrapperStyle={{ position: "absolute", inset: 0 }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg,#1a0520 0%,rgba(26,5,32,0.05) 55%,rgba(26,5,32,0.55) 100%)" }} />
         </div>
         <div style={{ position: "relative", zIndex: 2, padding: "80px 64px", maxWidth: 760 }}>
@@ -108,7 +109,7 @@ export default function EducationPage() {
               </div>
             </div>
             <div style={{ position: "relative", height: 420 }}>
-              <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="Education" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 6 }} />
+              <SafeImage src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="Education" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 6 }} wrapperStyle={{ position: "absolute", inset: 0 }} />
               <div style={{ position: "absolute", bottom: 24, left: 24, right: 24, background: "rgba(26,5,32,0.88)", borderRadius: 4, padding: "16px 20px", backdropFilter: "blur(8px)" }}>
                 <div style={{ fontSize: 12, color: "#fff", fontWeight: 500 }}>
                   &ldquo;Education is the most powerful investment we can make in Africa&apos;s future — and women must be at its centre.&rdquo;

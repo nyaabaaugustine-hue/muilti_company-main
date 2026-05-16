@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowDown, ArrowRight } from "lucide-react";
+import SafeImage from "./SafeImage";
 
 const STATS = [
 { n: "4", label: "Companies" },
@@ -45,7 +46,7 @@ export function HeroSection() {
         className="absolute right-0 top-0 h-full hidden lg:block pointer-events-none"
         style={{ width: "48%" }}
       >
-        <img
+        <SafeImage
           src="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1777865847/WhatsApp_Image_2026-05-03_at_7.41.12_PM_buzbtt.jpg"
           alt="Ghana business"
           style={{
@@ -55,6 +56,7 @@ export function HeroSection() {
             opacity: 0.30,
             filter: "grayscale(10%) contrast(1.1)",
           }}
+          wrapperStyle={{ position: "absolute", inset: 0 }}
         />
         {/* Fade edge */}
         <div
