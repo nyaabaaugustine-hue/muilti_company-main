@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import Image from "next/image";
 import { ArrowRight, Globe, TrendingUp, Users, Award } from "lucide-react";
+import { LoadingScreen } from "@/components/sections/LoadingScreen";
 
 const COMPANIES = [
   {
@@ -87,6 +88,11 @@ export default function Home() {
 
   return (
     <>
+      <LoadingScreen
+        logo="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778124971/apn_square_i3pzri.png"
+        accentColor="#C9A84C"
+        companyName="APNABEC Group"
+      />
       {/* ════ Redirect overlay ════ */}
       {redirect && (
         <div

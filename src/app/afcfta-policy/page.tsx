@@ -8,6 +8,9 @@ import { AfcftaNewsletter } from "@/components/sections/afcfta/AfcftaNewsletter"
 import { AfcftaContact } from "@/components/sections/afcfta/AfcftaContact";
 import { CompanyNav } from "@/components/sections/CompanyNav";
 import { CompanyFooter } from "@/components/sections/CompanyFooter";
+import { LoadingScreen } from "@/components/sections/LoadingScreen";
+
+const AFC_LOGO = "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778750984/logo-afcfta-policy-network_oyf0rb.png";
 
 export const metadata = {
   title: "AfCFTA Policy Network | UnifiedNexus Group",
@@ -17,6 +20,7 @@ export const metadata = {
 export default function AfcftaPolicyPage() {
   return (
     <main>
+      <LoadingScreen logo={AFC_LOGO} accentColor="#F59E0B" companyName="AfCFTA Policy Network" />
       <style>{`
         img, video, iframe { max-width: 100%; height: auto; }
         @media (max-width: 640px) {

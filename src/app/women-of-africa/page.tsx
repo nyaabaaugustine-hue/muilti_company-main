@@ -9,6 +9,7 @@ import { WomenPartners } from "@/components/sections/women/WomenPartners";
 import { WomenContact } from "@/components/sections/women/WomenContact";
 import { CompanyNav } from "@/components/sections/CompanyNav";
 import { CompanyFooter } from "@/components/sections/CompanyFooter";
+import { LoadingScreen } from "@/components/sections/LoadingScreen";
 
 const WAN_LOGO = "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099379/1a_zcxsx2.png";
 const GOLD = "#D4A017";
@@ -27,6 +28,7 @@ export const metadata = {
 export default function WomenOfAfricaPage() {
   return (
     <main>
+      <LoadingScreen logo={WAN_LOGO} accentColor={GOLD} companyName="Women of Africa Network" />
       <style>{`
         img, video, iframe { max-width: 100%; height: auto; }
         @media (max-width: 640px) {

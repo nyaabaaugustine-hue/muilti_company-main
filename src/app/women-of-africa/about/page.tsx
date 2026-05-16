@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { LoadingScreen } from "@/components/sections/LoadingScreen";
+
+const WAN_LOGO = "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778099379/1a_zcxsx2.png";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -20,6 +23,7 @@ const VALUES = [
 export default function AboutPage() {
   return (
     <>
+      <LoadingScreen logo={WAN_LOGO} accentColor="#EC4899" companyName="Women of Africa Network" />
       <style>{`
         .wan-value-card {
           transition: all 0.3s;
