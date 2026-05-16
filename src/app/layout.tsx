@@ -6,7 +6,7 @@ const SITE_TITLE = "APNABEC | Excellence Across Ghana & Beyond";
 const SITE_DESC = "APNABEC is a Ghanaian multi-sector powerhouse spanning Technology, Renewable Energy, Real Estate, and Strategic Marketing.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tgne-groupsite.vercel.app"),
+  metadataBase: new URL("https://muilti-company-main.vercel.app"),
   title: SITE_TITLE,
   description: SITE_DESC,
   icons: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESC,
-    url: "https://tgne-groupsite.vercel.app",
+    url: "https://muilti-company-main.vercel.app/",
     siteName: "APNABEC",
     images: [
       {
@@ -51,21 +51,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Hard-coded OG tags — WhatsApp/Telegram crawlers read raw HTML and
-            sometimes miss Next.js-injected tags. These act as a guaranteed fallback. */}
+        {/* HTML Meta Tags */}
+        <title>{SITE_TITLE}</title>
+        <meta name="description" content={SITE_DESC} />
+
+        {/* Facebook Meta Tags */}
+        <meta property="og:url" content="https://muilti-company-main.vercel.app/" />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content={SITE_TITLE} />
         <meta property="og:description" content={SITE_DESC} />
         <meta property="og:image" content={OG_IMAGE} />
-        <meta property="og:image:secure_url" content={OG_IMAGE} />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="APNABEC" />
-        <meta property="og:url" content="https://tgne-groupsite.vercel.app" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="APNABEC" />
+
+        {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="muilti-company-main.vercel.app" />
+        <meta property="twitter:url" content="https://muilti-company-main.vercel.app/" />
+        <meta name="twitter:title" content={SITE_TITLE} />
+        <meta name="twitter:description" content={SITE_DESC} />
         <meta name="twitter:image" content={OG_IMAGE} />
+
+        {/* Meta Tags Generated via https://www.opengraph.xyz */}
+
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href={OG_IMAGE} type="image/png" />
