@@ -11,14 +11,24 @@ export function AgifTeam() {
   const A="#10B981";
   return (
     <section id="team" style={{background:"#0A2318",padding:"100px 64px"}}>
+      <style>{`
+        @media(max-width:600px){
+          #team{padding:60px 20px!important;}
+          .agif-team-grid{grid-template-columns:repeat(2,1fr)!important;gap:12px!important;}
+        }
+        @media(max-width:900px) and (min-width:601px){
+          #team{padding:80px 32px!important;}
+          .agif-team-grid{grid-template-columns:repeat(2,1fr)!important;}
+        }
+      `}</style>
       <div style={{maxWidth:1100,margin:"0 auto"}}>
         <div style={{display:"inline-flex",alignItems:"center",gap:10,fontSize:10,fontWeight:700,letterSpacing:"0.22em",textTransform:"uppercase",color:A,marginBottom:16}}>
           <span style={{width:28,height:1,background:A,display:"block"}}/>Leadership
         </div>
-        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(32px,3.5vw,48px)",fontWeight:600,color:"#fff",marginBottom:52}}>
+        <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(28px,3.5vw,48px)",fontWeight:600,color:"#fff",marginBottom:52}}>
           World-Class <em style={{color:A,fontStyle:"italic",fontWeight:400}}>Leadership</em>
         </h2>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(300px,1fr))",gap:16}}>
+        <div className="agif-team-grid" style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))",gap:16}}>
           {TEAM.map((m,i)=>(
             <div key={i}
               onMouseEnter={e=>{(e.currentTarget as HTMLDivElement).style.borderColor="rgba(16,185,129,0.50)";(e.currentTarget as HTMLDivElement).style.transform="translateY(-6px)"}}
@@ -28,9 +38,9 @@ export function AgifTeam() {
                 <img src={m.img} alt={m.name} style={{width:"100%",height:"100%",objectFit:"cover",filter:"grayscale(10%) brightness(0.90)"}}/>
               </div>
               <div style={{padding:"18px 20px 22px"}}>
-                <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:19,fontWeight:600,color:"#fff",marginBottom:4}}>{m.name}</div>
+                <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:18,fontWeight:600,color:"#fff",marginBottom:4,lineHeight:1.2}}>{m.name}</div>
                 <div style={{fontSize:11,color:A,fontWeight:600,letterSpacing:"0.05em",marginBottom:10}}>{m.role}</div>
-                <p style={{fontSize:12,color:"rgba(255,255,255,0.68)",lineHeight:1.7,fontWeight:300}}>{m.bio}</p>
+                <p style={{fontSize:13,color:"rgba(255,255,255,0.68)",lineHeight:1.7,fontWeight:300}}>{m.bio}</p>
               </div>
             </div>
           ))}

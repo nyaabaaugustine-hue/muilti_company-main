@@ -13,17 +13,28 @@ export function AgifServices() {
   const A="#10B981";
   return (
     <section id="services" style={{background:"#0A2318",padding:"100px 64px"}}>
+      <style>{`
+        @media(max-width:600px){
+          #services{padding:60px 20px!important;}
+          .agif-svc-header{flex-direction:column!important;align-items:flex-start!important;gap:12px!important;}
+          .agif-svc-grid{grid-template-columns:1fr!important;}
+        }
+        @media(max-width:900px) and (min-width:601px){
+          #services{padding:80px 32px!important;}
+          .agif-svc-grid{grid-template-columns:repeat(2,1fr)!important;}
+        }
+      `}</style>
       <div style={{maxWidth:1100,margin:"0 auto"}}>
         <div style={{display:"inline-flex",alignItems:"center",gap:10,fontSize:10,fontWeight:700,letterSpacing:"0.22em",textTransform:"uppercase",color:A,marginBottom:16}}>
           <span style={{width:28,height:1,background:A,display:"block"}}/>Investment Sectors
         </div>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:56}}>
-          <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(32px,3.5vw,48px)",fontWeight:600,color:"#fff",lineHeight:1.15}}>
+        <div className="agif-svc-header" style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:56,flexWrap:"wrap",gap:16}}>
+          <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(28px,3.5vw,48px)",fontWeight:600,color:"#fff",lineHeight:1.15,margin:0}}>
             Where We <em style={{color:A,fontStyle:"italic",fontWeight:400}}>Deploy Capital</em>
           </h2>
-          <p style={{fontSize:13,color:"rgba(255,255,255,0.60)",maxWidth:300,lineHeight:1.75,fontWeight:300}}>15+ strategic sectors. Bankable deals. Real returns.</p>
+          <p style={{fontSize:13,color:"rgba(255,255,255,0.60)",maxWidth:300,lineHeight:1.75,fontWeight:300,margin:0}}>15+ strategic sectors. Bankable deals. Real returns.</p>
         </div>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(300px,1fr))",gap:16}}>
+        <div className="agif-svc-grid" style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))",gap:16}}>
           {SECTORS.map((s,i)=>(
             <div key={i} onMouseEnter={()=>setHov(i)} onMouseLeave={()=>setHov(null)}
               style={{background:hov===i?"rgba(16,185,129,0.09)":"rgba(10,52,36,0.80)",border:`1px solid ${hov===i?"rgba(16,185,129,0.45)":"rgba(16,185,129,0.15)"}`,borderRadius:4,overflow:"hidden",transition:"all 0.4s cubic-bezier(0.22,1,0.36,1)",transform:hov===i?"translateY(-6px)":"translateY(0)"}}>
@@ -33,7 +44,7 @@ export function AgifServices() {
               <div style={{padding:"20px 22px 24px"}}>
                 <div style={{width:4,height:20,background:A,marginBottom:10}}/>
                 <h3 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:19,fontWeight:600,color:"#fff",marginBottom:8}}>{s.title}</h3>
-                <p style={{fontSize:12,color:"rgba(255,255,255,0.70)",lineHeight:1.75,fontWeight:300}}>{s.desc}</p>
+                <p style={{fontSize:13,color:"rgba(255,255,255,0.75)",lineHeight:1.75,fontWeight:300}}>{s.desc}</p>
               </div>
             </div>
           ))}
