@@ -25,7 +25,7 @@ export default function AgifPage() {
           main > * { overflow-x: hidden; }
         }
       `}</style>
-      <CompanyNav companyName="Africa Globalized Investment Forum" accentColor="#10B981" />
+      <CompanyNav companyName="Africa Globalized Investment Forum" accentColor="#10B981" logo={AGIF_LOGO} />
       <AgifHero />
       <AgifServices />
       <AgifProjects />

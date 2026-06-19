@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "clean": "rmdir /s /q .next 2>nul & echo Cache cleared"
+    "clean": "rimraf .next out"
   },
   "dependencies": {
     "@genkit-ai/google-genai": "^1.28.0",

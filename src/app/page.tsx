@@ -434,15 +434,15 @@ export default function Home() {
                     </p>
 
                     {/* Stats row */}
-                    {company.stats && company.stats.length > 0 && (
+                    {company.stats && (company.stats as {v:string;l:string}[]).length > 0 && (
                       <div
                         style={{
                           display: "flex", flexWrap: "wrap", gap: 8, marginTop: 6,
                           borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 10,
                         }}
                       >
-                        {company.stats.map((s, si) => (
-                          <div key={si} style={{ flex: "1 1 80px", textAlign: "center", borderRight: si < company.stats.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
+                        {(company.stats as {v:string;l:string}[]).map((s, si) => (
+                          <div key={si} style={{ flex: "1 1 80px", textAlign: "center", borderRight: si < (company.stats as {v:string;l:string}[]).length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
                             <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 18, fontWeight: 600, color: company.accentColor, lineHeight: 1 }}>{s.v}</div>
                             <div style={{ fontSize: 9, color: "rgba(255,255,255,0.40)", textTransform: "uppercase", letterSpacing: "0.10em", marginTop: 3 }}>{s.l}</div>
                           </div>

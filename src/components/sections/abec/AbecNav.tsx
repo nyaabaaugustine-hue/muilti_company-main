@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import { ArrowLeft, Menu, X, ChevronDown } from "lucide-react";
 import { ContactModal, openContactModal } from "@/components/sections/ContactModal";
@@ -50,8 +51,6 @@ export function AbecNav() {
     <ContactModal companyName="Africa Business Export Club 500" accentColor={A} />
     <nav
       style={{
-        // @ts-ignore
-        "--accent": A,
         position: "fixed",
         top: 0,
         left: 0,
@@ -63,9 +62,10 @@ export function AbecNav() {
           ? `1px solid rgba(242,141,1,0.25)`
           : "1px solid rgba(242,141,1,0.10)",
         transition: "all 0.4s ease",
-      }}
+      } as React.CSSProperties}
     >
-      <style jsx>{`
+      <style>{`
+        :root { --accent: ${A}; }
         .nav-link:hover { color: var(--accent) !important; }
         .nav-link:hover .icon-rotate { transform: rotate(180deg); }
         .social-icon:hover { color: var(--accent) !important; }

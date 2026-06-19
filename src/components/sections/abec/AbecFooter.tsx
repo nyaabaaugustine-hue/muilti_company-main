@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import Link from "next/link";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { openContactModal } from "@/components/sections/ContactModal";
@@ -23,11 +24,10 @@ export function AbecFooter() {
       style={{
         background: NAVY,
         borderTop: `1px solid rgba(242,141,1,0.20)`,
-        // @ts-ignore
-        "--accent": A
-      }}
+      } as React.CSSProperties}
     >
-      <style jsx>{`
+      <style>{`
+        :root { --accent: ${A}; }
         .footer-link:hover { color: var(--accent) !important; padding-left: 4px; }
         .social-icon:hover { 
            background: var(--accent) !important; 

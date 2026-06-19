@@ -27,7 +27,7 @@ export default function AfcftaPolicyPage() {
           main > * { overflow-x: hidden; }
         }
       `}</style>
-      <CompanyNav companyName="AfCFTA Policy Network" accentColor="#F59E0B" />
+      <CompanyNav companyName="AfCFTA Policy Network" accentColor="#F59E0B" logo={AFC_LOGO} />
       <AfcftaHero />
       <AfcftaAbout />
       <AfcftaServices />
