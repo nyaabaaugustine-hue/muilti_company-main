@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Image from "next/image";
-import { ArrowRight, Globe, TrendingUp, Users, Award } from "lucide-react";
+import { ArrowRight, Globe, TrendingUp, Users, Award, GraduationCap } from "lucide-react";
 import { LoadingScreen } from "@/components/sections/LoadingScreen";
 
 const COMPANIES = [
@@ -63,6 +63,21 @@ const COMPANIES = [
     href: "/women-of-africa",
     external: false,
     visitLabel: "Visit WAN",
+   
+  },
+  {
+    id: "apn-youth",
+    index: "05",
+    name: "APN Youth International",
+    tagline: "Empowering Africa's Next Generation",
+    description: "Equipping young Africans with education support, mentorship, wellness programs and leadership development — building a generation of confident, skilled and globally competitive leaders.",
+    sector: "Youth Empowerment",
+    icon: GraduationCap,
+    accentColor: "#F4C430",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1781791523/lllogo_qt1wzz.jpg",
+    href: "/apn-youth",
+    external: false,
+    visitLabel: "Visit APN Youth",
    
   },
 ];
