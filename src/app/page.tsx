@@ -300,6 +300,76 @@ export default function Home() {
           >
             
           </p>
+
+          {/* ── Market Access CTA link ── */}
+          <a
+            href="https://forms.gle/qcuYxjJKfmjSdBwb6"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 10,
+              marginTop: 28,
+              padding: "13px 28px",
+              borderRadius: 3,
+              background: "linear-gradient(135deg, rgba(201,168,76,0.12) 0%, rgba(201,168,76,0.06) 100%)",
+              border: "1px solid rgba(201,168,76,0.45)",
+              textDecoration: "none",
+              color: "#C9A84C",
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "clamp(11px, 1.5vw, 13px)",
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              transition: "all 0.25s ease",
+              position: "relative",
+              overflow: "hidden",
+            }}
+            onMouseEnter={(e) => {
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.background = "linear-gradient(135deg, rgba(201,168,76,0.22) 0%, rgba(201,168,76,0.12) 100%)";
+              el.style.borderColor = "#C9A84C";
+              el.style.boxShadow = "0 0 32px rgba(201,168,76,0.20), inset 0 0 20px rgba(201,168,76,0.06)";
+              el.style.transform = "translateY(-2px)";
+              el.style.letterSpacing = "0.22em";
+            }}
+            onMouseLeave={(e) => {
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.background = "linear-gradient(135deg, rgba(201,168,76,0.12) 0%, rgba(201,168,76,0.06) 100%)";
+              el.style.borderColor = "rgba(201,168,76,0.45)";
+              el.style.boxShadow = "none";
+              el.style.transform = "translateY(0)";
+              el.style.letterSpacing = "0.18em";
+            }}
+          >
+            {/* Shimmer line */}
+            <span style={{
+              position: "absolute",
+              top: 0, left: "-100%",
+              width: "60%", height: "100%",
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.12), transparent)",
+              animation: "mktShimmer 3s ease-in-out infinite",
+              pointerEvents: "none",
+            }} />
+            {/* Left diamond */}
+            <span style={{ fontSize: 10, opacity: 0.7 }}>◆</span>
+            Sign For Market Access Opportunities
+            {/* Arrow */}
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
+              <path d="M2 7H12M8 3L12 7L8 11" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
+
+          <style>{`
+            @keyframes mktShimmer {
+              0%   { left: -100%; opacity: 0; }
+              20%  { opacity: 1; }
+              60%  { left: 160%; opacity: 1; }
+              61%  { opacity: 0; }
+              100% { left: 160%; opacity: 0; }
+            }
+          `}</style>
         </div>
 
         {/* ── Company Cards ── */}

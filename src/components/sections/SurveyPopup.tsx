@@ -144,60 +144,11 @@ export function SurveyPopup() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              gap: "clamp(4px, 1vh, 8px)",
+              gap: 0,
               textAlign: "center",
               borderTop: "1px solid rgba(201,168,76,0.12)",
             }}
           >
-            {/* Gold rule */}
-            <div
-              style={{
-                width: 36,
-                height: 2,
-                background: "linear-gradient(90deg, transparent, #C9A84C, transparent)",
-                borderRadius: 1,
-              }}
-            />
-
-            <p
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: "clamp(8px, 1.5vw, 10px)",
-                letterSpacing: "0.26em",
-                textTransform: "uppercase",
-                color: "rgba(201,168,76,0.70)",
-                fontWeight: 600,
-                margin: 0,
-              }}
-            >
-              Your Voice Matters
-            </p>
-
-            <h2
-              style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
-                fontSize: "clamp(16px, 4vw, 22px)",
-                fontWeight: 700,
-                color: "#fff",
-                margin: 0,
-                lineHeight: 1.2,
-              }}
-            >
-              Share Your Feedback
-            </h2>
-
-            <p
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: "clamp(11px, 1.8vw, 13px)",
-                color: "rgba(255,255,255,0.50)",
-                lineHeight: 1.5,
-                margin: 0,
-              }}
-            >
-              Help us improve the APNABEC Group experience — takes under 2 minutes.
-            </p>
-
             {/* Buttons */}
             <div
               style={{
@@ -239,7 +190,7 @@ export function SurveyPopup() {
                   (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 20px rgba(201,168,76,0.35)";
                 }}
               >
-                Take Survey Now →
+                Sign Up Now →
               </a>
 
               <button
