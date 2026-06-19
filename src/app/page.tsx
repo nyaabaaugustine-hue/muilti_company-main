@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { ArrowRight, Globe, TrendingUp, Users, Award, GraduationCap } from "lucide-react";
 import { LoadingScreen } from "@/components/sections/LoadingScreen";
+import { SurveyPopup } from "@/components/sections/SurveyPopup";
 
 const FAVICON = "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1781861840/favicon_qasbeo.png";
 
@@ -121,6 +122,7 @@ export default function Home() {
         accentColor="#C9A84C"
         companyName="APNABEC Group"
       />
+      <SurveyPopup />
       {/* ════ Redirect overlay ════ */}
       {redirect && (
         <div
