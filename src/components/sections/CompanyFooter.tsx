@@ -304,7 +304,7 @@ export function CompanyFooter({
               ← Back to APNABEC
             </Link>
             <span style={{ fontSize: 10, color: "rgba(255,255,255,0.30)" }}>
-              © {new Date().getFullYear()} All Rights Reserved | Powered by: FRIIS IT Solutions
+              © {new Date().getFullYear()} All Rights Reserved
             </span>
           </div>
         </div>

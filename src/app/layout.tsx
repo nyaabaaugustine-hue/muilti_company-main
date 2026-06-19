@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const OG_IMAGE = "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1778124971/apn_square_i3pzri.png";
+const FAVICON = "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1781861840/favicon_qasbeo.png";
 const SITE_TITLE = "APNABEC | Excellence Across Ghana & Beyond";
 const SITE_DESC = "APNABEC is a Ghanaian multi-sector powerhouse spanning Technology, Renewable Energy, Real Estate, and Strategic Marketing.";
 

@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { ArrowRight, Globe, TrendingUp, Users, Award, GraduationCap } from "lucide-react";
 import { LoadingScreen } from "@/components/sections/LoadingScreen";
+
+const FAVICON = "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1781861840/favicon_qasbeo.png";
 
 const COMPANIES = [
   {
@@ -88,6 +90,17 @@ export default function Home() {
     accentColor: string;
     href: string;
   } | null>(null);
+
+  // Swap favicon on the home page only
+  useEffect(() => {
+    const existing = document.querySelectorAll("link[rel~='icon']");
+    existing.forEach(el => el.remove());
+    const link = document.createElement("link");
+    link.rel = "icon";
+    link.type = "image/png";
+    link.href = FAVICON;
+    document.head.appendChild(link);
+  }, []);
 
   const handleClick = useCallback(
     (name: string, accentColor: string, href: string, e: React.MouseEvent) => {

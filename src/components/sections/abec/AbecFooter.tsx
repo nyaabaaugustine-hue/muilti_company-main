@@ -283,15 +283,7 @@ export function AbecFooter() {
             margin: 0,
           }}
         >
-          © {new Date().getFullYear()} Africa Business Export Club 500 | Powered by:{" "}
-          <a
-            href="https://friisitsolutions.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: A, textDecoration: "none" }}
-          >
-            FRIIS IT Solutions
-          </a>
+          © {new Date().getFullYear()} Africa Business Export Club 500
         </p>
         <Link
           href="/"
