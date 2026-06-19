@@ -354,7 +354,7 @@ export default function Home() {
             }} />
             {/* Left diamond */}
             <span style={{ fontSize: 10, opacity: 0.7 }}>◆</span>
-            Sign For Market Access Opportunities
+            Sign Up For Market Access Opportunities
             {/* Arrow */}
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
               <path d="M2 7H12M8 3L12 7L8 11" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
