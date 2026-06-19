@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { ArrowLeft, Menu, X } from "lucide-react";
+import { openContactModal } from "./ContactModal";
 
 interface NavLink {
   label: string;
@@ -117,6 +118,10 @@ export function CompanyNav({
       if (!href.startsWith("#")) return;
       e.preventDefault();
       setOpen(false);
+      if (href === "#contact") {
+        openContactModal(companyName);
+        return;
+      }
       const id = href.slice(1);
       const el = document.getElementById(id);
       if (el) {
@@ -124,7 +129,7 @@ export function CompanyNav({
         window.scrollTo({ top, behavior: "smooth" });
       }
     },
-    []
+    [companyName]
   );
 
   return (

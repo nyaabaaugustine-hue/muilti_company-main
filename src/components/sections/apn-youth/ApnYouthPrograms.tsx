@@ -1,6 +1,7 @@
 "use client";
 
 import { BookOpen, Globe, Users, Mic2, Lightbulb, BarChart3 } from "lucide-react";
+import { openContactModal } from "@/components/sections/ContactModal";
 
 const ACCENT = "#F4C430";
 
@@ -205,8 +206,12 @@ export function ApnYouthPrograms() {
             </p>
             <a
               href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                openContactModal("APN Youth");
+              }}
               className="inline-block px-10 py-4 rounded-full font-bold text-base uppercase tracking-wider transition-all duration-200 hover:opacity-90 hover:scale-105"
-              style={{ backgroundColor: "#111", color: ACCENT }}
+              style={{ backgroundColor: "#111", color: ACCENT, cursor: "pointer" }}
             >
               Join the Movement
             </a>

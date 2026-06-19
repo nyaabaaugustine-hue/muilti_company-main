@@ -1,27 +1,27 @@
 "use client";
-import { useState } from "react";
+import { Mail, Phone, Globe, MapPin, Send } from "lucide-react";
+import { openContactModal } from "@/components/sections/ContactModal";
 
 const A = "#f28d01";
 const BG = "#000040";
 
 const INFO = [
-  { icon: "📍", label: "Address", value: "Cita House, Osu, Accra — Ghana" },
-  { icon: "📞", label: "Phone", value: "+233 24 486 8395" },
-  { icon: "✉️", label: "Email", value: "info@abec500.com" },
-  { icon: "🌐", label: "Website", value: "www.abec500.com" },
+  { icon: <MapPin size={18} />, label: "Address", value: "Cita House, Osu, Accra — Ghana" },
+  { icon: <Phone size={18} />, label: "Phone", value: "+233 24 486 8395" },
+  { icon: <Mail size={18} />, label: "Email", value: "info@abec500.com" },
+  { icon: <Globe size={18} />, label: "Website", value: "www.abec500.com" },
 ];
 
 export function AbecContact() {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
-  const [sent, setSent] = useState(false);
-
-  const handle = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSent(true);
-  };
-
   return (
     <section id="contact" style={{ background: "#f8f6f0", padding: "100px 64px" }}>
+      <style>{`
+        .abec-contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:48px;align-items:stretch;}
+        @media(max-width:768px){
+          #contact{padding:60px 24px!important;}
+          .abec-contact-grid{grid-template-columns:1fr!important;gap:32px!important;}
+        }
+      `}</style>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: 10, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: A, marginBottom: 16 }}>
           <span style={{ width: 28, height: 1, background: A, display: "block" }} />
@@ -31,7 +31,7 @@ export function AbecContact() {
           Contact <em style={{ color: A, fontStyle: "italic", fontWeight: 400 }}>ABEC500</em>
         </h2>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 48, alignItems: "start" }}>
+        <div className="abec-contact-grid">
           {/* Info */}
           <div>
             <p style={{ fontSize: 14, color: "#555", lineHeight: 1.8, marginBottom: 36 }}>
@@ -40,7 +40,7 @@ export function AbecContact() {
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {INFO.map((item, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-                  <div style={{ width: 40, height: 40, background: BG, borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0 }}>
+                  <div style={{ width: 40, height: 40, background: BG, borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", color: A, flexShrink: 0 }}>
                     {item.icon}
                   </div>
                   <div>
@@ -56,64 +56,82 @@ export function AbecContact() {
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: 16 }}>
                 Become a member of Africa's fastest-growing export club and unlock access to global markets.
               </p>
-              <a href="#" style={{ display: "inline-block", background: `linear-gradient(135deg,#b36900,${A})`, color: "#fff", fontSize: 11, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", padding: "10px 22px", borderRadius: 2, textDecoration: "none" }}>
+              <button
+                type="button"
+                onClick={() => openContactModal("Africa Business Export Club 500")}
+                style={{ display: "inline-block", background: `linear-gradient(135deg,#b36900,${A})`, color: "#fff", fontSize: 11, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", padding: "10px 22px", borderRadius: 2, border: "none", cursor: "pointer" }}
+              >
                 Register Now →
-              </a>
+              </button>
             </div>
           </div>
 
-          {/* Form */}
-          <div style={{ background: "#fff", borderRadius: 4, padding: 36, border: "1px solid rgba(0,0,64,0.08)", boxShadow: "0 4px 24px rgba(0,0,64,0.06)" }}>
-            {sent ? (
-              <div style={{ textAlign: "center", padding: "40px 0" }}>
-                <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
-                <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 28, color: BG, marginBottom: 10 }}>Message Sent!</h3>
-                <p style={{ fontSize: 14, color: "#666" }}>We'll get back to you within 24 hours.</p>
-                <button onClick={() => setSent(false)} style={{ marginTop: 20, background: A, color: "#fff", border: "none", padding: "10px 24px", borderRadius: 2, cursor: "pointer", fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>Send Another</button>
-              </div>
-            ) : (
-              <form onSubmit={handle} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 26, color: BG, marginBottom: 4 }}>Send a Message</h3>
-                {[
-                  { key: "name", label: "Full Name", placeholder: "Your name", type: "text" },
-                  { key: "email", label: "Email Address", placeholder: "your@email.com", type: "email" },
-                  { key: "subject", label: "Subject", placeholder: "How can we help?", type: "text" },
-                ].map(({ key, label, placeholder, type }) => (
-                  <div key={key}>
-                    <label style={{ display: "block", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#888", marginBottom: 6 }}>{label}</label>
-                    <input
-                      type={type}
-                      placeholder={placeholder}
-                      value={form[key as keyof typeof form]}
-                      onChange={e => setForm(p => ({ ...p, [key]: e.target.value }))}
-                      required
-                      style={{ width: "100%", padding: "11px 14px", border: "1px solid #e0e0e0", borderRadius: 3, fontSize: 13, outline: "none", fontFamily: "inherit", background: "#fafafa", transition: "border-color 0.2s", boxSizing: "border-box" }}
-                      onFocus={e => (e.target.style.borderColor = A)}
-                      onBlur={e => (e.target.style.borderColor = "#e0e0e0")}
-                    />
-                  </div>
-                ))}
-                <div>
-                  <label style={{ display: "block", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#888", marginBottom: 6 }}>Message</label>
-                  <textarea
-                    placeholder="Tell us about your export needs..."
-                    value={form.message}
-                    onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
-                    required
-                    rows={4}
-                    style={{ width: "100%", padding: "11px 14px", border: "1px solid #e0e0e0", borderRadius: 3, fontSize: 13, outline: "none", fontFamily: "inherit", resize: "vertical", background: "#fafafa", transition: "border-color 0.2s", boxSizing: "border-box" }}
-                    onFocus={e => (e.target.style.borderColor = A)}
-                    onBlur={e => (e.target.style.borderColor = "#e0e0e0")}
-                  />
-                </div>
-                <button
-                  type="submit"
-                  style={{ background: `linear-gradient(135deg,#b36900,${A})`, color: "#fff", border: "none", padding: "13px 28px", borderRadius: 2, cursor: "pointer", fontSize: 12, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", alignSelf: "flex-start", boxShadow: "0 6px 24px rgba(242,141,1,0.30)" }}
-                >
-                  Send Message →
-                </button>
-              </form>
-            )}
+          {/* Send a Message CTA card (opens the popup form) */}
+          <div
+            style={{
+              background: "#fff",
+              borderRadius: 4,
+              padding: "clamp(32px,5vw,56px)",
+              border: "1px solid rgba(0,0,64,0.08)",
+              boxShadow: "0 4px 24px rgba(0,0,64,0.06)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+            }}
+          >
+            <div
+              style={{
+                width: 64,
+                height: 64,
+                borderRadius: "50%",
+                background: `${A}1A`,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginBottom: 22,
+              }}
+            >
+              <Mail size={28} color={A} />
+            </div>
+            <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 26, color: BG, marginBottom: 12 }}>
+              Send Us a Message
+            </h3>
+            <p style={{ fontSize: 14, color: "#666", lineHeight: 1.7, marginBottom: 28, maxWidth: 320 }}>
+              Tell us about your export needs and our team will get back to you within 24 hours.
+            </p>
+            <button
+              type="button"
+              onClick={() => openContactModal("Africa Business Export Club 500")}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 10,
+                background: `linear-gradient(135deg,#b36900,${A})`,
+                color: "#fff",
+                border: "none",
+                padding: "14px 32px",
+                borderRadius: 2,
+                cursor: "pointer",
+                fontSize: 12,
+                fontWeight: 700,
+                letterSpacing: "0.10em",
+                textTransform: "uppercase",
+                boxShadow: "0 8px 28px rgba(242,141,1,0.30)",
+                transition: "transform 0.2s, box-shadow 0.2s",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = "translateY(-3px)";
+                e.currentTarget.style.boxShadow = "0 14px 36px rgba(242,141,1,0.45)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 8px 28px rgba(242,141,1,0.30)";
+              }}
+            >
+              <Send size={14} /> Open Contact Form
+            </button>
           </div>
         </div>
       </div>

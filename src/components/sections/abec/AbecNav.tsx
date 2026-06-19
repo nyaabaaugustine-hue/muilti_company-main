@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowLeft, Menu, X, ChevronDown } from "lucide-react";
+import { ContactModal, openContactModal } from "@/components/sections/ContactModal";
 
 const A = "#f28d01";
 const NAVY = "#000040";
@@ -34,7 +35,19 @@ export function AbecNav() {
     return () => window.removeEventListener("scroll", h);
   }, []);
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, closeMobile = false) => {
+    if (href === "#contact") {
+      e.preventDefault();
+      if (closeMobile) setMobileOpen(false);
+      openContactModal("Africa Business Export Club 500");
+    } else if (closeMobile) {
+      setMobileOpen(false);
+    }
+  };
+
   return (
+    <>
+    <ContactModal companyName="Africa Business Export Club 500" accentColor={A} />
     <nav
       style={{
         // @ts-ignore
@@ -121,6 +134,7 @@ export function AbecNav() {
               <a
                 href={link.href}
                 className="nav-link"
+                onClick={e => handleLinkClick(e, link.href)}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -151,6 +165,7 @@ export function AbecNav() {
                 }}>
                   {link.children.map(c => (
                     <a key={c.label} href={c.href} className="nav-link" 
+                      onClick={e => handleLinkClick(e, c.href)}
                       style={{
                         display: "block",
                         padding: "11px 18px",
@@ -173,6 +188,7 @@ export function AbecNav() {
           <a
             href="#contact"
             className="hidden lg:inline-flex"
+            onClick={e => handleLinkClick(e, "#contact")}
             style={{
               background: `linear-gradient(135deg,#b36900,${A})`,
               color: "#fff",
@@ -215,7 +231,7 @@ export function AbecNav() {
             <div key={link.label}>
               <a
                 href={link.href}
-                onClick={() => setMobileOpen(false)}
+                onClick={e => handleLinkClick(e, link.href, true)}
                 style={{
                   display: "block",
                   padding: "12px 0",
@@ -231,7 +247,7 @@ export function AbecNav() {
                 {link.label}
               </a>
               {link.children?.map(c => (
-                <a key={c.label} href={c.href} onClick={() => setMobileOpen(false)}
+                <a key={c.label} href={c.href} onClick={e => handleLinkClick(e, c.href, true)}
                   style={{
                     display: "block",
                     padding: "9px 0 9px 16px",
@@ -249,7 +265,7 @@ export function AbecNav() {
               ))}
             </div>
           ))}
-          <a href="#contact" onClick={() => setMobileOpen(false)}
+          <a href="#contact" onClick={e => handleLinkClick(e, "#contact", true)}
             style={{
               display: "block", textAlign: "center", marginTop: 20,
               background: `linear-gradient(135deg,#b36900,${A})`,
@@ -263,5 +279,6 @@ export function AbecNav() {
         </div>
       )}
     </nav>
+    </>
   );
 }

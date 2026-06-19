@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { openContactModal } from "@/components/sections/ContactModal";
 
 const A = "#f28d01";
 const BG = "#000040";
@@ -86,7 +87,7 @@ export function AbecMembers() {
 
         <div style={{ display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
           <a href="#export-club" style={{ background: `linear-gradient(135deg,#b36900,${A})`, color: "#fff", fontSize: 12, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", padding: "14px 32px", borderRadius: 2, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8, boxShadow: `0 8px 28px rgba(242,141,1,0.35)` }}>Become a Member →</a>
-          <a href="#contact" style={{ background: "transparent", border: "1px solid rgba(242,141,1,0.45)", color: A, fontSize: 12, fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", padding: "13px 28px", borderRadius: 2, textDecoration: "none" }}>Contact Us</a>
+          <a href="#contact" onClick={(e) => { e.preventDefault(); openContactModal("Africa Business Export Club 500"); }} style={{ background: "transparent", border: "1px solid rgba(242,141,1,0.45)", color: A, fontSize: 12, fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", padding: "13px 28px", borderRadius: 2, textDecoration: "none", cursor: "pointer" }}>Contact Us</a>
         </div>
       </div>
     </section>

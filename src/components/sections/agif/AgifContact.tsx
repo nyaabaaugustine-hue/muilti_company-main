@@ -1,45 +1,25 @@
 "use client";
-import { useState } from "react";
+import { Mail, Phone, Globe, MapPin, Send } from "lucide-react";
+import { openContactModal } from "@/components/sections/ContactModal";
 
 const A = "#10B981";
-const BG = "#042f1e";
-
-const SECTORS = [
-  "Infrastructure & Transport", "Energy & Renewables", "Fintech & Banking",
-  "Agriculture & Agribusiness", "Real Estate & Housing", "Healthcare",
-  "Technology & ICT", "Mining & Natural Resources", "Manufacturing",
-  "Tourism & Hospitality", "Trade & Logistics", "Other",
-];
 
 const INFO = [
-  { icon: "📍", label: "Secretariat", value: "P.O. Box SK 2290, Sakumono, Accra — Ghana" },
-  { icon: "✉️", label: "Email", value: "info@africaglobalizedinvestment.com" },
-  { icon: "📞", label: "Phone", value: "+233 244 868 395" },
-  { icon: "🌐", label: "Website", value: "africaglobalizedinvestment.com" },
+  { icon: <MapPin size={17} />, label: "Secretariat", value: "P.O. Box SK 2290, Sakumono, Accra — Ghana" },
+  { icon: <Mail size={17} />, label: "Email", value: "info@africaglobalizedinvestment.com" },
+  { icon: <Phone size={17} />, label: "Phone", value: "+233 244 868 395" },
+  { icon: <Globe size={17} />, label: "Website", value: "africaglobalizedinvestment.com" },
 ];
 
 export function AgifContact() {
-  const [form, setForm] = useState({
-    name: "", org: "", email: "", phone: "",
-    country: "", sector: "", interest: "", message: "",
-  });
-  const [sent, setSent] = useState(false);
-
-  const handle = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSent(true);
-  };
-
   return (
     <section id="contact" style={{ background: "linear-gradient(180deg,#0A2318 0%,#042f1e 100%)", padding: "100px 64px" }}>
       <style>{`
-        .agif-contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;align-items:start;}
-        .agif-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+        .agif-contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;align-items:stretch;}
         @media(max-width:768px){
           #contact{padding:60px 20px!important;}
           .agif-contact-grid{grid-template-columns:1fr!important;gap:32px!important;}
           .agif-contact-header{flex-direction:column!important;align-items:flex-start!important;gap:12px!important;}
-          .agif-form-grid{grid-template-columns:1fr!important;}
         }
         @media(max-width:900px) and (min-width:769px){
           #contact{padding:80px 32px!important;}
@@ -66,7 +46,7 @@ export function AgifContact() {
             <div style={{ display: "flex", flexDirection: "column", gap: 20, marginBottom: 40 }}>
               {INFO.map((item, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-                  <div style={{ width: 40, height: 40, background: "rgba(16,185,129,0.10)", border: "1px solid rgba(16,185,129,0.25)", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0 }}>
+                  <div style={{ width: 40, height: 40, background: "rgba(16,185,129,0.10)", border: "1px solid rgba(16,185,129,0.25)", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", color: A, flexShrink: 0 }}>
                     {item.icon}
                   </div>
                   <div>
@@ -82,88 +62,81 @@ export function AgifContact() {
               <p style={{ fontSize: 12.5, color: "rgba(255,255,255,0.65)", lineHeight: 1.75, marginBottom: 20 }}>
                 Accra International Conference Centre, Ghana. Register now for early-bird delegate pricing before spaces fill.
               </p>
-              <a href="#" style={{ display: "inline-flex", alignItems: "center", gap: 6, background: `linear-gradient(135deg,#047857,${A})`, color: "#fff", fontSize: 11, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", padding: "11px 22px", borderRadius: 2, textDecoration: "none", boxShadow: "0 6px 24px rgba(16,185,129,0.30)" }}>
+              <button
+                type="button"
+                onClick={() => openContactModal("Africa Globalized Investment Forum")}
+                style={{ display: "inline-flex", alignItems: "center", gap: 6, background: `linear-gradient(135deg,#047857,${A})`, color: "#fff", fontSize: 11, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", padding: "11px 22px", borderRadius: 2, border: "none", cursor: "pointer", boxShadow: "0 6px 24px rgba(16,185,129,0.30)" }}
+              >
                 Register Now →
-              </a>
+              </button>
             </div>
           </div>
 
-          {/* Form */}
-          <div style={{ background: "rgba(4,47,30,0.60)", border: "1px solid rgba(16,185,129,0.18)", borderRadius: 4, padding: 36 }}>
-            {sent ? (
-              <div style={{ textAlign: "center", padding: "50px 0" }}>
-                <div style={{ fontSize: 52, marginBottom: 18 }}>📬</div>
-                <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 30, color: "#fff", marginBottom: 12 }}>Interest Registered!</h3>
-                <p style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.8 }}>
-                  Our team will reach out within 48 hours with summit details and delegate packages.
-                </p>
-                <button onClick={() => setSent(false)} style={{ marginTop: 24, background: A, color: "#042f1e", border: "none", padding: "11px 28px", borderRadius: 2, cursor: "pointer", fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                  Submit Another
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handle}>
-                <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 24, color: "#fff", marginBottom: 20 }}>Register Your Interest</h3>
-                <div className="agif-form-grid">
-                  {[
-                    { key: "name", label: "Full Name", placeholder: "Your full name", type: "text" },
-                    { key: "org", label: "Organisation", placeholder: "Company / Institution", type: "text" },
-                    { key: "email", label: "Email", placeholder: "your@email.com", type: "email" },
-                    { key: "phone", label: "Phone", placeholder: "+1 234 567 8900", type: "tel" },
-                    { key: "country", label: "Country", placeholder: "Your country", type: "text" },
-                  ].map(({ key, label, placeholder, type }) => (
-                    <div key={key}>
-                      <label style={{ display: "block", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(16,185,129,0.75)", marginBottom: 6 }}>{label}</label>
-                      <input
-                        type={type}
-                        placeholder={placeholder}
-                        value={form[key as keyof typeof form]}
-                        onChange={e => setForm(p => ({ ...p, [key]: e.target.value }))}
-                        required={["name", "email", "country"].includes(key)}
-                        style={{ width: "100%", padding: "12px 14px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(16,185,129,0.20)", borderRadius: 3, fontSize: 14, color: "#fff", outline: "none", fontFamily: "inherit", transition: "border-color 0.2s", boxSizing: "border-box" }}
-                        onFocus={e => (e.target.style.borderColor = A)}
-                        onBlur={e => (e.target.style.borderColor = "rgba(16,185,129,0.20)")}
-                      />
-                    </div>
-                  ))}
-                </div>
-
-                <div style={{ marginTop: 16 }}>
-                  <label style={{ display: "block", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(16,185,129,0.75)", marginBottom: 6 }}>Investment Sector</label>
-                  <select value={form.sector} onChange={e => setForm(p => ({ ...p, sector: e.target.value }))}
-                    style={{ width: "100%", padding: "12px 14px", background: "#042f1e", border: "1px solid rgba(16,185,129,0.20)", borderRadius: 3, fontSize: 14, color: form.sector ? "#fff" : "rgba(255,255,255,0.40)", outline: "none", fontFamily: "inherit", boxSizing: "border-box" }}
-                    onFocus={e => (e.target.style.borderColor = A)} onBlur={e => (e.target.style.borderColor = "rgba(16,185,129,0.20)")}>
-                    <option value="" disabled>Select your primary sector</option>
-                    {SECTORS.map(s => <option key={s} value={s} style={{ background: "#042f1e", color: "#fff" }}>{s}</option>)}
-                  </select>
-                </div>
-
-                <div style={{ marginTop: 16 }}>
-                  <label style={{ display: "block", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(16,185,129,0.75)", marginBottom: 8 }}>I'm Interested In</label>
-                  <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                    {["Attending Summit", "Exhibiting", "Speaking", "Sponsorship", "Deal Rooms", "PPP Projects"].map(opt => (
-                      <button key={opt} type="button" onClick={() => setForm(p => ({ ...p, interest: opt }))}
-                        style={{ padding: "8px 14px", borderRadius: 2, fontSize: 12, fontWeight: 600, cursor: "pointer", transition: "all 0.2s", background: form.interest === opt ? A : "transparent", color: form.interest === opt ? "#042f1e" : "rgba(255,255,255,0.65)", border: `1px solid ${form.interest === opt ? A : "rgba(16,185,129,0.25)"}` }}>
-                        {opt}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div style={{ marginTop: 16 }}>
-                  <label style={{ display: "block", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(16,185,129,0.75)", marginBottom: 6 }}>Additional Notes</label>
-                  <textarea placeholder="Tell us about your investment focus, portfolio size, or any specific requirements..." value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} rows={3}
-                    style={{ width: "100%", padding: "12px 14px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(16,185,129,0.20)", borderRadius: 3, fontSize: 14, color: "#fff", outline: "none", fontFamily: "inherit", resize: "vertical", transition: "border-color 0.2s", boxSizing: "border-box" }}
-                    onFocus={e => (e.target.style.borderColor = A)} onBlur={e => (e.target.style.borderColor = "rgba(16,185,129,0.20)")}/>
-                </div>
-
-                <div style={{ marginTop: 20 }}>
-                  <button type="submit" style={{ background: `linear-gradient(135deg,#047857,${A})`, color: "#fff", border: "none", padding: "14px 32px", borderRadius: 2, cursor: "pointer", fontSize: 13, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", boxShadow: "0 6px 24px rgba(16,185,129,0.30)" }}>
-                    Submit Interest →
-                  </button>
-                </div>
-              </form>
-            )}
+          {/* Send a Message CTA card (opens the popup form) */}
+          <div
+            style={{
+              background: "rgba(4,47,30,0.60)",
+              border: "1px solid rgba(16,185,129,0.18)",
+              borderRadius: 4,
+              padding: "clamp(36px,5vw,56px)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+            }}
+          >
+            <div
+              style={{
+                width: 68,
+                height: 68,
+                borderRadius: "50%",
+                background: "rgba(16,185,129,0.14)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginBottom: 24,
+              }}
+            >
+              <Mail size={30} color={A} />
+            </div>
+            <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 28, color: "#fff", marginBottom: 12 }}>
+              Register Your Interest
+            </h3>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.65)", lineHeight: 1.8, marginBottom: 30, maxWidth: 340 }}>
+              Tell us about your investment focus, sector and delegate needs — our team will respond within 48 hours with summit details and packages.
+            </p>
+            <button
+              type="button"
+              onClick={() => openContactModal("Africa Globalized Investment Forum")}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 10,
+                background: `linear-gradient(135deg,#047857,${A})`,
+                color: "#fff",
+                border: "none",
+                padding: "15px 34px",
+                borderRadius: 2,
+                cursor: "pointer",
+                fontSize: 13,
+                fontWeight: 700,
+                letterSpacing: "0.10em",
+                textTransform: "uppercase",
+                boxShadow: "0 8px 28px rgba(16,185,129,0.35)",
+                transition: "transform 0.2s, box-shadow 0.2s",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = "translateY(-3px)";
+                e.currentTarget.style.boxShadow = "0 14px 36px rgba(16,185,129,0.5)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 8px 28px rgba(16,185,129,0.35)";
+              }}
+            >
+              <Send size={15} /> Open Contact Form
+            </button>
           </div>
         </div>
       </div>

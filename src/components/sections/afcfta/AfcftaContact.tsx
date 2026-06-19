@@ -1,14 +1,14 @@
 "use client";
-import { useState } from "react";
+import { Mail, Phone, Globe, MapPin, Send } from "lucide-react";
+import { openContactModal } from "@/components/sections/ContactModal";
 
 const A = "#F59E0B";
-const BG = "#0F172A";
 
 const INFO = [
-  { icon: "📍", label: "Address", value: "P.O. Box SK 2290, Sakumono, Accra — Ghana" },
-  { icon: "📞", label: "Phone", value: "+233 244 868 395" },
-  { icon: "✉️", label: "Email", value: "info@afcftapolicy.net" },
-  { icon: "🌐", label: "Website", value: "afcftapolicy.net" },
+  { icon: <MapPin size={16} />, label: "Address", value: "P.O. Box SK 2290, Sakumono, Accra — Ghana" },
+  { icon: <Phone size={16} />, label: "Phone", value: "+233 244 868 395" },
+  { icon: <Mail size={16} />, label: "Email", value: "info@afcftapolicy.net" },
+  { icon: <Globe size={16} />, label: "Website", value: "afcftapolicy.net" },
 ];
 
 const OFFICES = [
@@ -19,18 +19,10 @@ const OFFICES = [
 ];
 
 export function AfcftaContact() {
-  const [form, setForm] = useState({ name: "", email: "", org: "", message: "" });
-  const [sent, setSent] = useState(false);
-
-  const handle = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSent(true);
-  };
-
   return (
     <section id="contact" style={{ background: "#1E293B", padding: "clamp(40px, 8vw, 100px) clamp(16px, 4vw, 64px)" }}>
       <style>{`
-        .afcfta-contact-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:start;}
+        .afcfta-contact-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:stretch;}
         .afcfta-offices-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
         @media(min-width:768px){
           .afcfta-contact-grid{grid-template-columns:1fr 1.4fr;gap:48px;}
@@ -63,7 +55,7 @@ export function AfcftaContact() {
             <div style={{ display: "flex", flexDirection: "column", gap: 18, marginBottom: 36 }}>
               {INFO.map((item, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-                  <div style={{ width: 38, height: 38, background: "rgba(245,158,11,0.10)", border: "1px solid rgba(245,158,11,0.25)", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, flexShrink: 0 }}>
+                  <div style={{ width: 38, height: 38, background: "rgba(245,158,11,0.10)", border: "1px solid rgba(245,158,11,0.25)", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", color: A, flexShrink: 0 }}>
                     {item.icon}
                   </div>
                   <div>
@@ -90,59 +82,71 @@ export function AfcftaContact() {
             </div>
           </div>
 
-          <div style={{ background: "rgba(15,23,42,0.80)", border: "1px solid rgba(245,158,11,0.15)", borderRadius: 4, padding: "clamp(24px,4vw,36px)" }}>
-            {sent ? (
-              <div style={{ textAlign: "center", padding: "40px 0" }}>
-                <div style={{ fontSize: 48, marginBottom: 16 }}>📬</div>
-                <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(22px,4vw,28px)", color: "#fff", marginBottom: 10 }}>Message Received!</h3>
-                <p style={{ fontSize: "clamp(13px,2.5vw,16px)", color: "rgba(255,255,255,0.65)" }}>Our team will respond within 2 business days.</p>
-                <button onClick={() => setSent(false)} style={{ marginTop: 20, background: A, color: "#0C0A04", border: "none", padding: "10px 24px", borderRadius: 2, cursor: "pointer", fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                  Send Another
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handle} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(22px,4vw,26px)", color: "#fff", marginBottom: 4 }}>Send a Message</h3>
-                {[
-                  { key: "name", label: "Full Name", placeholder: "Your name", type: "text" },
-                  { key: "email", label: "Email Address", placeholder: "your@email.com", type: "email" },
-                  { key: "org", label: "Organisation", placeholder: "Company / Institution", type: "text" },
-                ].map(({ key, label, placeholder, type }) => (
-                  <div key={key}>
-                    <label style={{ display: "block", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(245,158,11,0.70)", marginBottom: 6 }}>{label}</label>
-                    <input
-                      type={type}
-                      placeholder={placeholder}
-                      value={form[key as keyof typeof form]}
-                      onChange={e => setForm(p => ({ ...p, [key]: e.target.value }))}
-                      required
-                      style={{ width: "100%", padding: "12px 14px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(245,158,11,0.20)", borderRadius: 3, fontSize: "clamp(12px,2.2vw,14px)", color: "#fff", outline: "none", fontFamily: "inherit", transition: "border-color 0.2s", boxSizing: "border-box" }}
-                      onFocus={e => (e.target.style.borderColor = A)}
-                      onBlur={e => (e.target.style.borderColor = "rgba(245,158,11,0.20)")}
-                    />
-                  </div>
-                ))}
-                <div>
-                  <label style={{ display: "block", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(245,158,11,0.70)", marginBottom: 6 }}>Message</label>
-                  <textarea
-                    placeholder="How can we assist you?"
-                    value={form.message}
-                    onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
-                    required
-                    rows={4}
-                    style={{ width: "100%", padding: "12px 14px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(245,158,11,0.20)", borderRadius: 3, fontSize: "clamp(12px,2.2vw,14px)", color: "#fff", outline: "none", fontFamily: "inherit", resize: "vertical", transition: "border-color 0.2s", boxSizing: "border-box" }}
-                    onFocus={e => (e.target.style.borderColor = A)}
-                    onBlur={e => (e.target.style.borderColor = "rgba(245,158,11,0.20)")}
-                  />
-                </div>
-                <button
-                  type="submit"
-                  style={{ background: `linear-gradient(135deg,#B45309,${A})`, color: "#0C0A04", border: "none", padding: "14px 28px", borderRadius: 2, cursor: "pointer", fontSize: "clamp(12px,2.2vw,14px)", fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", alignSelf: "flex-start" }}
-                >
-                  Send Message →
-                </button>
-              </form>
-            )}
+          {/* Send a Message CTA card (opens the popup form) */}
+          <div
+            style={{
+              background: "rgba(15,23,42,0.80)",
+              border: "1px solid rgba(245,158,11,0.15)",
+              borderRadius: 4,
+              padding: "clamp(32px,5vw,56px)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+            }}
+          >
+            <div
+              style={{
+                width: 64,
+                height: 64,
+                borderRadius: "50%",
+                background: "rgba(245,158,11,0.12)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginBottom: 22,
+              }}
+            >
+              <Mail size={28} color={A} />
+            </div>
+            <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(22px,4vw,26px)", color: "#fff", marginBottom: 12 }}>
+              Send Us a Message
+            </h3>
+            <p style={{ fontSize: "clamp(13px,2.5vw,14px)", color: "rgba(255,255,255,0.65)", lineHeight: 1.75, marginBottom: 28, maxWidth: 320 }}>
+              Reach out on policy engagement, partnerships, or research collaboration — our team responds within 2 business days.
+            </p>
+            <button
+              type="button"
+              onClick={() => openContactModal("AfCFTA Policy Network")}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 10,
+                background: `linear-gradient(135deg,#B45309,${A})`,
+                color: "#0C0A04",
+                border: "none",
+                padding: "14px 32px",
+                borderRadius: 2,
+                cursor: "pointer",
+                fontSize: "clamp(12px,2.2vw,14px)",
+                fontWeight: 700,
+                letterSpacing: "0.10em",
+                textTransform: "uppercase",
+                boxShadow: "0 8px 28px rgba(245,158,11,0.35)",
+                transition: "transform 0.2s, box-shadow 0.2s",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = "translateY(-3px)";
+                e.currentTarget.style.boxShadow = "0 14px 36px rgba(245,158,11,0.5)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 8px 28px rgba(245,158,11,0.35)";
+              }}
+            >
+              <Send size={14} /> Open Contact Form
+            </button>
           </div>
         </div>
       </div>

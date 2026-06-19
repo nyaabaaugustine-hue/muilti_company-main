@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { openContactModal } from "@/components/sections/ContactModal";
 
 const A = "#f28d01";
 const NAVY = "#000040";
@@ -129,6 +130,12 @@ export function AbecFooter() {
                   <a
                     href={link.href}
                     className="footer-link"
+                    onClick={(e) => {
+                      if (link.href === "#contact") {
+                        e.preventDefault();
+                        openContactModal("Africa Business Export Club 500");
+                      }
+                    }}
                     style={{
                       fontSize: 13,
                       color: "rgba(255,255,255,0.60)",

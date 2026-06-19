@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { openContactModal } from "@/components/sections/ContactModal";
 
 const A = "#f28d01";
 const NAVY = "#000040";
@@ -355,6 +356,10 @@ export function AbecExportClub() {
               </div>
               <a
                 href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  openContactModal("Africa Business Export Club 500");
+                }}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -416,6 +421,10 @@ export function AbecExportClub() {
           </p>
           <a
             href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              openContactModal("Africa Business Export Club 500");
+            }}
             style={{
               display: "inline-flex",
               alignItems: "center",

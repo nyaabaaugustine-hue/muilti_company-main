@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
+import { ContactModal, openContactModal } from "./ContactModal";
 
 interface CompanyFooterProps {
   companyName: string;
@@ -78,6 +79,8 @@ export function CompanyFooter({
           .footer-bottom > div:last-child { flex-direction: column; gap: 8px; }
         }
       `}</style>
+
+      <ContactModal companyName={companyName} accentColor={color} />
 
       <footer id="contact" style={{ backgroundColor: "#0A1422", borderTop: `1px solid ${color}30` }}>
 
@@ -199,8 +202,9 @@ export function CompanyFooter({
 
             {/* Right — action buttons */}
             <div style={{ display: "flex", flexDirection: "column", gap: 14, alignItems: "flex-start" }}>
-              <a
-                href={`mailto:${email}`}
+              <button
+                type="button"
+                onClick={() => openContactModal(companyName)}
                 style={{
                   backgroundImage: `linear-gradient(135deg, ${color}cc, ${color})`,
                   color: "#0A1628",
@@ -210,6 +214,8 @@ export function CompanyFooter({
                   textTransform: "uppercase",
                   padding: "16px 36px",
                   borderRadius: 3,
+                  border: "none",
+                  cursor: "pointer",
                   textDecoration: "none",
                   display: "flex",
                   alignItems: "center",
@@ -218,18 +224,18 @@ export function CompanyFooter({
                   transition: "transform 0.2s, box-shadow 0.2s",
                 }}
                 onMouseEnter={e => {
-                  const el = e.currentTarget as HTMLAnchorElement;
+                  const el = e.currentTarget as HTMLButtonElement;
                   el.style.transform = "translateY(-3px)";
                   el.style.boxShadow = `0 14px 40px ${color}60`;
                 }}
                 onMouseLeave={e => {
-                  const el = e.currentTarget as HTMLAnchorElement;
+                  const el = e.currentTarget as HTMLButtonElement;
                   el.style.transform = "translateY(0)";
                   el.style.boxShadow = `0 8px 32px ${color}50`;
                 }}
               >
                 <Mail size={15} /> Send a Message
-              </a>
+              </button>
               <div
                 style={{
                   display: "flex",
